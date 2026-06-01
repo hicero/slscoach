@@ -1,0 +1,6 @@
+{
+  "name": "SLS 보컬 발성 진단 및 레슨 필드 실전 가이드",
+  "description": "Speech Level Singing(SLS) 기반의 6가지 발성 유형을 자가 진단하고, 유형별 상세 설명 및 타이머 연동 레슨 플로우를 제공하는 보컬 트레이닝 필드 가이드 어플리케이션입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
