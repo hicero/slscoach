@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { VOCAL_TERMS } from '../../terms';
+import { VOCAL_TERMS } from '../terms';
 
 const TERMS_KEYS = Object.keys(VOCAL_TERMS).sort((a, b) => b.length - a.length);
 const REGEX = new RegExp(`(${TERMS_KEYS.map(k => k.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')).join('|')})`, 'gi');
