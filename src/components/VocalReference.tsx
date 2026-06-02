@@ -4,7 +4,7 @@ import { ShieldCheck, Sparkles, RefreshCw, AlertTriangle, HelpCircle, ChevronRig
 import TermTooltip from './TermTooltip';
 
 export default function VocalReference() {
-  const [activeTab, setActiveTab] = useState<'toolbox' | 'transitions' | 'science' | 'quickRef'>('toolbox');
+  const [activeTab, setActiveTab] = useState<'toolbox' | 'transitions' | 'science' | 'quickRef' | 'postures' | 'vowels'>('toolbox');
 
   return (
     <div className="bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm">
@@ -62,6 +62,26 @@ export default function VocalReference() {
             }`}
           >
             과학적 근거 (논문 매치)
+          </button>
+          <button
+            onClick={() => setActiveTab('postures')}
+            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
+              activeTab === 'postures'
+                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
+                : "text-slate-500 hover:text-slate-800"
+            }`}
+          >
+            신체 큐잉 & 자세
+          </button>
+          <button
+            onClick={() => setActiveTab('vowels')}
+            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
+              activeTab === 'vowels'
+                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
+                : "text-slate-500 hover:text-slate-800"
+            }`}
+          >
+            모음 훈련 가이드
           </button>
           <button
             onClick={() => setActiveTab('quickRef')}
@@ -514,6 +534,185 @@ export default function VocalReference() {
                <h4 className="text-sm font-bold text-emerald-400 mb-2">💡 통찰과 시사점: (코칭 가이드)</h4>
                <p className="text-xs leading-relaxed">
                  SLS 6가지 도구 상자와 툴들은 성문 하강 훈련법이 아닙니다. 학생에게 툴을 제시할 때, "세스 리그스가 그렇게 했기 때문에" 가 아닌, <strong>"이 툴이 당신의 성문 형태를 직사각형(믹스)으로 물리 변형시켜주고, 성문하압의 불연속적 폭발을 막아 안전하게 발성할 수 있게 해주는 구조적 해법 (Titze 2014 모델 등)"</strong>이라고 인지하고 코치할 때 그 위력과 안정성이 극대화됩니다.
+               </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'postures' && (
+        <div className="space-y-6">
+          <div className="bg-white border border-slate-200/60 p-5 md:p-6 rounded-2xl shadow-sm relative overflow-hidden">
+            <h3 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2 mb-4">
+              <Sparkles className="text-emerald-500" size={20} />
+              신체 큐잉과 자세 (Somatic Cues)
+            </h3>
+            
+            <p className="text-[13px] text-slate-600 mb-6 leading-relaxed">
+              SLS에서는 자음+모음 툴뿐만 아니라 신체의 움직임과 자세를 활용한 큐잉도 중요하게 다룹니다. 무의식적 긴장 패턴을 차단하고, 올바른 발성 조건을 간접적으로 유도합니다. 특히 고음에서 후두 상승이나 외부 근육 개입이 심한 학생에게 효과적입니다.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-indigo-700">① 허리 굽히기 (Bend Forward)</h4>
+                <p className="text-xs text-slate-600 mb-2">고음에 다가갈 때 허리를 앞으로 굽혀 고음에 대한 불안감을 해소하고 '도달하려는' 습관을 차단합니다.</p>
+                <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
+                  추천: Type 4 (Pull Chest), Type 5 (Pressed)
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-indigo-700">② 손가락으로 볼 받치기</h4>
+                <p className="text-xs text-slate-600 mb-2">손가락으로 볼과 입 주변을 받쳐 턱과 입술의 긴장을 풉니다. 과도한 공기 사용을 방지합니다.</p>
+                <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
+                  추천: Type 2, 4 (Lip Trill 훈련 시)
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-emerald-700">③ Speech-Level Posture (가장 핵심)</h4>
+                <p className="text-xs text-slate-600 mb-2">후두가 안정된 위치에 머물게 합니다. 고음에서 턱을 들거나 저음에서 고개를 숙이지 않는 중립 자세를 유지합니다.</p>
+                <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
+                  추천: 모든 유형의 최종 상태 (Type 1)
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-teal-700">④ 이완 유도 (Relaxation)</h4>
+                <p className="text-xs text-slate-600 mb-2">심호흡, 어깨 롤(Shoulder Roll), 스트레칭 등을 통해 전신의 긴장을 해소한 후 훈련에 돌입합니다.</p>
+                <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
+                  추천: Type 5 (신체적 과긴장 동반 시)
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-sky-700">⑤ Dopy Sound (후두 하강)</h4>
+                <p className="text-xs text-slate-600 mb-2">"우-웅" 하는 멍청한 목소리로 후두를 직접적으로 낮춥니다. 후두 상승 억제용 임시 도구입니다.</p>
+                <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
+                  추천: Type 4, 5의 치솟는 후두 교정
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-purple-700">⑥ Cry / Whimper</h4>
+                <p className="text-xs text-slate-600 mb-2">강아지 훌쩍이듯 가벼운 울음소리로 성대의 Thin & Short 조정을 유도하고 연결을 돕습니다.</p>
+                <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
+                  추천: Type 2, 3, 6 (접촉 탄력 부여)
+                </div>
+              </div>
+            </div>
+
+            <h3 className="text-[14px] font-bold text-slate-800 mb-3 border-b border-slate-100 pb-2">유형별 추천 신체 큐 요약정리</h3>
+            <div className="overflow-x-auto rounded-xl border border-slate-150">
+              <table className="w-full text-xs text-left min-w-[600px]">
+                <thead className="bg-slate-50 font-semibold text-slate-700">
+                  <tr>
+                    <th className="px-3 py-3 border-b border-slate-150 w-32">유형</th>
+                    <th className="px-3 py-3 border-b border-slate-150">추천 신체 큐</th>
+                    <th className="px-3 py-3 border-b border-slate-150 w-1/2">목적 및 이유</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-slate-100">
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-teal-700">Type 1</td>
+                    <td className="px-3 py-2.5 font-semibold text-slate-700">Speech-Level Posture</td>
+                    <td className="px-3 py-2.5 text-slate-600">이미 균형이 잡혀 있으므로 다른 동작 없이 기본 자세만 유지</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-sky-600">Type 2</td>
+                    <td className="px-3 py-2.5 font-semibold text-slate-700">Cry / 볼 받치기</td>
+                    <td className="px-3 py-2.5 text-slate-600">접촉을 강화하고 입 주변 긴장을 풀어 과도한 공기 사용을 방지</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-indigo-600">Type 3</td>
+                    <td className="px-3 py-2.5 font-semibold text-slate-700">고개 돌리기 + Cry, 걷기</td>
+                    <td className="px-3 py-2.5 text-slate-600">브리지 통과 시 긴장 완화 및 전신 이완으로 자연스러운 연결 유도</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-amber-600">Type 4</td>
+                    <td className="px-3 py-2.5 font-semibold text-slate-700">허리 굽히기(핵심) + Dopy</td>
+                    <td className="px-3 py-2.5 text-slate-600">고음을 향해 '도달'하려는 나쁜 습관을 물리적으로 차단, 후두 억제</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-rose-600">Type 5</td>
+                    <td className="px-3 py-2.5 font-semibold text-slate-700">어깨 롤링 + 이완 + Dopy</td>
+                    <td className="px-3 py-2.5 text-slate-600">몸 전체의 압축과 과폐쇄를 풀고 후두 하강을 통해 공간을 확보</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-emerald-600">Type 6</td>
+                    <td className="px-3 py-2.5 font-semibold text-slate-700">Cry + 걷기</td>
+                    <td className="px-3 py-2.5 text-slate-600">적당한 텐션의 접촉 강화 및 심리적 긴장 완화로 호흡 조절력 향상</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'vowels' && (
+        <div className="space-y-6">
+          <div className="bg-white border border-slate-200/60 p-5 md:p-6 rounded-2xl shadow-sm relative overflow-hidden">
+            <h3 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2 mb-4">
+              <Sparkles className="text-purple-500" size={20} />
+              모음 분류 및 진행 원칙 (Vowel Strategies)
+            </h3>
+            
+            <p className="text-[13px] text-slate-600 mb-6 leading-relaxed">
+              SLS에서 모음(Vowel)은 가장 강력한 교정 도구 중 하나입니다. 좁은 모음과 넓은 모음은 단순히 입모양의 차이가 아니라 성대의 진동 방식, 레지스터 활성화, 후두 위치에 영향을 미칩니다.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="p-4 bg-indigo-50/50 border border-indigo-100 rounded-xl">
+                <h4 className="font-bold text-indigo-800 text-[13px] mb-2">좁은 모음이 Bridge 통과에 도움되는 이유</h4>
+                <ul className="text-[11px] text-slate-700 space-y-1.5 list-disc pl-4 marker:text-indigo-400">
+                  <li><strong>공명 전략 전환:</strong> 구강 공명을 피해 인두/비강 공명으로 Head Voice 유도.</li>
+                  <li><strong>성대 긴장도:</strong> CT 근육(cricothyroid) 활성화로 성대가 얇고 길어짐.</li>
+                  <li><strong>외근 개입 방어:</strong> 입을 좁게 열면 외부 근육 개입 공간 축소.</li>
+                  <li><strong>공기압 제어 증대:</strong> 구강 내 저항 증가로 성대가 효율적으로 진동.</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-rose-50/50 border border-rose-100 rounded-xl">
+                <h4 className="font-bold text-rose-800 text-[13px] mb-2">넓은 모음이 Pull Chest를 유도하는 이유</h4>
+                <ul className="text-[11px] text-slate-700 space-y-1.5 list-disc pl-4 marker:text-rose-400">
+                  <li><strong>TA 활성화:</strong> Chest Voice 활성도를 높여 성대가 두껍게 진동 유지.</li>
+                  <li><strong>구강 공명 강화:</strong> Chest Voice 의 질감과 저주파 울림 지속.</li>
+                  <li><strong>공기 소비 확대:</strong> 성대 압력이 불안정해지며 강제 외부압력 시도 유발.</li>
+                  <li><strong>습관적 도달 본능:</strong> 넓게 부르려다 목이 조여지는 악순환 발생.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 className="text-[13px] font-bold text-slate-800 mb-3 mt-6 border-b border-slate-100 pb-2">모음 3 카테고리 기전</h3>
+            <div className="overflow-x-auto rounded-xl border border-slate-150 mb-6">
+              <table className="w-full text-xs text-left min-w-[500px]">
+                <thead className="bg-slate-50 font-semibold text-slate-700">
+                  <tr>
+                    <th className="px-3 py-3 border-b border-slate-150">카테고리</th>
+                    <th className="px-3 py-3 border-b border-slate-150">예시 모음</th>
+                    <th className="px-3 py-3 border-b border-slate-150">활성화 레지스터</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-slate-100">
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-indigo-600">Narrow (좁은 모음)</td>
+                    <td className="px-3 py-2.5 font-mono">OO (/u/), EE (/i/)</td>
+                    <td className="px-3 py-2.5 text-slate-600">Head Voice 활성화, Bridge 통과 용이</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-teal-600">Medium (중간 모음)</td>
+                    <td className="px-3 py-2.5 font-mono">UH (/ʌ/), ʊ (/ʊ/)</td>
+                    <td className="px-3 py-2.5 text-slate-600">Mix Voice 활성화, Register 전환 균형</td>
+                  </tr>
+                  <tr className="hover:bg-slate-50/50">
+                    <td className="px-3 py-2.5 font-bold text-rose-600">Wide (넓은 모음)</td>
+                    <td className="px-3 py-2.5 font-mono">AH (/æ/), A (/ɑ/), EY, EH</td>
+                    <td className="px-3 py-2.5 text-slate-600">Chest Voice 고정, 파워 및 공명</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="p-4 bg-purple-50/40 border border-purple-100 rounded-xl">
+               <h3 className="text-[12px] font-bold text-purple-900 mb-2">💡 SLS 모음 훈련 진행 원칙</h3>
+               <p className="text-[11px] md:text-xs text-purple-800/80 leading-relaxed font-medium">
+                 가장 보편적인 교정 메커니즘은 <strong>좁은 모음 → 중간 모음 → 넓은 모음</strong> 순으로 진행하며, 환절기에서 당김이 심해질 때 좁은 모음으로 임시 스윙하여 안정성을 보강합니다. 지속적으로 좁은 모음만 부르면 Head Voice 파워가 미약해지는 부작용이 생기므로, 반드시 브리지를 안착한 후엔 입을 열어(Wide) 본래의 파워를 얻어야 합니다.
                </p>
             </div>
           </div>
