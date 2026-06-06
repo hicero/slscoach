@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { VOCAL_TYPES, VocalType, LessonStep } from '../types';
-import { Play, Pause, RotateCcw, AlertTriangle, MessageSquare, ListMusic, CheckCircle, ChevronRight, HelpCircle, Activity } from 'lucide-react';
+import { Play, Pause, RotateCcw, AlertTriangle, MessageSquare, ListMusic, CheckCircle, ChevronRight, HelpCircle, Activity, Sparkles } from 'lucide-react';
 import TermTooltip from './TermTooltip';
 
 interface VocalLessonPlannerProps {
@@ -193,10 +193,39 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
                 <strong className="text-slate-900 font-bold block mb-1">핵심 전략 및 원칙:</strong>
                 <TermTooltip text={currentType.strategy} />
               </p>
-              <div className="bg-white border border-slate-200/60 rounded-xl p-3 text-[10px] text-slate-600">
+              <div className="bg-white border border-slate-200/60 rounded-xl p-3 text-[10px] text-slate-600 mb-2">
                 <span className="text-slate-800 font-bold">⚠️ 강사 가이드 큐팁: </span>
                 <TermTooltip text={currentType.keyPoints} />
               </div>
+              
+              {currentType.motorDiagnostic && (
+                <div className="mt-3 pt-3 border-t border-slate-200/60 space-y-3">
+                  <h3 className="text-[11px] font-bold text-blue-800 flex items-center gap-1">
+                    <Sparkles size={12} className="text-blue-500" />
+                    운동학습 (복잡계) 관점 중재 설계
+                  </h3>
+                  
+                  <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-2.5">
+                    <strong className="text-[10px] text-blue-800 block mb-1">운동학적 진단</strong>
+                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.motorDiagnostic}</p>
+                  </div>
+                  
+                  <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-2.5">
+                    <strong className="text-[10px] text-indigo-800 block mb-1">제약 조건 재설계 (과제 제약)</strong>
+                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.constraintRedesign}</p>
+                  </div>
+                  
+                  <div className="bg-teal-50/50 border border-teal-100 rounded-lg p-2.5">
+                    <strong className="text-[10px] text-teal-800 block mb-1">창발 유도 및 대역폭 피드백</strong>
+                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.emergenceFeedback}</p>
+                  </div>
+                  
+                  <div className="bg-purple-50/50 border border-purple-100 rounded-lg p-2.5">
+                    <strong className="text-[10px] text-purple-800 block mb-1">파지 및 전이(Transfer) 설계</strong>
+                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.transferDesign}</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

@@ -4,7 +4,7 @@ import { ShieldCheck, Sparkles, RefreshCw, AlertTriangle, HelpCircle, ChevronRig
 import TermTooltip from './TermTooltip';
 
 export default function VocalReference() {
-  const [activeTab, setActiveTab] = useState<'toolbox' | 'transitions' | 'science' | 'quickRef' | 'postures' | 'vowels'>('toolbox');
+  const [activeTab, setActiveTab] = useState<'toolbox' | 'transitions' | 'science' | 'quickRef' | 'postures' | 'vowels' | 'motorLearning'>('toolbox');
 
   return (
     <div className="bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm">
@@ -32,67 +32,53 @@ export default function VocalReference() {
         </div>
 
         {/* 하부 탭 컨트롤 */}
-        <div className="flex overflow-x-auto hide-scrollbar bg-slate-100 p-1 rounded-lg w-full xl:w-auto border border-slate-150 gap-1">
-          <button
-            onClick={() => setActiveTab('toolbox')}
-            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
-              activeTab === 'toolbox'
-                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
-                : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            툴 분류 가이드 & 충돌 맵
-          </button>
-          <button
-            onClick={() => setActiveTab('transitions')}
-            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
-              activeTab === 'transitions'
-                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
-                : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            유형 전이 정밀 경로
-          </button>
-          <button
-            onClick={() => setActiveTab('science')}
-            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
-              activeTab === 'science'
-                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
-                : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            과학적 근거 (논문 매치)
-          </button>
-          <button
-            onClick={() => setActiveTab('postures')}
-            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
-              activeTab === 'postures'
-                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
-                : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            신체 큐잉 & 자세
-          </button>
-          <button
-            onClick={() => setActiveTab('vowels')}
-            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
-              activeTab === 'vowels'
-                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
-                : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            모음 훈련 가이드
-          </button>
-          <button
-            onClick={() => setActiveTab('quickRef')}
-            className={`whitespace-nowrap px-3 sm:px-4 py-2 rounded-md font-semibold text-[11px] sm:text-xs transition-all shrink-0 text-center ${
-              activeTab === 'quickRef'
-                ? "bg-white text-slate-900 shadow-sm border border-slate-200/50"
-                : "text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            빠른 종합 가이드
-          </button>
+        <div className="w-full xl:w-auto">
+          {/* 모바일 (Select Dropdown) */}
+          <div className="md:hidden relative">
+            <select
+              value={activeTab}
+              onChange={(e) => setActiveTab(e.target.value as any)}
+              className="w-full appearance-none bg-slate-50 border border-slate-200 text-slate-800 text-sm font-bold rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm transition-all"
+            >
+              <option value="toolbox">툴 분류 가이드 & 충돌 맵</option>
+              <option value="transitions">유형 전이 정밀 경로</option>
+              <option value="science">과학적 근거 (논문 매치)</option>
+              <option value="postures">신체 큐잉 & 자세</option>
+              <option value="vowels">모음 훈련 가이드</option>
+              <option value="motorLearning">복잡계/운동학습</option>
+              <option value="quickRef">빠른 종합 가이드</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+              <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* 태블릿/데스크탑 (Buttons) */}
+          <div className="hidden md:flex flex-wrap bg-slate-100 p-1.5 rounded-xl border border-slate-200 gap-1.5 justify-start">
+            {[
+              { id: 'toolbox', label: '툴 분류 가이드 & 충돌 맵' },
+              { id: 'transitions', label: '유형 전이 정밀 경로' },
+              { id: 'science', label: '과학적 근거 (논문 매치)' },
+              { id: 'postures', label: '신체 큐잉 & 자세' },
+              { id: 'vowels', label: '모음 훈련 가이드' },
+              { id: 'motorLearning', label: '복잡계/운동학습' },
+              { id: 'quickRef', label: '빠른 종합 가이드' },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`px-3 lg:px-4 py-2 rounded-lg font-semibold text-xs transition-all text-center ${
+                  activeTab === tab.id
+                    ? "bg-white text-slate-900 shadow-sm border border-slate-200/60"
+                    : "text-slate-500 hover:text-slate-800 hover:bg-slate-200/50"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -828,6 +814,93 @@ export default function VocalReference() {
                   <p className="text-xs text-slate-600 mb-2 font-mono bg-white inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100">모든 유형 (위험!)</p>
                   <p className="text-xs text-slate-700 mb-2">즉시 연습 중단. 48시간 휴식 및 후두 외상 ENT 전문의 상담 권고.</p>
                </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'motorLearning' && (
+        <div className="space-y-6">
+          <div className="bg-white border border-slate-200/60 p-5 md:p-6 rounded-2xl shadow-sm relative overflow-hidden">
+            <h3 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2 mb-4">
+              <Sparkles className="text-blue-500" size={20} />
+              복잡계 관점의 운동 제어와 발성 교육
+            </h3>
+            
+            <p className="text-[13px] text-slate-600 mb-6 leading-relaxed">
+              SLS 교육 방법론을 최신 스포츠 과학/재활의학의 '복잡계(Complex Systems) 및 동적 시스템 이론(Dynamic Systems Theory)' 관점으로 해석합니다. 발성 문제를 선형적으로 교정하려는 관점에서 벗어나, <strong>수행자(Performer), 과제(Task), 환경(Environment)</strong>이라는 제약 조건 속에서 발성 시스템이 어떤 협응을 창발해내는지를 이해하는 체계입니다. 강사의 역할은 '교정자'에서 '조건 설계자'로 매끄럽게 전환됩니다.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="p-4 bg-blue-50/50 border border-blue-100 rounded-xl space-y-2">
+                <h4 className="font-bold text-blue-800 text-[13px]">1. 패러다임의 전환: 교정에서 '조건 설계(중재)'로</h4>
+                <p className="text-[11px] md:text-xs text-slate-700 leading-relaxed">
+                  문제적 소리(Pull Chest, No Chest 등)는 단순한 <strong>실수</strong>가 아니라, 현재의 조건(과도한 음정/음량) 속에서 살기 위해 신경계가 선택해 파놓은 깊은 골짜기, <strong>보상 끌개(Attractor)</strong>입니다. "목 열어" 같은 몸통 직접 조정(MMC)은 실패하며, 대신 <strong>오직 올바른 협응만 나올 수 있는 저항력 있는 툴로 과제 규칙(조건) 자체를 개조</strong>해야 합니다.
+                </p>
+              </div>
+              <div className="p-4 bg-indigo-50/50 border border-indigo-100 rounded-xl space-y-2">
+                <h4 className="font-bold text-indigo-800 text-[13px]">2. 자기조직화(Self-Organization)와 창발(Emergence)</h4>
+                <p className="text-[11px] md:text-xs text-slate-700 leading-relaxed">
+                  학생이 수많은 성대와 호흡 내부 근육들을 하나하나 의식으로 통제(자유도 문제)할 수 없습니다. 교사가 학생의 자유도를 제한하는 특수 툴(자음, 모음, SOVTE)이라는 <strong>과제 제약(Task Constraint)</strong>을 주면, 학생의 신경계가 생존을 위해 그 모양대로 <strong>스스로 목표 협응을 창발해 조립</strong>합니다.
+                </p>
+              </div>
+              <div className="p-4 bg-teal-50/50 border border-teal-100 rounded-xl space-y-2">
+                <h4 className="font-bold text-teal-800 text-[13px]">3. SOVTE와 Vocalise = 과제 제약</h4>
+                <p className="text-[11px] md:text-xs text-slate-700 leading-relaxed">
+                  Lip Trill이나 좁은 모음 스케일은 성문 압력을 올려주는 단순한 요술 지팡이가 아닙니다. 풀체스트 같은 <strong>틀린 버릇을 아예 쓸 수가 없는 물리적 한계 환경을 목에 씌워버리는 '과제 제약'</strong>입니다. 자유도를 얼려서 악습을 틀어막고 정방향을 일러줍니다.
+                </p>
+              </div>
+              <div className="p-4 bg-rose-50/50 border border-rose-100 rounded-xl space-y-2">
+                <h4 className="font-bold text-rose-800 text-[13px]">4. 임계 요동(Critical Fluctuation)과 상전이</h4>
+                <p className="text-[11px] md:text-xs text-slate-700 leading-relaxed">
+                  파사지오 대역에서 소리가 불안정하게 떨리거나 살짝 플립되는 것을 즉시 실패로 심판하지 마세요. 거대했던 무거운 흉성의 협응 체계가 부서지고 새로운 믹스 체계로 환승하며 일어나는 <strong>상전이(Phase Transition)의 정상적 신호이자 '좋은 변동성'</strong>일 수 있습니다.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-slate-900 rounded-2xl p-5 md:p-6 shadow-xl border border-slate-800 relative z-10">
+              <h3 className="text-[14px] md:text-base font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                <ShieldCheck size={18} />
+                강사용 운동학습 5대 점검 체크리스트
+              </h3>
+              
+              <ul className="space-y-4 text-xs md:text-[13px] text-slate-300">
+                <li className="flex gap-3">
+                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">1</div>
+                  <div>
+                    <strong className="text-slate-100 font-semibold block mb-0.5">[제약 조건 관찰]</strong> 
+                    학생이 쓰러진 고비가 과연 특정 음역이 문제였는지, 아니면 너무 큰 음량, 어려운 모음, 빠른 템포가 뒤섞여 만들어낸 <strong>종합적인 '과부하 요인' 때문이었는지 진단했습니까?</strong>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">2</div>
+                  <div>
+                    <strong className="text-slate-100 font-semibold block mb-0.5">[직접 지시 경고]</strong> 
+                    "목을 더 넓혀!", "배에 힘들어가게 해!" 등 내부 신체를 강제로 조작시키는 망상을 지시하고 있지 않습니까? <strong>신체 조작이 아닌 외부 과제의 물성(도구)을 바꿨습니까?</strong>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">3</div>
+                  <div>
+                    <strong className="text-slate-100 font-semibold block mb-0.5">[주의 자원 한계]</strong> 
+                    초보자에게 "입모양은 이렇게 하고 후두는 안 흔들리게 배를 눌러!" 같이 멀티태스킹 지시를 남발하여 두뇌 연산 과부하를 주지 않았습니까?
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">4</div>
+                  <div>
+                    <strong className="text-slate-100 font-semibold block mb-0.5">[변동성의 가치 분별]</strong> 
+                    학생이 뿜어낸 작고 예민한 흔들림이, 마침내 정답으로 진입하려 바들거리는 기특한 <strong>'임계 요동'</strong>인지, 다시 익숙한 흉폭한 습관으로 무너지는 <strong>'붕괴 현상'</strong>인지 분별해 냈습니까?
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">5</div>
+                  <div>
+                    <strong className="text-slate-100 font-semibold block mb-0.5">[파지와 전이(Transfer) 평가]</strong> 
+                    연습실에서 Lip Trill로 나온 완벽한 연결감에 취해 혼자 환호하는 건 아닙니까? <strong>모든 툴을 떼고 개방된 원래 가사로 불렀을 때에도 그 질량이 순조롭게 유지(전이)되었습니까?</strong>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
