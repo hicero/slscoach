@@ -37,6 +37,10 @@ export interface VocalType {
   primaryTools: string[];
   avoidTools: string[];
   strategy: string;
+  motorDiagnostic?: string;
+  constraintRedesign?: string;
+  emergenceFeedback?: string;
+  transferDesign?: string;
   startKey: string;
   keyPoints: string;
   lessonFlow: LessonStep[];
@@ -67,6 +71,10 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["W/Y 글라이드", "이중모음([ei], [oʊ])", "N[ae] / N[ei]"],
     avoidTools: ["불필요하고 급격한 툴 변경", "Edgy mmm (불필요하나 순간적 사용 가능, 과사용 주의)"],
     strategy: "과도한 연습 자극을 금지하며, 현재의 좋은 성대 협응을 유지하면서 디테일을 연마합니다. '그 가볍고 부드럽게 연결 느낌을 유지하면서 가창하자'라는 접근 방식을 가집니다.",
+    motorDiagnostic: "목표 협응(Mix)이 깊은 끌개를 형성하고 있어, 다양한 변수(음역, 음량, 모음)에서도 안정성을 유지(준안정성)하는 최적의 운동 제어 상태.",
+    constraintRedesign: "[자유도 개방/Freeing] 모음, 자음, 음역, 음량, 템포, 가사 등의 변수를 점진적으로 복잡하게 개방하여 실제 가창과 거의 동일한 극한 조건 설계.",
+    emergenceFeedback: "미시적 지시(MMC) 배제, 외적 초점(감정 전달, 프레이징, 리듬감 달성)에 기반한 피드백 제공 (대역폭 피드백 적용으로 사소한 흔들림은 허용).",
+    transferDesign: "Vocalise(모음/자음) ➡️ 특정 구간 가사 ➡️ 전체 곡 반복 ➡️ 다양한 공연/스트레스 환경 시뮬레이션으로 전이(Transfer) 및 파지(Retention) 극대화.",
     startKey: "여성: G3 – A3 / 남성: C3 – D3 (현재 안정적인 상태 그대로 가볍게 가창 시작)",
     keyPoints: "과도한 툴 변경을 기피하고, 현재의 훌륭한 협응 근육을 세밀하게 유지・강화하는 데 집중합니다.",
     lessonFlow: [
@@ -131,6 +139,10 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["B[ae]b, D[ae]d, K[ae]k", "Staccato 훈련", "Edgy mmm", "Cry (울음 섞인 톤)"],
     avoidTools: ["Hooty 계열 음성 훈련 (성대 접촉을 더 약화시킴)", "좁은 모음 ([i], [u])"],
     strategy: "좁고 부드러운 모음보다는 '넓고 밝은 모음'을 앞세워 적정한 성대 밀착감을 먼저 회복합니다. 음정이 가창 도중 가성으로 뒤집히면(Flip), 'Edgy mmm'을 적용하여 성대의 얇고 선명한 울림을 즉시 리셋해 줍니다.",
+    motorDiagnostic: "성대 접촉 협응에 대한 끌개가 너무 얕거나 없음. 약간의 부하(음정 상승)만 걸려도 가성(반대위상)으로 상전이가 즉시 일어나며 도피하는 상태.",
+    constraintRedesign: "[과제 제약] 파열음(B, D, K)과 같은 물리적 장애물을 추가해 성대 하부에 순간적인 기압을 형성, 성대가 닫히지 않으면 소리를 낼 수 없는 강제적 과제 제약을 부여.",
+    emergenceFeedback: "'성대를 붙여라' 등의 내부 감각(MMC) 지시 철저히 배제(과긴장 유발). 'B[ʌ]b 발음에서 공기가 새지 않고 튕겨 나오는가?' 같은 명확한 외적 전환 피드백 적용. 단, 파열음 강도가 과하면 Type 5(과압착) 보상이 창발될 수 있으므로 최적 부하 모니터링.",
+    transferDesign: "Staccato 파열음 ➡️ Sustain 파열음 ➡️ 넓은 모음 기반 연결 ➡️ 짧은 가사 적용.",
     startKey: "여성: G3 – A3 / 남성: C3 (안정적인 흉성을 확실히 확보하기 위해 반드시 낮은 음역에서 훈련을 점진 시작)",
     keyPoints: "넓은 모음과 탄력적인 자음 조합으로 먼저 안전하게 성대 접촉을 이끌어내고, 소리가 깨지거나 흐려지면 즉시 Edgy mmm 스태카토로 재교정합니다.",
     lessonFlow: [
@@ -195,6 +207,10 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["Nay (가파르고 둔탁하지 않은 톤)", "W/w 자음 가창", "G[ʌ]g + Cry", "N[ei] / N[ae]"],
     avoidTools: ["고정된 금지 툴은 없으나 현재 나타나는 세부 Tends To에 따라 조건부 선택 (브리지에서 무거워지면 좁은 모음/Release 계열, 접촉이 빠지면 Friendly Compression/경음 자음 계열, 후두가 오르면 Hooty 계열로 즉시 조정)"],
     strategy: "성대의 접촉력이 갑자기 사라지거나 풀리면, 즉시 날카로운 접촉을 돕는 'Nay' 발음으로 단단하게 연결감을 리셋해 주는 전략을 사용합니다. 흉성을 유지하는 내부 근육(TA)을 안전하고 점진적으로만 증강시키는 것이 본 유형의 핵심입니다.",
+    motorDiagnostic: "음역 전환 부근에서 기존 협응(흉성)의 준안정성이 깨지면서, 새로운 협응(상전이)으로 안정적으로 편입되지 못하고 요동치는 전이적 상태.",
+    constraintRedesign: "[과제 제약] Nay, W[ʌ]w, G[ʌ]g 등 좁은 모음과 혀/입술의 보조적 저항을 활용해, 상전이가 일어날 때의 과부하를 줄여주고 임계 요동 구간의 진폭을 억제.",
+    emergenceFeedback: "연결이 흔들리는 임계 요동 현상을 무조건 실패로 보지 않고 '상전이의 정상적 신호(좋은 변동성)'로 해석. 'Nay'나 울음소리(Cry)를 사용한 외적 초점으로 자연스러운 믹스 협응의 창발만 유도.",
+    transferDesign: "Nay/W 반복 ➡️ Octave Repeater로 이동폭 확대 ➡️ 구강 개방을 점진적으로 넓힌 모음으로 전이 ➡️ 가사.",
     startKey: "여성: G3 – A3 / 남성: C3 (기초 진단 가창 단계에서는, 초기 후두 긴장을 줄이고 편안함을 최우선으로 유도)",
     keyPoints: "풍부한 흉성을 가지고 있으나 연결이 취약한 상태이므로, 'Nay' 발음을 통해 브릿지 통과 경험을 안전하게 누적시키는 것이 보컬 성장의 핵심입니다.",
     lessonFlow: [
@@ -259,6 +275,10 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["Lip Trill / Tongue Trill (유연성 회복)", "Hooty W[i]/G[i], G[u], N[ei]", "M[ʌ]m (Reinforcing 단계 제한적 사용)"],
     avoidTools: ["Bratty (초기 금지, Release 후 제한적 사용)", "Ng [ŋ] (과압축 악화될 수 있으므로 관찰하며 주의)", "경음 자음 (B/D/K 등)", "넓은 모음 ([a], [ae]) 및 N[ae] (후두 상승 위험)"],
     strategy: "저음부터 밀고 올라가는 순방향 훈련법은 실패 확률이 다분히 높습니다. 과도한 공기 압력과 흉성 무게를 줄이고, 좁은 모음과 top-down scale로 브리지 release를 경험하게 합니다. 목표는 성대를 더 붙이는 것이 아니라 moderate adduction + low stable larynx + connected release입니다.",
+    motorDiagnostic: "음정 상승이라는 조건(부하)이 가해지면 흉성 우세 협응(깊은 끌개) 패턴으로 강력하게 수렴해버리는 상태. 억지로 고음을 낼수록 보상 끌개가 더 깊어짐.",
+    constraintRedesign: "[조건 재설계/자유도 제한] 현재 스트랩 근육이 과부하를 견디고 있으므로, 고음역 시도 중단. 음역/음량 축소, 템포 늦춤. SOVTE(Lip Trill, Hooty)로 성도 임피던스를 바꿔 Pulled Chest로 빠질 수 없는 무해한 과제 제약 부여.",
+    emergenceFeedback: "Lip Trill 시 '음정을 맞춰라(내적 초점)' 지시 금지. '입술이 떨리는 느낌만 가져라(외적/과제 초점)'로 전환. 후두 급상승이 동반되는 '나쁜 변동성'만 대역폭 피드백으로 즉각 통제.",
+    transferDesign: "SOVTE(Lip Trill/Hooty) ➡️ 반폐쇄 모음(M[ʌ]m) ➡️ 개방 모음(N[ei]) ➡️ 짧은 가사 ➡️ 부하 재상승.",
     startKey: "여성: C#4 – C#5 / 남성: F#3 – G4 (밀어 올릴 수 없는 높은 음성 구역에서부터 가볍게 하행하여 두성을 유도)",
     keyPoints: "후두를 확실하게 낮추어 목 조임을 해방하는 것을 보컬 레슨 1순위 목표로 삼고, 외부 전신 근육이 계속 수축할 경우 즉각 가벼운 훈련으로 이완시킵니다.",
     lessonFlow: [
@@ -323,6 +343,10 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["Lip Trill (립트릴)", "Tongue Trill (텅트릴/설소대 릴리즈)", "Hooty (가벼운 포근한 바보 목소리 음색)", "가벼운 M[ʌ]m (가장 옅은 성대 터치)"],
     avoidTools: ["징징대는 소리 (Bratty)", "비강 접촉 (Pharyngeal)", "Ng [ŋ] 조임 툴", "경음 자음 및 Edgy mmm의 무분별한 사용"],
     strategy: "목 주변에 '성대가 좌우로 약간 평화롭게 멀어져 얇게 풀리는 듯한 산뜻한 감각'을 빚어주는 것이 제1훈련 수칙입니다. '더 강하게 발성하라'는 주문은 절대 닫아두고 오직 립트릴과 텅트릴의 안정적인 마사지에 가창 시간을 풍성하게 할애합니다. ★ Type 5 예외: Hooty는 후두 하강 및 외부근 이완을 돕는 임시 도구이며, 숨섞임은 과폐쇄 해제의 자연스러운 '결과'일 뿐입니다. Hooty 없이 선명한 p를 무리하게 시도하면 조용한 압착(quiet pressing)으로 이어질 수 있습니다.",
+    motorDiagnostic: "성대 과폐쇄 및 호흡 억류라는 보상 협응이 한계치까지 고착화된 매우 깊은 단일 끌개 상태. 조절매개변수(공기압)의 누적 부하로 외부 개입(긴장)이 턱끝까지 차오름.",
+    constraintRedesign: "[부하 전면 하향/자유도 최소화] 음량을 p(피아노) 이하로 극단 제한. Lip/Tongue Trill을 통해 기류 유출이 필수적인 기계적 환경(조건)을 만들어 압착 본능이 물리적으로 가동되지 않게 강제.",
+    emergenceFeedback: "'목에 힘부터 빼라'는 지시를 절대 금지(오히려 긴장 증폭). Trill의 '부드러운 떨림' 기류나 Hooty의 '풍성하게 풀린 톤' 자체에 외적 초점을 두게 하여 이완 상태의 수동적 창발 유도.",
+    transferDesign: "Lip/Tongue Trill ➡️ Hooty ➡️ 가벼운 Touch의 M[ʌ]m ➡️ 약호흡 기반 N[ei] 연결 ➡️ 단계적 부하 회복.",
     startKey: "여성: C#4 – C#5 / 남성: F#3 – G4 (목 수축 관성이 도무지 발동될 수 없는 고음에서부터 이완과 하행을 주도하는 전략)",
     keyPoints: "선명한 p를 무리하게 유지하려다 조용한 압착(quiet pressing)에 빠지는 것을 가장 경계해야 합니다. Hooty의 의도적인 숨섞임으로 과폐쇄를 강제로 해제하는 것이 핵심입니다.",
     lessonFlow: [
@@ -378,6 +402,10 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["Edgy mmm (성대 앞쪽 접촉 유도)", "자음 기반 훈련 (B, D, K + Cry)", "G[ʌ]g (후두 낮추기 및 접촉 유도)", "Squeaky Door (가벼운 성대 접촉을 유도하는 삐걱거리는 문 소리 기법)"],
     avoidTools: ["Hooty 계열 (흉성 발견 초기의 주 도구로는 부적합. 다만 접촉을 만든 뒤 과압축으로 전이될 경우 리셋 도구로 짧게 사용 가능)", "가성을 과도하게 유발해 성대를 벌리는 좁은 모음"],
     strategy: "편안하게 부를 수 있는 저음역대에서부터 'Edgy mmm'과 압력 조절을 돕는 자음을 연결하여, 성대가 가볍고 안전하게 연결되는 접촉을 알게 하는 것이 중요합니다. 접촉이 강화되면서 성대가 지나치게 조이는 상태(Type 5)로 가지 않도록 주의하며, 소리가 조일 경우 즉시 립트릴로 이완을 유도합니다.",
+    motorDiagnostic: "성대 폐쇄 협응 자체가 거의 형성되지 못하고, 전 음역에서 성문 이탈기류(호흡 누수) 상태만이 유일한 안정 끌개로 작용하는 극도 소극적 협응 상태.",
+    constraintRedesign: "[과제 제약 창출] 'Edgy mmm', 파열음(G, B, K), 그리고 Squeaky Door(문 삐걱임)를 결합하여, 유출되는 호흡 기류에 즉각적인 물리적 저항 장벽(성문 폐쇄의 필연성)을 구축.",
+    emergenceFeedback: "'성대를 세게 붙여라' 직접 지시 금지(Type 5로 전이되는 나쁜 보상 우려). Edgy 사운드의 선명한 '크랙' 질감(결과물)에 청각적 주의초점을 맞추어 무의식적 접촉력 창발 달성.",
+    transferDesign: "Edgy mmm / Staccato ➡️ 파열음 B/D/K + Cry 결합 ➡️ 지속적인 유성자음(G, B) 연결 ➡️ 일반 모음 전이.",
     startKey: "여성: G3 – A3 / 남성: C3 (가장 편안하고 명료한 흉성 본령을 가둘 수 있는 저음 극단 구역에서 무조건 시작)",
     keyPoints: "숨소리를 촘촘하게 메워줄 수 있는 'Edgy' 음가와 파열 자음을 우선 조합하되, 훈련이 자칫 목 주변 골격을 완전히 쪼아붙이는 과압착 길로 치닫지 않도록 점진 증강시킵니다.",
     lessonFlow: [
