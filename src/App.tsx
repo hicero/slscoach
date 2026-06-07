@@ -4,11 +4,12 @@ import VocalDiagnostic from './components/VocalDiagnostic';
 import VocalLessonPlanner from './components/VocalLessonPlanner';
 import VocalReference from './components/VocalReference';
 import VocalPiano from './components/VocalPiano';
-import { Compass, Sparkles, BookOpen, Music, ShieldCheck, Heart, AlertCircle } from 'lucide-react';
+import StudentLog from './components/StudentLog';
+import { Compass, Sparkles, BookOpen, Music, ShieldCheck, Heart, AlertCircle, Users } from 'lucide-react';
 
 export default function App() {
   const [selectedTypeId, setSelectedTypeId] = useState<string>("type1");
-  const [viewMode, setViewMode] = useState<'diagnostic' | 'planner' | 'reference'>('planner');
+  const [viewMode, setViewMode] = useState<'diagnostic' | 'planner' | 'reference' | 'log'>('planner');
 
   const handleSelectTypeFromDiagnostic = (typeId: string) => {
     setSelectedTypeId(typeId);
@@ -40,7 +41,7 @@ export default function App() {
           </div>
 
           {/* 중앙 통합 탭 셀렉터 */}
-          <nav className="flex bg-slate-100 p-0.5 sm:p-1 rounded-xl border border-slate-200 w-full md:w-auto overflow-x-auto">
+          <nav className="flex bg-slate-100 p-0.5 sm:p-1 rounded-xl border border-slate-200 w-full md:w-auto overflow-x-auto hide-scrollbar">
             <button
               onClick={() => setViewMode('diagnostic')}
               className={`px-2.5 sm:px-4.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none whitespace-nowrap ${
@@ -73,6 +74,17 @@ export default function App() {
             >
               <BookOpen size={13} />
               지휘 레퍼런스
+            </button>
+            <button
+              onClick={() => setViewMode('log')}
+              className={`px-2.5 sm:px-4.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 sm:gap-1.5 flex-1 sm:flex-none whitespace-nowrap ${
+                viewMode === 'log'
+                  ? "bg-white text-teal-700 shadow-sm border border-slate-200/50"
+                  : "text-slate-500 hover:text-slate-800"
+              }`}
+            >
+              <Users size={13} />
+              학생 관리
             </button>
           </nav>
         </div>
@@ -218,6 +230,12 @@ export default function App() {
             {viewMode === 'reference' && (
               <div className="animate-fade-in">
                 <VocalReference />
+              </div>
+            )}
+
+            {viewMode === 'log' && (
+              <div className="animate-fade-in">
+                <StudentLog />
               </div>
             )}
           </div>
