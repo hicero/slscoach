@@ -83,7 +83,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "진단",
         tools: "5-Tone [a]",
         scale: "5-Tone",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "편하게 시작해 보세요",
         checkpoint: "자연스러운 상태 관찰"
       },
@@ -92,7 +92,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Add/Connect",
         tools: "N[ae]",
         scale: "1.5 Octave with Sustain",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "N으로 시작해서 ae로 연결",
         checkpoint: "저음과 고음의 경계에서 뒤집히는 소리(Flip)나 삐걱거림(Crack)이 발생하는지 점검하고, 발생 시 립트릴로 다시 리셋합니다."
       },
@@ -101,7 +101,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "W[ʌ]w + Y[ʌ]y",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "W로 부드러운 연결 유지",
         checkpoint: "저음의 무게감이 탄탄하게 유지되는지 관찰하며, 소리가 지나치게 무겁거나 굳어지면 다시 가벼운 W 발음으로 복귀합니다."
       },
@@ -110,7 +110,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "G[ʌ]g",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "G로 확인하고 ʌ로 연결",
         checkpoint: "보조적인 연습 발음(자음)의 지원이 사라진 상태에서도 완벽한 음정 연결과 성대 접촉 강도가 견고히 유지되는지 확인합니다."
       },
@@ -119,7 +119,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Speech Level",
         tools: "N[ei] + [oʊ]",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "자연스럽게 말하듯 불러보세요",
         checkpoint: "실제 원곡 가사로 부를 때 뒤집힘이나 목 조임 등의 불안정한 습관이 재발하면 즉시 립트릴 브릿지 연습으로 우회합니다."
       }
@@ -134,7 +134,7 @@ export const VOCAL_TYPES: VocalType[] = [
     characteristics: [
       "고음으로 갈수록 성대가 벌어지며 가벼운 소리로 전환되거나, 급격한 삑사리(Flip)가 상시 발생",
       "숨이 새거나 힘이 없는 가창 스타일 (흉성의 부재)",
-      "소리가 약하게라도 나오기는 하지만, 성역의 브릿지 구간에서 어김없이 와르르 깨짐"
+      "소리가 약하게라도 나오기는 하지만, 성역의 브릿지 구간에서 어김없이 와르르 깨짐 (구분 문장: Type 6은 '소리가 안 나와요', Type 2는 '소리가 나오다가 깨져요')"
     ],
     primaryTools: ["B[ae]b, D[ae]d, K[ae]k", "Staccato 훈련", "Edgy mmm", "Cry (울음 섞인 톤)"],
     avoidTools: ["Hooty 계열 음성 훈련 (성대 접촉을 더 약화시킴)", "좁은 모음 ([i], [u])"],
@@ -142,7 +142,7 @@ export const VOCAL_TYPES: VocalType[] = [
     motorDiagnostic: "성대 접촉 협응에 대한 끌개가 너무 얕거나 없음. 약간의 부하(음정 상승)만 걸려도 가성(반대위상)으로 상전이가 즉시 일어나며 도피하는 상태.",
     constraintRedesign: "[과제 제약] 파열음(B, D, K)과 같은 물리적 장애물을 추가해 성대 하부에 순간적인 기압을 형성, 성대가 닫히지 않으면 소리를 낼 수 없는 강제적 과제 제약을 부여.",
     emergenceFeedback: "'성대를 붙여라' 등의 내부 감각(MMC) 지시 철저히 배제(과긴장 유발). 'B[ʌ]b 발음에서 공기가 새지 않고 튕겨 나오는가?' 같은 명확한 외적 전환 피드백 적용. 단, 파열음 강도가 과하면 Type 5(과압착) 보상이 창발될 수 있으므로 최적 부하 모니터링.",
-    transferDesign: "Staccato 파열음 ➡️ Sustain 파열음 ➡️ 넓은 모음 기반 연결 ➡️ 짧은 가사 적용.",
+    transferDesign: "Staccato 파열음 ➡️ Sustain 파열음 ➡️ 넓은 모음 기반 연결 ➡️ 짧은 가사 적용. (임계 요동 주의: Type 5 상전이 경고)",
     startKey: "여성: G3 – A3 / 남성: C3 (안정적인 흉성을 확실히 확보하기 위해 반드시 낮은 음역에서 훈련을 점진 시작)",
     keyPoints: "넓은 모음과 탄력적인 자음 조합으로 먼저 안전하게 성대 접촉을 이끌어내고, 소리가 깨지거나 흐려지면 즉시 Edgy mmm 스태카토로 재교정합니다.",
     lessonFlow: [
@@ -151,7 +151,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Discover",
         tools: "5-Tone [a] → Edgy mmm",
         scale: "Staccato (Cord Adduction)",
-        dynamicBreath: "mp~mf, 과도한 공기 압력 없이",
+        dynamicBreath: "mp~mf, 과도한 공기 사용량 없이",
         queuing: "에지를 느끼며 또렷하게 붙여보세요",
         checkpoint: "가창 시 뒤집힘(Flip)이 발생하는 정확한 음역대의 위치와 빈도를 정밀하게 청취하여 진단 정보로 삼습니다."
       },
@@ -160,7 +160,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Add/Connect",
         tools: "B[ʌ]b, D[ʌ]d, K[ʌ]k",
         scale: "5-Tone [ae]",
-        dynamicBreath: "mp~mf, 과도한 공기 압력 없이",
+        dynamicBreath: "mp~mf, 과도한 공기 사용량 없이",
         queuing: "B로 또렷하게 흉성 느낌 유도",
         checkpoint: "매 음표마다 성대가 헐겁지 않고, 또렷하게 착 달라붙는 명료한 감각(성대 접촉)이 살아 있는지 확인합니다."
       },
@@ -169,7 +169,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "Cry + Bratty N[ae]",
         scale: "1.5 Octave",
-        dynamicBreath: "mf, 중호흡 (균형시점까지)",
+        dynamicBreath: "mf, 중 공기 사용량 (균형시점까지)",
         queuing: "우는 소리로 연결 유지",
         checkpoint: "저음부에서 단단한 울림(Chest weight)이 채워지는지 귀로 확인하며, 후두 상승 가능성이 있으므로 Bratty는 일시적으로만 사용합니다."
       },
@@ -178,7 +178,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "G[ʌ]g + N[ei]",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "G로 시작, ʌ로 연결 유지",
         checkpoint: "목을 지나치게 좁히거나 조이지 않으면서 적정한 성대 밀착(Chest Weight)이 확보되는지 살피고, 성대가 무겁게 굳어지면 N[ae] 발음을 더 부드럽게 조정합니다."
       },
@@ -187,7 +187,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Speech Level",
         tools: "M[ʌ]m + Squeaky Door",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "부드러운 연결 유지하며 시작",
         checkpoint: "실전 곡을 부르는 도중 가성으로 홀랑 뒤집히거나 풀려버리는 바람 소리(Breathy)가 나면, Edgy mmm 스태카토로 해당 프레이즈를 즉시 풀고 다시 연습합니다."
       }
@@ -196,7 +196,7 @@ export const VOCAL_TYPES: VocalType[] = [
   {
     id: "type3",
     name: "Type 3: Light Transitional",
-    koreanName: "과도기적 유형 (Light Transitional)",
+    koreanName: "과도기적 유형 (Light Transitional - 이동 표적 Moving Target)",
     slsTarget: "흉성 발달을 점진적으로 강화하며 브릿지 통과의 안정화 도모",
     description: "저음역에서 기초적인 가창 무게감(Chest Weight)은 잘 확보되어 있으나, 브릿지(환절기 음역대)로 진입하고 이를 통과하는 순간 연결이 끊기거나 심하게 요동치는 유형입니다. SLS 기본 카테고리에는 없지만 'No Chest Soprano'와 'Flip Type B'의 경계선에 해당하는 넓은 학생층의 구조적 과도기 상태입니다.",
     characteristics: [
@@ -219,7 +219,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "진단",
         tools: "5-Tone [a] → N[ae]",
         scale: "1.5 Octave",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "어디서 연결이 끊기나요?",
         checkpoint: "저음부의 무게중심을 과도하게 끌고 올라가는 경향이 있는지, 연결이 갑작스레 끊어지는 음역대가 어디쯤인지 확인합니다."
       },
@@ -228,7 +228,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Add/Connect",
         tools: "Nay + W[ʌ]w",
         scale: "Octave Repeater",
-        dynamicBreath: "mf→p, 중→약호흡 (통과 시 약하게)",
+        dynamicBreath: "mf→p, 중→약 공기 사용량 (통과 시 약하게)",
         queuing: "Nay로 흉성 확인하고 W로 부드럽게 연결",
         checkpoint: "소리가 뒤집혀 바람이 확 새는 것을 감지하는 지점을 확인하고, 소리가 완전히 뒤집히면 즉시 Nay 가창 모드로 복귀하여 차분히 연결감을 리셋합니다."
       },
@@ -237,7 +237,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "G[ʌ]g + Cry",
         scale: "1.5 Octave",
-        dynamicBreath: "mf→mp, 중→약호흡",
+        dynamicBreath: "mf→mp, 중→약 공기 사용량",
         queuing: "우는 소리로 연결 안정화",
         checkpoint: "브릿지가 부드럽고 매끄러운지 체크합니다. 만약 목을 단단히 옥죄는 'Pressed(압착)' 보상 현상이 나타나면 즉시 중단하고 립트릴로 안정을 되찾아 줍니다."
       },
@@ -246,7 +246,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "N[ei] + [oʊ]",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "모음 좁히기로 브릿지 통과",
         checkpoint: "가창 훈련 중에 성대 접촉이 탄탄히 연결되는지 확인하고, 소리가 많이 무거워지거나 후두가 흔들리면 W 발음으로 돌아가 수평을 다시 맞춥니다."
       },
@@ -255,7 +255,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Speech Level",
         tools: "M[ʌ]m + Y[ʌ]y",
         scale: "Octave Down 3x",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "높은 음에서 낮은 음으로 연결",
         checkpoint: "노래 가창에서 저음과 고음의 격차가 지나치게 크고 계속 흔들리거나 어색하다면, 'Nay + W' 연습 조합을 징검다리 삼아 한 소절씩 다듬고 갑니다."
       }
@@ -274,7 +274,7 @@ export const VOCAL_TYPES: VocalType[] = [
     ],
     primaryTools: ["Lip Trill / Tongue Trill (유연성 회복)", "Hooty W[i]/G[i], G[u], N[ei]", "M[ʌ]m (Reinforcing 단계 제한적 사용)"],
     avoidTools: ["Bratty (초기 금지, Release 후 제한적 사용)", "Ng [ŋ] (과압축 악화될 수 있으므로 관찰하며 주의)", "경음 자음 (B/D/K 등)", "넓은 모음 ([a], [ae]) 및 N[ae] (후두 상승 위험)"],
-    strategy: "저음부터 밀고 올라가는 순방향 훈련법은 실패 확률이 다분히 높습니다. 과도한 공기 압력과 흉성 무게를 줄이고, 좁은 모음과 top-down scale로 브리지 release를 경험하게 합니다. 목표는 성대를 더 붙이는 것이 아니라 moderate adduction + low stable larynx + connected release입니다.",
+    strategy: "저음부터 밀고 올라가는 순방향 훈련법은 실패 확률이 다분히 높습니다. 과도한 공기 사용량과 흉성 무게를 줄이고 (Airflow 원활화), 좁은 모음과 top-down scale로 브리지 release를 경험하게 합니다. 목표는 성대를 더 붙이는 것이 아니라 moderate adduction + low stable larynx + connected release입니다.",
     motorDiagnostic: "음정 상승이라는 조건(부하)이 가해지면 흉성 우세 협응(깊은 끌개) 패턴으로 강력하게 수렴해버리는 상태. 억지로 고음을 낼수록 보상 끌개가 더 깊어짐.",
     constraintRedesign: "[조건 재설계/자유도 제한] 현재 스트랩 근육이 과부하를 견디고 있으므로, 고음역 시도 중단. 음역/음량 축소, 템포 늦춤. SOVTE(Lip Trill, Hooty)로 성도 임피던스를 바꿔 Pulled Chest로 빠질 수 없는 무해한 과제 제약 부여.",
     emergenceFeedback: "Lip Trill 시 '음정을 맞춰라(내적 초점)' 지시 금지. '입술이 떨리는 느낌만 가져라(외적/과제 초점)'로 전환. 후두 급상승이 동반되는 '나쁜 변동성'만 대역폭 피드백으로 즉각 통제.",
@@ -287,7 +287,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Discover",
         tools: "Lip Trill + Hooty W[i]",
         scale: "1.5 Octave (Tricking)",
-        dynamicBreath: "p~mp, 저호흡 (절대 밀지 않기)",
+        dynamicBreath: "p~mp, 저 공기 사용량 (절대 밀지 않기)",
         queuing: "립으로 부드럽게 넘어가 보세요",
         checkpoint: "목 안쪽 깊고 거친 외부 핏대 수축과 턱 밑 힘 들어감이 해제되어 편안한 호흡 균형이 자리를 잡는지 확인합니다."
       },
@@ -296,7 +296,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Add/Connect",
         tools: "M[ʌ]m + d[ʌ]m",
         scale: "Octave Repeater (Reinforcing)",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "아래로 낮추어가며 연결 유지",
         checkpoint: "후두를 낮추는 평안한 느낌이 잘 찾아지는지 청취하고, 계속 목을 강하게 지니려는 관성이 세지면 오직 립트릴 하나로만 안전 가도로 주행합니다."
       },
@@ -305,7 +305,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "N[ae] → N[ei]",
         scale: "1.5 Octave (모음 좁히기)",
-        dynamicBreath: "p→mf, 약→중호흡",
+        dynamicBreath: "p→mf, 약→중 공기 사용량",
         queuing: "ae에서 ei로 모음 좁아지면서 넘어가기",
         checkpoint: "하행 도중에 목구멍 속의 넓은 뼈대(Larynx) 안정적 깊이로 연착륙하며 잘 머물고 있는지, 중도에 무거움이 치솟으면 Hooty 단계로 신속히 복귀합니다."
       },
@@ -314,7 +314,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "G[ʌ]g",
         scale: "Octave Down 3x",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "높은 음에서 아래로 내려가며 연결",
         checkpoint: "훈련 기구들의 의존성을 버린 상태에서도 풀체스트(Pulled Chest)의 나쁜 끌어당김 통증이 과연 깔끔하게 수거/완화되었는지를 확인합니다."
       },
@@ -323,7 +323,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Speech Level",
         tools: "노래 적용",
         scale: "곡 적용",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "방금 한 연결 그대로 노래 불러보세요",
         checkpoint: "원 가사로 가창할 때 한순간 쥐어짜는 무거운 습관이 눈에 띄면, 망설임 없이 'Lip Trill + Hooty'로 리미터를 걸어 즉각 초기화합니다."
       }
@@ -340,13 +340,13 @@ export const VOCAL_TYPES: VocalType[] = [
       "가창 도중 음정 안정성을 꾀하는 게 거의 불가능하며 성대 근육 피로도가 기하급수적임",
       "후두 주변의 근육들이 마치 돌처럼 단단히 고정되어 수축함"
     ],
-    primaryTools: ["Lip Trill (립트릴)", "Tongue Trill (텅트릴/설소대 릴리즈)", "Hooty (가벼운 포근한 바보 목소리 음색)", "가벼운 M[ʌ]m (가장 옅은 성대 터치)"],
+    primaryTools: ["Lip Trill (립트릴)", "Tongue Trill (텅트릴/설소대 릴리즈)", "Hooty (가벼운 포근한 바보 목소리 음색, 임시적 과제 제약으로만 사용)", "가벼운 M[ʌ]m (가장 옅은 성대 터치)"],
     avoidTools: ["징징대는 소리 (Bratty)", "비강 접촉 (Pharyngeal)", "Ng [ŋ] 조임 툴", "경음 자음 및 Edgy mmm의 무분별한 사용"],
     strategy: "목 주변에 '성대가 좌우로 약간 평화롭게 멀어져 얇게 풀리는 듯한 산뜻한 감각'을 빚어주는 것이 제1훈련 수칙입니다. '더 강하게 발성하라'는 주문은 절대 닫아두고 오직 립트릴과 텅트릴의 안정적인 마사지에 가창 시간을 풍성하게 할애합니다. ★ Type 5 예외: Hooty는 후두 하강 및 외부근 이완을 돕는 임시 도구이며, 숨섞임은 과폐쇄 해제의 자연스러운 '결과'일 뿐입니다. Hooty 없이 선명한 p를 무리하게 시도하면 조용한 압착(quiet pressing)으로 이어질 수 있습니다.",
     motorDiagnostic: "성대 과폐쇄 및 호흡 억류라는 보상 협응이 한계치까지 고착화된 매우 깊은 단일 끌개 상태. 조절매개변수(공기압)의 누적 부하로 외부 개입(긴장)이 턱끝까지 차오름.",
     constraintRedesign: "[부하 전면 하향/자유도 최소화] 음량을 p(피아노) 이하로 극단 제한. Lip/Tongue Trill을 통해 기류 유출이 필수적인 기계적 환경(조건)을 만들어 압착 본능이 물리적으로 가동되지 않게 강제.",
     emergenceFeedback: "'목에 힘부터 빼라'는 지시를 절대 금지(오히려 긴장 증폭). Trill의 '부드러운 떨림' 기류나 Hooty의 '풍성하게 풀린 톤' 자체에 외적 초점을 두게 하여 이완 상태의 수동적 창발 유도.",
-    transferDesign: "Lip/Tongue Trill ➡️ Hooty ➡️ 가벼운 Touch의 M[ʌ]m ➡️ 약호흡 기반 N[ei] 연결 ➡️ 단계적 부하 회복.",
+    transferDesign: "Lip/Tongue Trill ➡️ Hooty ➡️ 가벼운 Touch의 M[ʌ]m ➡️ 약 공기 사용량 기반 N[ei] 연결 ➡️ 단계적 부하 회복.",
     startKey: "여성: C#4 – C#5 / 남성: F#3 – G4 (목 수축 관성이 도무지 발동될 수 없는 고음에서부터 이완과 하행을 주도하는 전략)",
     keyPoints: "선명한 p를 무리하게 유지하려다 조용한 압착(quiet pressing)에 빠지는 것을 가장 경계해야 합니다. Hooty의 의도적인 숨섞임으로 과폐쇄를 강제로 해제하는 것이 핵심입니다.",
     lessonFlow: [
@@ -355,7 +355,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Discover",
         tools: "Lip Trill + Tongue Trill",
         scale: "1.5 Octave (Tricking)",
-        dynamicBreath: "p, 최저호흡",
+        dynamicBreath: "p, 최저 공기 사용량",
         queuing: "립 트릴로 시작, 압력이 빠져나가게",
         checkpoint: "트릴이 압착 방지 (물리적 메커니즘이 성대의 과압을 대신 받아줌)"
       },
@@ -373,7 +373,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Add/Connect",
         tools: "Hooty + M[ʌ]m",
         scale: "Octave Repeater (Reinforcing)",
-        dynamicBreath: "mp~mf, 약→중호흡",
+        dynamicBreath: "mp~mf, 약→중 공기 사용량",
         queuing: "이완 후 가벼운 M으로 연결 확인",
         checkpoint: "자연 접촉 복귀 (압착이 풀린 후 정상적인 상태로 진입)"
       },
@@ -432,7 +432,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "G[ʌ]g + Bratty N[ae]",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "G로 시작, 가벼운 접촉 유지",
         checkpoint: "성대 접촉이 탄탄히 지속되는 상태인지 확인하고, 접촉 감각이 너무 과해져 무서운 압착 상태가 엿보이면 즉각 Cry 이완을 주입합니다."
       },
@@ -441,7 +441,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Stabilize",
         tools: "Squeaky Door + M[ʌ]m",
         scale: "Octave Repeater",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "부드러운 연결에서 시작",
         checkpoint: "지나친 목 근육의 동요 없이 부드러운 성량 상태에서도 완벽하게 빈틈없는 성대 접촉과 가벼운 연결이 깔끔하게 완성되어 보전되는지 판별합니다."
       },
@@ -450,7 +450,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Speech Level",
         tools: "노래 적용",
         scale: "곡 적용",
-        dynamicBreath: "mf, 중호흡",
+        dynamicBreath: "mf, 중 공기 사용량",
         queuing: "가벼운 접촉 유지하며 불러보세요",
         checkpoint: "훈련 후에 노래로 정식 복귀했을 때 가슴의 흉성이 탄탄히 자리하여 바람 새는 소리(Breathy)가 깨끗이 자취를 감추었는지 지속 모니터링합니다."
       }
@@ -503,7 +503,7 @@ export const TOOLBOX_TIERS = {
       name: "Cry (우는 소리)",
       classification: "Body Coordination (신체 협응 균형)",
       principle: "복근을 비롯한 전신 신체의 자연스러운 협응력을 유도하여, 목 주변 불필요한 외부 근육의 짓누름 없이 편안한 후두 하강 및 유효 성대 접촉을 균형 있게 만들어냅니다.",
-      reason: "과압착으로 찌그러지는 쇠소리를 내는 실수를 피하면서도, 힘없이 벌어지던 숨소리(Type 2, 6)의 성문에 편안하고 선명한 안착감을 즉각 제공합니다. (SLS에서 절대적인 치유의 안전 지대)."
+      reason: "과압착으로 찌그러지는 쇠소리를 내는 실수를 피하면서도, 힘없이 벌어지던 숨소리(Type 2, 6)의 성문에 편안하고 선명한 안착감을 즉각 제공합니다. (SLS에서 상대적 저위험의 치유 지대)."
     },
     {
       name: "5-Tone [a] (아- 스케일)",
