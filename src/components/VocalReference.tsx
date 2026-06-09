@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { TOOLBOX_TIERS, TRANSITION_GUIDE, VOWEL_NARROWING_CHART, CONSONANT_STRENGTH_CHART } from '../types';
 import { ShieldCheck, Sparkles, RefreshCw, AlertTriangle, HelpCircle, ChevronRight, Activity } from 'lucide-react';
 import TermTooltip from './TermTooltip';
+import LaxVoxGuide from './LaxVoxGuide';
+import MotorChecklistGuide from './MotorChecklistGuide';
 
 export default function VocalReference() {
-  const [activeTab, setActiveTab] = useState<'toolbox' | 'transitions' | 'science' | 'quickRef' | 'postures' | 'vowels' | 'motorLearning'>('toolbox');
+  const [activeTab, setActiveTab] = useState<'toolbox' | 'transitions' | 'science' | 'quickRef' | 'postures' | 'vowels' | 'motorLearning' | 'laxVox'>('toolbox');
 
   return (
     <div className="bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm">
@@ -46,6 +48,7 @@ export default function VocalReference() {
               <option value="postures">신체 큐잉 & 자세</option>
               <option value="vowels">모음 훈련 가이드</option>
               <option value="motorLearning">복잡계/운동학습</option>
+              <option value="laxVox">Lax Vox 심화</option>
               <option value="quickRef">빠른 종합 가이드</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
@@ -64,6 +67,7 @@ export default function VocalReference() {
               { id: 'postures', label: '신체 큐잉 & 자세' },
               { id: 'vowels', label: '모음 훈련 가이드' },
               { id: 'motorLearning', label: '복잡계/운동학습' },
+              { id: 'laxVox', label: 'Lax Vox 심화' },
               { id: 'quickRef', label: '빠른 종합 가이드' },
             ].map((tab) => (
               <button
@@ -568,17 +572,17 @@ export default function VocalReference() {
                 </div>
               </div>
               <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
-                <h4 className="font-bold text-slate-800 text-sm mb-1 text-sky-700">⑤ Dopy Sound (후두 하강)</h4>
-                <p className="text-xs text-slate-600 mb-2">"우-웅" 하는 멍청한 목소리로 후두를 직접적으로 낮춥니다. 후두 상승 억제용 임시 도구입니다.</p>
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-sky-700">⑤ 고개 숙이기 (Chin Tuck)</h4>
+                <p className="text-xs text-slate-600 mb-2">턱을 가슴 쪽으로 약간 숙인 채 발성하여 설골상근 긴장을 감소시키고 후두 상승 억제.</p>
                 <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
-                  추천: Type 4, 5의 치솟는 후두 교정
+                  추천: Type 4 (Pulled Chest 후두 상승 억제)
                 </div>
               </div>
               <div className="p-4 bg-slate-50 border border-slate-150 rounded-xl">
-                <h4 className="font-bold text-slate-800 text-sm mb-1 text-purple-700">⑥ Cry / Whimper</h4>
-                <p className="text-xs text-slate-600 mb-2">강아지 훌쩍이듯 가벼운 울음소리로 성대의 Thin & Short 조정을 유도하고 연결을 돕습니다.</p>
+                <h4 className="font-bold text-slate-800 text-sm mb-1 text-purple-700">⑥ 허리 숙이기 (Bend Forward)</h4>
+                <p className="text-xs text-slate-600 mb-2">허리를 앞으로 약 45도 숙이고 발성하여 복강내압을 자동 증가, 호흡 지원 파워 자동화.</p>
                 <div className="mt-2 text-[10px] bg-white border border-slate-200 p-1.5 rounded-md inline-block text-slate-500 font-semibold">
-                  추천: Type 2, 3, 6 (접촉 탄력 부여)
+                  추천: Type 6 (Breathy/Weak 호흡 지원 강화)
                 </div>
               </div>
             </div>
@@ -641,26 +645,24 @@ export default function VocalReference() {
             </h3>
             
             <p className="text-[13px] text-slate-600 mb-6 leading-relaxed">
-              SLS에서 모음(Vowel)은 가장 강력한 교정 도구 중 하나입니다. 좁은 모음과 넓은 모음은 단순히 입모양의 차이가 아니라 성대의 진동 방식, 레지스터 활성화, 후두 위치에 영향을 미칩니다.
+              SLS에서 모음(Vowel)은 성도(Vocal Tract)의 형태를 변화시켜 성대 접촉과 공명에 영향을 미치는 핵심 조절매개변수입니다. 운동학습 관점에서 모음 선택 자체가 발성 시스템의 특정 방향의 자기조직화를 유도하는 '과제 제약(Task Constraint)'입니다.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="p-4 bg-indigo-50/50 border border-indigo-100 rounded-xl">
-                <h4 className="font-bold text-indigo-800 text-[13px] mb-2">좁은 모음이 Bridge 통과에 도움되는 이유</h4>
+                <h4 className="font-bold text-indigo-800 text-[13px] mb-2">좁은 모음 [i], [u], [o]</h4>
                 <ul className="text-[11px] text-slate-700 space-y-1.5 list-disc pl-4 marker:text-indigo-400">
-                  <li><strong>공명 전략 전환:</strong> 구강 공명을 피해 인두/비강 공명으로 Head Voice 유도.</li>
-                  <li><strong>성대 긴장도:</strong> CT 근육(cricothyroid) 활성화로 성대가 얇고 길어짐.</li>
-                  <li><strong>외근 개입 방어:</strong> 입을 좁게 열면 외부 근육 개입 공간 축소.</li>
-                  <li><strong>공기압 제어 증대:</strong> 구강 내 저항 증가로 성대가 효율적으로 진동.</li>
+                  <li><strong>성도 형태:</strong> 구강 내 공간 축소, 성도가 좁아짐.</li>
+                  <li><strong>과제 효과:</strong> 두성 유도, 성대 접촉 간접 지원, 브릿지 통과 원활.</li>
+                  <li><strong>활용 유형:</strong> Type 4, 5 (과압축 완화, 두성 유도. 흉성이 강한 자에게 유리)</li>
                 </ul>
               </div>
               <div className="p-4 bg-rose-50/50 border border-rose-100 rounded-xl">
-                <h4 className="font-bold text-rose-800 text-[13px] mb-2">넓은 모음이 Pull Chest를 유도하는 이유</h4>
+                <h4 className="font-bold text-rose-800 text-[13px] mb-2">넓은 모음 [a], [æ]</h4>
                 <ul className="text-[11px] text-slate-700 space-y-1.5 list-disc pl-4 marker:text-rose-400">
-                  <li><strong>TA 활성화:</strong> Chest Voice 활성도를 높여 성대가 두껍게 진동 유지.</li>
-                  <li><strong>구강 공명 강화:</strong> Chest Voice 의 질감과 저주파 울림 지속.</li>
-                  <li><strong>공기 소비 확대:</strong> 성대 압력이 불안정해지며 강제 외부압력 시도 유발.</li>
-                  <li><strong>습관적 도달 본능:</strong> 넓게 부르려다 목이 조여지는 악순환 발생.</li>
+                  <li><strong>성도 형태:</strong> 구강 내 공간 확대, 성도가 넓어짐.</li>
+                  <li><strong>과제 효과:</strong> 흉성 유도, 풍부한 배음 형성, 성대 접촉 강화.</li>
+                  <li><strong>활용 유형:</strong> Type 2, 6 (흉성 발견, 접촉 형성. 흉성이 약한 자에게 유리)</li>
                 </ul>
               </div>
             </div>
@@ -858,52 +860,13 @@ export default function VocalReference() {
               </div>
             </div>
 
-            <div className="bg-slate-900 rounded-2xl p-5 md:p-6 shadow-xl border border-slate-800 relative z-10">
-              <h3 className="text-[14px] md:text-base font-bold text-emerald-400 mb-4 flex items-center gap-2">
-                <ShieldCheck size={18} />
-                강사용 운동학습 5대 점검 체크리스트
-              </h3>
-              
-              <ul className="space-y-4 text-xs md:text-[13px] text-slate-300">
-                <li className="flex gap-3">
-                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">1</div>
-                  <div>
-                    <strong className="text-slate-100 font-semibold block mb-0.5">[제약 조건 관찰]</strong> 
-                    학생이 쓰러진 고비가 과연 특정 음역이 문제였는지, 아니면 너무 큰 음량, 어려운 모음, 빠른 템포가 뒤섞여 만들어낸 <strong>종합적인 '과부하 요인' 때문이었는지 진단했습니까?</strong>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">2</div>
-                  <div>
-                    <strong className="text-slate-100 font-semibold block mb-0.5">[직접 지시 경고]</strong> 
-                    "목을 더 넓혀!", "배에 힘들어가게 해!" 등 내부 신체를 강제로 조작시키는 망상을 지시하고 있지 않습니까? <strong>신체 조작이 아닌 외부 과제의 물성(도구)을 바꿨습니까?</strong>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">3</div>
-                  <div>
-                    <strong className="text-slate-100 font-semibold block mb-0.5">[주의 자원 한계]</strong> 
-                    초보자에게 "입모양은 이렇게 하고 후두는 안 흔들리게 배를 눌러!" 같이 멀티태스킹 지시를 남발하여 두뇌 연산 과부하를 주지 않았습니까?
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">4</div>
-                  <div>
-                    <strong className="text-slate-100 font-semibold block mb-0.5">[변동성의 가치 분별]</strong> 
-                    학생이 뿜어낸 작고 예민한 흔들림이, 마침내 정답으로 진입하려 바들거리는 기특한 <strong>'임계 요동'</strong>인지, 다시 익숙한 흉폭한 습관으로 무너지는 <strong>'붕괴 현상'</strong>인지 분별해 냈습니까?
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="mt-0.5 bg-emerald-500/20 text-emerald-400 w-5 h-5 flex items-center justify-center rounded-full shrink-0 font-bold text-[10px]">5</div>
-                  <div>
-                    <strong className="text-slate-100 font-semibold block mb-0.5">[파지와 전이(Transfer) 평가]</strong> 
-                    연습실에서 Lip Trill로 나온 완벽한 연결감에 취해 혼자 환호하는 건 아닙니까? <strong>모든 툴을 떼고 개방된 원래 가사로 불렀을 때에도 그 질량이 순조롭게 유지(전이)되었습니까?</strong>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <MotorChecklistGuide />
           </div>
         </div>
+      )}
+
+      {activeTab === 'laxVox' && (
+        <LaxVoxGuide />
       )}
     </div>
   );
