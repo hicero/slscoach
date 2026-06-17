@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { VOCAL_TYPES, VocalType, LessonStep } from '../types';
 import { Play, Pause, RotateCcw, AlertTriangle, MessageSquare, ListMusic, CheckCircle, ChevronRight, HelpCircle, Activity, Sparkles } from 'lucide-react';
 import TermTooltip from './TermTooltip';
+import TypeSummaryModal from './TypeSummaryModal';
 
 interface VocalLessonPlannerProps {
   selectedTypeId: string;
@@ -16,6 +17,8 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
   const [totalSeconds, setTotalSeconds] = useState(0); // 20분 = 1200초
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  
+  const [isTypeSummaryModalOpen, setIsTypeSummaryModalOpen] = useState(false);
 
   // 유형 변경 시 타이머 리셋
   useEffect(() => {
@@ -119,16 +122,16 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
 
   return (
     <div className="space-y-6">
-      <div className="bg-teal-50 border border-teal-100/70 p-3 rounded-xl flex gap-2">
+      <div className="bg-teal-50 dark:bg-teal-900/30 border border-teal-100/70 p-3 rounded-xl flex gap-2">
         <AlertTriangle className="text-teal-600 shrink-0 mt-0.5" size={16} />
-        <p className="text-[11px] md:text-xs text-teal-800 leading-relaxed font-medium">
+        <p className="text-[11px] md:text-xs text-teal-800 dark:text-teal-300 leading-relaxed font-medium">
           <strong>레슨 플로우는 참고용 레시피입니다.</strong><br/>
           훈련 도중 학생의 Tends To가 바뀌면(예: Type 4가 Hooty 후 Type 2로 풀려버리는 경우 등) 현재 플로우를 고집하지 말고 <strong className="text-teal-900 border-b border-teal-200">즉시 해당 상태(유형)에 맞는 솔루션으로 조향</strong>해야 발성 사고를 예방할 수 있습니다.
         </p>
       </div>
 
       {/* 발성 유형별 가로 탭 바 */}
-      <div className="flex bg-slate-100 hover:bg-slate-150/80 p-0.5 rounded-xl overflow-x-auto gap-0.5 scroller-slim border border-slate-200">
+      <div className="flex bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-150/80 p-0.5 rounded-xl overflow-x-auto gap-0.5 scroller-slim border border-slate-200 dark:border-slate-700">
         {VOCAL_TYPES.map((v) => (
           <button
             key={v.id}
@@ -137,8 +140,8 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
             }}
             className={`px-3 py-1.5 rounded-lg font-medium text-[11px] md:text-xs whitespace-nowrap transition-all ${
               selectedTypeId === v.id
-                ? "bg-white text-teal-700 shadow-sm border border-slate-200/50"
-                : "text-slate-650 hover:text-slate-800 hover:bg-white/40"
+                ? "bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-400 shadow-sm border border-slate-200 dark:border-slate-700/50"
+                : "text-slate-650 hover:text-slate-800 dark:text-slate-200 hover:bg-white dark:bg-slate-900/40"
             }`}
           >
             {v.koreanName.split(' ')[0]} {v.koreanName.split(' ')[1] || ""}
@@ -146,15 +149,25 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
         ))}
       </div>
 
+      <div className="flex justify-end">
+        <button
+          onClick={() => setIsTypeSummaryModalOpen(true)}
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 font-bold text-xs rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-colors border border-indigo-200 dark:border-indigo-800"
+        >
+          <Activity size={14} />
+          유형별 요약 카드 열기
+        </button>
+      </div>
+
       {/* 종합 가이드 카드 */}
-      <div className="bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm">
+      <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           
           {/* 좌측 상세 및 가시적 정보 */}
           <div className="lg:col-span-2 space-y-4">
             <div>
               <span className="text-[10px] uppercase tracking-widest font-bold text-teal-600">6대 보컬 유형 매뉴얼</span>
-              <h1 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight mt-0.5">
+              <h1 className="text-lg md:text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-0.5">
                 {currentType.koreanName}
               </h1>
               <p className="text-[10px] text-slate-400 font-mono mt-0.5">
@@ -162,7 +175,7 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
               </p>
             </div>
 
-            <p className="text-xs text-slate-600 leading-relaxed font-normal bg-slate-50 border border-slate-100 p-4 rounded-xl">
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-4 rounded-xl">
               <TermTooltip text={currentType.description} />
             </p>
 
@@ -170,59 +183,59 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-emerald-50/20 border border-emerald-100 rounded-xl p-4">
                 <span className="text-[10px] uppercase font-bold text-emerald-600">레슨 시작 가이드 키(여/남)</span>
-                <p className="text-xs text-slate-700 font-normal mt-1 leading-snug">
+                <p className="text-xs text-slate-700 dark:text-slate-300 font-normal mt-1 leading-snug">
                   {currentType.startKey}
                 </p>
               </div>
 
               <div className="bg-teal-50/20 border border-teal-100 rounded-xl p-4">
                 <span className="text-[10px] uppercase font-bold text-teal-600">훈련 목적 (SLS Target)</span>
-                <p className="text-xs text-slate-700 font-normal mt-1 leading-snug">
+                <p className="text-xs text-slate-700 dark:text-slate-300 font-normal mt-1 leading-snug">
                   {currentType.slsTarget}
                 </p>
               </div>
             </div>
 
             {/* 주의 가짜 훈련 & 위험 대응 */}
-            <div className="bg-slate-50 border border-slate-150 rounded-xl p-4 space-y-2">
-              <h3 className="text-[10px] uppercase tracking-wider text-slate-500 font-bold flex items-center gap-1.5 pb-2 border-b border-slate-200">
+            <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl p-4 space-y-2">
+              <h3 className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold flex items-center gap-1.5 pb-2 border-b border-slate-200 dark:border-slate-700">
                 <AlertTriangle size={12} className="text-amber-500" />
                 우발적 보상현상 및 핵심 수칙
               </h3>
               <p className="text-xs text-slate-750 leading-relaxed">
-                <strong className="text-slate-900 font-bold block mb-1">핵심 전략 및 원칙:</strong>
+                <strong className="text-slate-900 dark:text-slate-100 font-bold block mb-1">핵심 전략 및 원칙:</strong>
                 <TermTooltip text={currentType.strategy} />
               </p>
-              <div className="bg-white border border-slate-200/60 rounded-xl p-3 text-[10px] text-slate-600 mb-2">
-                <span className="text-slate-800 font-bold">⚠️ 강사 가이드 큐팁: </span>
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3 text-[10px] text-slate-600 dark:text-slate-400 mb-2">
+                <span className="text-slate-800 dark:text-slate-200 font-bold">⚠️ 강사 가이드 큐팁: </span>
                 <TermTooltip text={currentType.keyPoints} />
               </div>
               
               {currentType.motorDiagnostic && (
-                <div className="mt-3 pt-3 border-t border-slate-200/60 space-y-3">
-                  <h3 className="text-[11px] font-bold text-blue-800 flex items-center gap-1">
+                <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700/60 space-y-3">
+                  <h3 className="text-[11px] font-bold text-blue-800 dark:text-blue-300 flex items-center gap-1">
                     <Sparkles size={12} className="text-blue-500" />
                     운동학습 (복잡계) 관점 중재 설계
                   </h3>
                   
                   <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-2.5">
-                    <strong className="text-[10px] text-blue-800 block mb-1">운동학적 진단</strong>
-                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.motorDiagnostic}</p>
+                    <strong className="text-[10px] text-blue-800 dark:text-blue-300 block mb-1">운동학적 진단</strong>
+                    <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">{currentType.motorDiagnostic}</p>
                   </div>
                   
                   <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-2.5">
-                    <strong className="text-[10px] text-indigo-800 block mb-1">제약 조건 재설계 (과제 제약)</strong>
-                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.constraintRedesign}</p>
+                    <strong className="text-[10px] text-indigo-800 dark:text-indigo-300 block mb-1">제약 조건 재설계 (과제 제약)</strong>
+                    <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">{currentType.constraintRedesign}</p>
                   </div>
                   
                   <div className="bg-teal-50/50 border border-teal-100 rounded-lg p-2.5">
-                    <strong className="text-[10px] text-teal-800 block mb-1">창발 유도 및 대역폭 피드백</strong>
-                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.emergenceFeedback}</p>
+                    <strong className="text-[10px] text-teal-800 dark:text-teal-300 block mb-1">창발 유도 및 대역폭 피드백</strong>
+                    <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">{currentType.emergenceFeedback}</p>
                   </div>
                   
                   <div className="bg-purple-50/50 border border-purple-100 rounded-lg p-2.5">
-                    <strong className="text-[10px] text-purple-800 block mb-1">파지 및 전이(Transfer) 설계</strong>
-                    <p className="text-[11px] text-slate-700 leading-relaxed">{currentType.transferDesign}</p>
+                    <strong className="text-[10px] text-purple-800 dark:text-purple-300 block mb-1">파지 및 전이(Transfer) 설계</strong>
+                    <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed">{currentType.transferDesign}</p>
                   </div>
                 </div>
               )}
@@ -245,7 +258,7 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
                 <span className="text-3xl md:text-4xl font-bold font-mono tracking-wider text-slate-100">
                   {formatTime(totalSeconds)}
                 </span>
-                <span className="text-slate-500 font-mono text-xs block mt-1">/ 20:00</span>
+                <span className="text-slate-500 dark:text-slate-400 font-mono text-xs block mt-1">/ 20:00</span>
               </div>
 
               {/* 가열 슬라이더 바 */}
@@ -256,7 +269,7 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
                     style={{ width: `${progressPercent}%` }}
                   ></div>
                 </div>
-                <div className="flex justify-between text-[9px] text-slate-500 font-mono">
+                <div className="flex justify-between text-[9px] text-slate-500 dark:text-slate-400 font-mono">
                   <span>00:00</span>
                   <span>10:00</span>
                   <span>20:00</span>
@@ -303,7 +316,7 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
               </div>
 
               <div className="bg-slate-900 border border-slate-850 p-2.5 rounded-xl">
-                <span className="text-[10px] uppercase text-slate-500 font-bold">매칭 툴 및 음표 진행</span>
+                <span className="text-[10px] uppercase text-slate-500 dark:text-slate-400 font-bold">매칭 툴 및 음표 진행</span>
                 <p className="text-xs text-slate-350 font-semibold mt-0.5 flex flex-wrap items-center gap-1">
                   <ListMusic size={12} className="text-teal-400" />
                   {activeStep.tools} / <span className="text-slate-400 font-normal">{activeStep.scale}</span>
@@ -332,8 +345,8 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
       </div>
 
       {/* 20분 레슨의 단계별 타임라인 바 */}
-      <div className="bg-white border border-slate-100 rounded-2xl p-4 sm:p-5 md:p-6 shadow-sm">
-        <h3 className="text-sm md:text-base font-semibold text-slate-900 mb-4 flex items-center gap-2 border-b border-slate-100 pb-3">
+      <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-4 sm:p-5 md:p-6 shadow-sm">
+        <h3 className="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
           <ListMusic className="text-teal-500" size={16} />
           20분 레슨 단계별 정밀 타임라인 (수동 이동 지원)
         </h3>
@@ -348,49 +361,49 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
                 className={`p-3.5 rounded-xl border-2 transition-all cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-3 ${
                   isCurrent
                     ? "bg-gradient-to-r from-teal-50/40 to-emerald-50/20 border-teal-500 shadow-md shadow-teal-700/5"
-                    : "bg-white border-slate-100 hover:border-slate-200"
+                    : "bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:border-slate-700"
                 }`}
               >
                 <div className="flex items-start gap-3">
                   <span className={`w-7 h-7 rounded-full font-mono text-xs font-semibold flex items-center justify-center shrink-0 border ${
                     isCurrent
                       ? "bg-teal-500 text-white border-teal-600 shadow-sm"
-                      : "bg-slate-50 text-slate-600 border-slate-205"
+                      : "bg-slate-50 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 border-slate-205"
                   }`}>
                     {idx + 1}
                   </span>
                   
                   <div>
                     <div className="flex flex-wrap items-center gap-1.5">
-                      <span className="text-xs font-semibold text-slate-900 font-sans"><TermTooltip text={step.stage} /></span>
+                      <span className="text-xs font-semibold text-slate-900 dark:text-slate-100 font-sans"><TermTooltip text={step.stage} /></span>
                       <span className={`px-1.5 py-0.5 rounded-md text-[9px] font-mono font-bold ${
-                        isCurrent ? "bg-teal-500/10 text-teal-700" : "bg-slate-100 text-slate-500"
+                        isCurrent ? "bg-teal-500/10 text-teal-700 dark:text-teal-400" : "bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400"
                       }`}>
                         {step.time}
                       </span>
                     </div>
                     
-                    <p className="text-[11px] text-slate-600 font-normal mt-1 flex flex-wrap items-center gap-1">
-                      <strong className="text-slate-500 font-normal">사용 툴:</strong> {step.tools} 
+                    <p className="text-[11px] text-slate-600 dark:text-slate-400 font-normal mt-1 flex flex-wrap items-center gap-1">
+                      <strong className="text-slate-500 dark:text-slate-400 font-normal">사용 툴:</strong> {step.tools} 
                       <span className="text-slate-300 mx-1">|</span>
-                      <strong className="text-slate-500 font-normal">스케일:</strong> {step.scale}
+                      <strong className="text-slate-500 dark:text-slate-400 font-normal">스케일:</strong> {step.scale}
                       {step.dynamicBreath && (
                         <>
                           <span className="text-slate-300 mx-1">|</span>
-                          <strong className="text-slate-500 font-normal">호흡/강도:</strong> {step.dynamicBreath}
+                          <strong className="text-slate-500 dark:text-slate-400 font-normal">호흡/강도:</strong> {step.dynamicBreath}
                         </>
                       )}
                     </p>
 
-                    <div className="mt-1.5 pl-2.5 border-l-2 border-teal-500/20 text-[10px] text-slate-500 leading-relaxed font-sans max-w-2xl">
+                    <div className="mt-1.5 pl-2.5 border-l-2 border-teal-500/20 text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-sans max-w-2xl">
                       <strong>큐잉:</strong> &ldquo;<TermTooltip text={step.queuing} />&rdquo;
                     </div>
                   </div>
                 </div>
 
-                <div className="md:text-right md:w-64 border-t md:border-t-0 border-slate-100 pt-2.5 md:pt-0">
+                <div className="md:text-right md:w-64 border-t md:border-t-0 border-slate-100 dark:border-slate-800 pt-2.5 md:pt-0">
                   <span className="text-[10px] uppercase font-bold text-rose-500 block">체크포인트 & 즉각 이완 조치</span>
-                  <p className="text-[11px] text-slate-600 font-normal mt-0.5 leading-relaxed">
+                  <p className="text-[11px] text-slate-600 dark:text-slate-400 font-normal mt-0.5 leading-relaxed">
                     <TermTooltip text={step.checkpoint} />
                   </p>
                 </div>
@@ -400,6 +413,7 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
           })}
         </div>
       </div>
+      <TypeSummaryModal isOpen={isTypeSummaryModalOpen} onClose={() => setIsTypeSummaryModalOpen(false)} />
     </div>
   );
 }

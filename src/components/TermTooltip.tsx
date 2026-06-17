@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { VOCAL_TERMS } from '../terms';
+import { VOCAL_TERMS } from '../lib/terms';
 
 const TERMS_KEYS = Object.keys(VOCAL_TERMS).sort((a, b) => b.length - a.length);
 const REGEX = new RegExp(`(${TERMS_KEYS.map(k => k.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')).join('|')})`, 'gi');
@@ -46,7 +46,7 @@ function TooltipTrigger({ text, tooltipContent }: { text: string, tooltipContent
       ref={spanRef}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
-      className="relative inline cursor-help border-b border-dashed border-teal-500/70 text-teal-800 hover:text-teal-950 font-semibold transition-colors"
+      className="relative inline cursor-help border-b border-dashed border-teal-500/70 text-teal-800 dark:text-teal-300 hover:text-teal-950 font-semibold transition-colors"
     >
       {text}
       {show && createPortal(

@@ -136,26 +136,26 @@ export default function StudentLog() {
   };
 
   return (
-    <div className="bg-white border border-slate-100 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm flex flex-col md:flex-row gap-6">
+    <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm flex flex-col md:flex-row gap-6">
       
       {/* Sidebar: Student List */}
-      <div className="w-full md:w-1/3 flex flex-col border-r border-slate-100 pr-0 md:pr-6 gap-4">
+      <div className="w-full md:w-1/3 flex flex-col border-r border-slate-100 dark:border-slate-800 pr-0 md:pr-6 gap-4">
         <div className="flex justify-between items-center mb-2">
-          <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+          <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
             <Users size={18} className="text-teal-600" />
             수강생 목록 ({students.length})
           </h2>
           <button 
             onClick={() => setIsAddingStudent(!isAddingStudent)}
-            className="p-1.5 bg-teal-50 text-teal-700 rounded-lg hover:bg-teal-100 transition-colors"
+            className="p-1.5 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 rounded-lg hover:bg-teal-100 transition-colors"
           >
             <Plus size={16} />
           </button>
         </div>
 
         {isAddingStudent && (
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl space-y-3 mb-4">
-            <h3 className="text-sm font-bold text-slate-700 mb-2">새 수강생 추가</h3>
+          <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 p-4 rounded-xl space-y-3 mb-4">
+            <h3 className="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">새 수강생 추가</h3>
             <div className="space-y-2">
               <input 
                 type="text" 
@@ -175,7 +175,7 @@ export default function StudentLog() {
                 <select 
                   value={newStudentGender}
                   onChange={(e) => setNewStudentGender(e.target.value)}
-                  className="w-1/2 px-3 py-2 border border-slate-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-teal-500 bg-white"
+                  className="w-1/2 px-3 py-2 border border-slate-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-teal-500 bg-white dark:bg-slate-900"
                 >
                   <option value="여성">여성</option>
                   <option value="남성">남성</option>
@@ -185,7 +185,7 @@ export default function StudentLog() {
               <select 
                   value={newStudentType}
                   onChange={(e) => setNewStudentType(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-teal-500 bg-white"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm outline-none focus:ring-1 focus:ring-teal-500 bg-white dark:bg-slate-900"
                 >
                   {VOCAL_TYPES.map(type => (
                     <option key={type.id} value={type.id}>{type.koreanName.split(' (')[0]}</option>
@@ -195,7 +195,7 @@ export default function StudentLog() {
             <div className="flex justify-end gap-2 mt-2">
               <button 
                 onClick={() => setIsAddingStudent(false)}
-                className="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:bg-slate-200 rounded-md"
+                className="px-3 py-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:bg-slate-200 rounded-md"
               >
                 취소
               </button>
@@ -222,12 +222,12 @@ export default function StudentLog() {
               className={`w-full text-left p-3 rounded-xl transition-all border ${
                 selectedStudentId === student.id 
                   ? 'bg-teal-50/50 border-teal-200 shadow-sm' 
-                  : 'bg-white border-slate-100 hover:border-slate-300 hover:bg-slate-50'
+                  : 'bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 hover:border-slate-300 hover:bg-slate-50 dark:bg-slate-800/40'
               }`}
             >
               <div className="flex justify-between items-start">
-                <div className="font-bold text-slate-800">{student.name}</div>
-                <div className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-medium">
+                <div className="font-bold text-slate-800 dark:text-slate-200">{student.name}</div>
+                <div className="text-[10px] bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded font-medium">
                   {student.logs.length}건
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function StudentLog() {
                   student.primaryTypeId === 'type1' ? 'bg-teal-500' : 
                   student.primaryTypeId === 'type4' || student.primaryTypeId === 'type5' ? 'bg-amber-500' : 'bg-indigo-500'
                 }`}></span>
-                <span className="text-[11px] text-slate-600 font-medium">
+                <span className="text-[11px] text-slate-600 dark:text-slate-400 font-medium">
                   {getTypeName(student.primaryTypeId)}
                 </span>
                 <span className="text-[10px] text-slate-400 ml-auto">
@@ -299,8 +299,8 @@ export default function StudentLog() {
 
             {/* Logs Area */}
             <div className="flex justify-between items-center px-1">
-              <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                <FileText size={18} className="text-slate-500" />
+              <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                <FileText size={18} className="text-slate-500 dark:text-slate-400" />
                 레슨 일지
               </h3>
               <button 
@@ -308,7 +308,7 @@ export default function StudentLog() {
                   setNewLogType(selectedStudent.primaryTypeId);
                   setIsAddingLog(!isAddingLog);
                 }}
-                className="px-3 py-1.5 bg-indigo-50 text-indigo-700 font-semibold text-xs rounded-lg border border-indigo-100 hover:bg-indigo-100 transition-colors flex items-center gap-1.5"
+                className="px-3 py-1.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 font-semibold text-xs rounded-lg border border-indigo-100 hover:bg-indigo-100 transition-colors flex items-center gap-1.5"
               >
                 <Plus size={14} />새 일지 작성
               </button>
@@ -322,20 +322,20 @@ export default function StudentLog() {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-bold text-slate-600 block">레슨 일자</label>
+                      <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 block">레슨 일자</label>
                       <input 
                         type="date" 
                         value={newLogDate}
                         onChange={e => setNewLogDate(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
+                        className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-slate-900"
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-bold text-slate-600 block">당일 텐즈투 (Tends To)</label>
+                      <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 block">당일 텐즈투 (Tends To)</label>
                       <select 
                         value={newLogType}
                         onChange={e => setNewLogType(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
+                        className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-slate-900"
                       >
                         {VOCAL_TYPES.map(type => (
                           <option key={type.id} value={type.id}>{type.koreanName.split(' (')[0]}</option>
@@ -344,18 +344,18 @@ export default function StudentLog() {
                     </div>
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-bold text-slate-600 block">레슨 노트 (분석 및 처방 툴)</label>
+                    <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 block">레슨 노트 (분석 및 처방 툴)</label>
                     <textarea 
                       value={newLogNotes}
                       onChange={e => setNewLogNotes(e.target.value)}
                       placeholder="발성 진단, 사용한 툴(Vocalise, SOVTE), 파지/전이 결과, 코멘트 등을 자세히 기록하세요."
-                      className="w-full p-3 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 min-h-[120px] resize-y leading-relaxed"
+                      className="w-full p-3 border border-slate-200 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-indigo-500 min-h-[120px] resize-y leading-relaxed"
                     ></textarea>
                   </div>
                   <div className="flex justify-end gap-2 pt-2">
                     <button 
                       onClick={() => setIsAddingLog(false)}
-                      className="px-4 py-2 text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors border border-slate-200"
+                      className="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 rounded-lg transition-colors border border-slate-200 dark:border-slate-700"
                     >
                       취소
                     </button>
@@ -372,23 +372,23 @@ export default function StudentLog() {
 
             <div className="space-y-4">
               {selectedStudent.logs.length === 0 ? (
-                <div className="py-12 border-2 border-dashed border-slate-100 rounded-2xl text-center text-slate-400 bg-slate-50/50">
-                  <div className="mx-auto w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mb-3">
+                <div className="py-12 border-2 border-dashed border-slate-100 dark:border-slate-800 rounded-2xl text-center text-slate-400 bg-slate-50 dark:bg-slate-800/40/50">
+                  <div className="mx-auto w-12 h-12 bg-slate-100 dark:bg-slate-800/80 rounded-full flex items-center justify-center mb-3">
                     <FileText size={20} className="text-slate-300" />
                   </div>
-                  <p className="text-sm font-medium text-slate-500">아직 작성된 레슨 일지가 없습니다.</p>
+                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400">아직 작성된 레슨 일지가 없습니다.</p>
                   <p className="text-xs text-slate-400 mt-1">새 일지 작성 버튼을 눌러 첫 기록을 남겨보세요.</p>
                 </div>
               ) : (
                 selectedStudent.logs.map(log => (
-                  <div key={log.id} className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow group relative">
-                    <div className="flex justify-between items-start mb-3 pb-3 border-b border-slate-100">
+                  <div key={log.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow group relative">
+                    <div className="flex justify-between items-start mb-3 pb-3 border-b border-slate-100 dark:border-slate-800">
                       <div className="flex items-center gap-3">
-                        <div className="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md text-[11px] font-bold font-mono tracking-tight flex items-center gap-1.5">
+                        <div className="bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 px-2.5 py-1 rounded-md text-[11px] font-bold font-mono tracking-tight flex items-center gap-1.5">
                           <Calendar size={12} />
                           {log.date}
                         </div>
-                        <span className="text-[11px] font-bold px-2 py-0.5 rounded border border-slate-100 bg-slate-50 text-slate-600">
+                        <span className="text-[11px] font-bold px-2 py-0.5 rounded border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400">
                           {getTypeName(log.vocalTypeId)}
                         </span>
                       </div>
@@ -400,7 +400,7 @@ export default function StudentLog() {
                         <Trash2 size={14} />
                       </button>
                     </div>
-                    <div className="text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
+                    <div className="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">
                       {log.notes}
                     </div>
                   </div>
@@ -415,18 +415,18 @@ export default function StudentLog() {
       {/* Delete Confirmation Modal */}
       {deleteConfirm && (
         <div className="fixed inset-0 bg-slate-900/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-6 shadow-xl w-full max-w-sm animate-fade-in text-center">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-xl w-full max-w-sm animate-fade-in text-center">
             <AlertTriangle className="mx-auto text-rose-500 mb-3" size={32} />
-            <h3 className="text-lg font-bold text-slate-800 mb-2">
+            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">
               {deleteConfirm.type === 'student' ? '수강생 프로필 삭제' : '레슨 일지 삭제'}
             </h3>
-            <p className="text-sm text-slate-600 mb-6">
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
               이 기록을 영구적으로 삭제하시겠습니까?<br />이 작업은 되돌릴 수 없습니다.
             </p>
             <div className="flex gap-2 justify-center">
               <button
                 onClick={() => setDeleteConfirm(null)}
-                className="px-4 py-2 font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex-1"
+                className="px-4 py-2 font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 rounded-lg transition-colors flex-1"
               >
                 취소
               </button>

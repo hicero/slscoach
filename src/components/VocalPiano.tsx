@@ -158,7 +158,7 @@ export default function VocalPiano() {
             </span>
           ) : (
             <div className="flex items-center gap-2 bg-slate-850 px-3 py-1.5 rounded-lg border border-slate-800">
-              {vol === 0 ? <VolumeX className="text-slate-500" size={16} /> : <Volume2 className="text-teal-400" size={16} />}
+              {vol === 0 ? <VolumeX className="text-slate-500 dark:text-slate-400" size={16} /> : <Volume2 className="text-teal-400" size={16} />}
               <input 
                 type="range" 
                 min="0" 
@@ -182,7 +182,7 @@ export default function VocalPiano() {
       </div>
 
       {/* 속성 가이드 핫 키들 */}
-      <h4 className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-2">훈련 필수 시작음 가치 체크 (One-Tap 피치 가이드)</h4>
+      <h4 className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-2">훈련 필수 시작음 가치 체크 (One-Tap 피치 가이드)</h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
         {RECOMMEND_GUIDES.map((g) => {
           const isCurrent = activeNote === g.note;
@@ -205,7 +205,7 @@ export default function VocalPiano() {
                   <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isCurrent ? "bg-teal-400" : "bg-slate-600"}`}></span>
                   <span><TermTooltip text={g.label} /></span>
                 </div>
-                <div className="text-[9px] text-slate-500 mt-0.5 font-sans leading-none"><TermTooltip text={g.desc} /></div>
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 mt-0.5 font-sans leading-none"><TermTooltip text={g.desc} /></div>
               </div>
               <span className="text-[10px] font-mono bg-slate-900/60 text-teal-400 px-1.5 py-0.5 rounded border border-slate-800">
                 {g.note}
@@ -234,7 +234,7 @@ export default function VocalPiano() {
                 className={`w-8 border-r border-slate-900 h-full rounded-b-md relative cursor-pointer flex flex-col justify-end pb-2 items-center transition-all ${
                   isPressed 
                     ? "bg-teal-500 text-slate-950" 
-                    : "bg-white hover:bg-slate-100 text-slate-705"
+                    : "bg-white dark:bg-slate-900 hover:bg-slate-100 dark:bg-slate-800/80 text-slate-705"
                 }`}
                 style={{ zIndex: 1 }}
               >
@@ -242,7 +242,7 @@ export default function VocalPiano() {
                   {k.note}
                 </span>
                 {k.label && (
-                  <span className="absolute top-1 text-[7px] text-center px-0.5 leading-none opacity-80 pointer-events-none text-slate-900 font-sans font-semibold">
+                  <span className="absolute top-1 text-[7px] text-center px-0.5 leading-none opacity-80 pointer-events-none text-slate-900 dark:text-slate-100 font-sans font-semibold">
                     <TermTooltip text={k.label.split('/')[0]} />
                   </span>
                 )}
@@ -287,7 +287,7 @@ export default function VocalPiano() {
           </div>
         </div>
       </div>
-      <div className="flex gap-2 items-center justify-center mt-3 text-[10px] text-slate-500">
+      <div className="flex gap-2 items-center justify-center mt-3 text-[10px] text-slate-500 dark:text-slate-400">
         <HelpCircle size={10} />
         건반을 꾹 마우스로 누르고 있으면 가이드 사인음이 지속됩니다. 과압축 진단 및 남성/여성 고음 브릿지 훈련 시 적극 활용해 보세요.
       </div>

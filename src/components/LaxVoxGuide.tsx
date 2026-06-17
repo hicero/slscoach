@@ -3,38 +3,38 @@ import { Info, AlertTriangle, Layers, Droplets, Target, Activity } from 'lucide-
 export default function LaxVoxGuide() {
   return (
     <div className="space-y-6 animate-fade-in">
-      <div className="bg-white border border-slate-200/60 p-5 md:p-6 rounded-2xl shadow-sm relative overflow-hidden">
-        <h3 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2 mb-4">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700/60 p-5 md:p-6 rounded-2xl shadow-sm relative overflow-hidden">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2 mb-4">
           <Droplets className="text-teal-500" size={20} />
           Lax Vox 심화 훈련 가이드
         </h3>
-        <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
           Lax Vox는 반폐쇄성도훈련(SOVTE)의 일환인 물 저항 치료(Water Resistance Therapy) 기법으로, SLS 자음+모음 툴 체계를 보조하는 심화 도구입니다. 특정 유형에서 단기간에 더 강력한 환경 제약이 필요할 때 활용합니다.
         </p>
 
-        <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl mb-6">
-          <h4 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
+        <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 p-4 rounded-xl mb-6">
+          <h4 className="font-bold text-slate-800 dark:text-slate-200 mb-3 flex items-center gap-2">
             <Layers className="text-indigo-500" size={16} />
             4대 핵심 기전 (Titze 양안정성 모델 극복)
           </h4>
-          <ul className="space-y-3 text-sm text-slate-700">
-            <li><strong className="text-indigo-700">성도 불활성 극대화:</strong> 35cm 튜브 연장으로 임피던스 상승 → 발성 역치 압력(PTP) 감소.</li>
-            <li><strong className="text-indigo-700">정적 역압 생성:</strong> 튜브 끝이 물에 잠기며 성문 상압 증가 → 직사각형 성문(안정적 접촉) 유도.</li>
-            <li><strong className="text-indigo-700">구강압 진동:</strong> 기포(Bubbling)에 의한 14~22Hz 진동이 후두 및 외부근 내부 마사지 효과 제공.</li>
-            <li><strong className="text-indigo-700">외적 초점:</strong> 얼굴로 쏠리는 진동감에 집중하여 과도한 내적 지시(근육 통제) 차단.</li>
+          <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+            <li><strong className="text-indigo-700 dark:text-indigo-400">성도 불활성 극대화:</strong> 35cm 튜브 연장으로 임피던스 상승 → 발성 역치 압력(PTP) 감소.</li>
+            <li><strong className="text-indigo-700 dark:text-indigo-400">정적 역압 생성:</strong> 튜브 끝이 물에 잠기며 성문 상압 증가 → 직사각형 성문(안정적 접촉) 유도.</li>
+            <li><strong className="text-indigo-700 dark:text-indigo-400">구강압 진동:</strong> 기포(Bubbling)에 의한 14~22Hz 진동이 후두 및 외부근 내부 마사지 효과 제공.</li>
+            <li><strong className="text-indigo-700 dark:text-indigo-400">외적 초점:</strong> 얼굴로 쏠리는 진동감에 집중하여 과도한 내적 지시(근육 통제) 차단.</li>
           </ul>
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-bold text-slate-800 flex items-center gap-2">
+          <h4 className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
             <Target className="text-amber-500" size={16} />
             유형별 정밀 세팅 및 전략
           </h4>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
-              <h5 className="font-bold text-slate-800 mb-2 border-b border-slate-100 pb-2">과다기능적 (Type 4, 5)</h5>
-              <ul className="text-sm text-slate-600 space-y-2">
+            <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm">
+              <h5 className="font-bold text-slate-800 dark:text-slate-200 mb-2 border-b border-slate-100 dark:border-slate-800 pb-2">과다기능적 (Type 4, 5)</h5>
+              <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
                 <li><strong>수심:</strong> 1~2cm (초기엔 물 밖에서 시작해 서서히 표면 터치)</li>
                 <li><strong>직경:</strong> 10~12mm (넓은 관. 저항 최소화)</li>
                 <li><strong>자세:</strong> 고개 숙이기 (Type 4: 후두 상승 억제)</li>
@@ -42,9 +42,9 @@ export default function LaxVoxGuide() {
               </ul>
             </div>
 
-            <div className="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
-              <h5 className="font-bold text-slate-800 mb-2 border-b border-slate-100 pb-2">과소기능적 (Type 2, 6)</h5>
-              <ul className="text-sm text-slate-600 space-y-2">
+            <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm">
+              <h5 className="font-bold text-slate-800 dark:text-slate-200 mb-2 border-b border-slate-100 dark:border-slate-800 pb-2">과소기능적 (Type 2, 6)</h5>
+              <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
                 <li><strong>수심:</strong> 5~15cm (깊은 Bubbling으로 물리적 성대 내전 강제 유도)</li>
                 <li><strong>직경:</strong> 5~10mm (좁은 관으로 압력 증폭)</li>
                 <li><strong>자세:</strong> 허리 숙이기 (복강내압 자동 증가를 통한 호흡 지원)</li>
@@ -52,9 +52,9 @@ export default function LaxVoxGuide() {
               </ul>
             </div>
             
-            <div className="border border-slate-200 rounded-xl p-4 bg-white shadow-sm md:col-span-2">
-              <h5 className="font-bold text-slate-800 mb-2 border-b border-slate-100 pb-2">이행적·균형적 (Type 1, 3)</h5>
-              <ul className="text-sm text-slate-600 space-y-2">
+            <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-900 shadow-sm md:col-span-2">
+              <h5 className="font-bold text-slate-800 dark:text-slate-200 mb-2 border-b border-slate-100 dark:border-slate-800 pb-2">이행적·균형적 (Type 1, 3)</h5>
+              <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
                 <li><strong>수심:</strong> 2~5cm 가변 조절 (플립 나면 약간 깊게, 목 조이면 약간 얕게)</li>
                 <li><strong>직경:</strong> 10mm 표준</li>
                 <li><strong>전략:</strong> 다이나믹 변동성 훈련. 1.5 Octave 도약, Crescendo 주며 외부 변동성에 대한 믹스 유지 적응력 배양.</li>
@@ -94,11 +94,11 @@ export default function LaxVoxGuide() {
         </div>
       </div>
 
-      <div className="bg-rose-50 border border-rose-100 p-5 rounded-2xl flex items-start gap-3">
+      <div className="bg-rose-50 dark:bg-rose-900/30 border border-rose-100 p-5 rounded-2xl flex items-start gap-3">
         <AlertTriangle className="text-rose-500 shrink-0 mt-0.5" size={18} />
         <div>
-          <h4 className="font-bold text-rose-800 text-sm mb-1">실전 운영 및 안전 주의사항</h4>
-          <ul className="text-xs text-rose-700/80 space-y-1.5 list-disc list-inside">
+          <h4 className="font-bold text-rose-800 dark:text-rose-300 text-sm mb-1">실전 운영 및 안전 주의사항</h4>
+          <ul className="text-xs text-rose-700 dark:text-rose-400/80 space-y-1.5 list-disc list-inside">
             <li>의료용 실리콘 튜브(길이 35cm, 내경 9~12mm) 권장. 최대 수심 15cm 엄수.</li>
             <li>Type 4, 5는 수심 2cm 이하 엄수, 얇은 빨대 사용 절대 금지.</li>
             <li>천식/호흡기 질환자는 의학적 상담 필요. 튜브 물고 물 삼키지 않도록 주의.</li>
