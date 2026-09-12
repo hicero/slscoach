@@ -171,7 +171,7 @@ export default function VocalLessonPlanner({ selectedTypeId, onSelectType }: Voc
                 {currentType.koreanName}
               </h1>
               <p className="text-[10px] text-slate-400 font-mono mt-0.5">
-                SLS 공식 명칭: {currentType.name}
+                SLS 관련 명칭·코칭 분류: {currentType.name}
               </p>
             </div>
 

@@ -51,4 +51,4 @@ export const VIRTUAL_COACH_RULES={
   note:'이 규칙은 특정 음절이 특정 근육이나 성문 형태를 반드시 만든다는 진단표가 아니라, 학생 반응을 기록하고 다음 과제를 선택하는 코칭 흐름이다.'
 };
 
-export default {TOOLS,PATTERNS,STAGES,EVIDENCE};
+export default {TOOLS,PATTERNS,STAGES,EVIDENCE,SLS_EXERCISE,VIRTUAL_COACH_RULES};

@@ -2,21 +2,21 @@ import { ShieldCheck, CheckSquare, XSquare, AlertCircle } from 'lucide-react';
 
 export default function MotorChecklistGuide() {
   const checklist = [
-    { category: '조건 관찰', item: '학생의 발성 유형을 6유형 체계로 진단했는가?' },
-    { category: '조건 관찰', item: '진단에 근거하여 Type별 맞춤 제약(툴, 모음, 강도, 자세)을 설계했는가?' },
-    { category: '조건 관찰', item: '조절매개변수(음역, 음량, 템포)의 변화에 따른 임계 요동을 관찰했는가?' },
-    { category: '직접 지시 경고', item: '"후두를 내려" "성대를 붙여" 등 내적 초점 지시를 3회 이상 사용했는가? (과제 제약으로 대체 필요)' },
-    { category: '직접 지시 경고', item: "Type 5 학생에게 'Hold on' 큐잉을 사용했는가? (즉시 'Let go'로 전환)" },
-    { category: '직접 지시 경고', item: "'압 더 세다' 지시를 사용했는가? (Type 5, 6 전이 상황에서 우선 피하고 반응을 확인)" },
-    { category: '주의 자원', item: '툴이 제공하는 감각 피드백(진동, 공명, 기포)에 주의를 기울이도록 했는가? (외적 초점)' },
-    { category: '주의 자원', item: '한 번에 2개 이상의 신체 부위 지시를 내렸는가? (주의 자원 초과 위험)' },
-    { category: '변동성 구분', item: '학생의 흔들림이 좋은 변동성(새 협응으로 이행)인지 나쁜 변동성(과부하 붕괴)인지 판단했는가?' },
-    { category: '변동성 구분', item: '좋은 변동성을 허용하고 조급하게 교정하지 않았는가? (대역폭 피드백)' },
-    { category: '변동성 구분', item: '나쁜 변동성 감지 시 과제 난이도를 낮추거나 제약을 강화했는가?' },
-    { category: '파지/전이', item: '이전 세션의 성과가 다음 레슨에서도 유지되는지 파지 테스트를 수행했는가?' },
-    { category: '파지/전이', item: '학생이 새로운 곡/환경에서도 툴 없이 협응을 재현하는지 전이 테스트를 수행했는가?' },
-    { category: 'Lax Vox (선택)', item: 'Lax Vox 사용 시 유형에 맞는 수심/직경 세팅을 적용했는가?' },
-    { category: 'Lax Vox (선택)', item: '5단계 점진적 자유도 해방 프로토콜을 준수했는가?' },
+    { category: '조건 관찰', item: '학생의 고정 진단명이 아니라 이번 과제에서 들린 경향과 조건을 기록했는가?' },
+    { category: '조건 관찰', item: '음역·음량·모음·진행 방향 중 한 번에 하나의 조건만 바꾸었는가?' },
+    { category: '조건 관찰', item: '도구를 시도하기 전과 후의 음질·연결·노력감·불편감을 비교했는가?' },
+    { category: '지시와 초점', item: '“후두를 내려” “성대를 붙여” 같은 내부 감각 지시를 반복하기보다 관찰 가능한 결과를 말했는가?' },
+    { category: '지시와 초점', item: '한 번에 여러 신체 부위를 지시하지 않고 과제의 소리·진동·연결에 초점을 두었는가?' },
+    { category: '지시와 초점', item: '학생이 이해한 단어와 실제 수행 반응이 일치하는지 확인했는가?' },
+    { category: '주의 자원', item: '도구의 진동·기류·소리처럼 학생이 확인할 수 있는 단서를 사용했는가?' },
+    { category: '주의 자원', item: '자음·모음·SOVT가 특정 성대 상태를 보장한다고 설명하지 않았는가?' },
+    { category: '반응 구분', item: '편안함·가벼움·흐려짐·눌림·변화 없음 중 학생 반응을 기록했는가?' },
+    { category: '반응 구분', item: '작은 흔들림과 불편감·통증·지속적 음질 악화를 구분했는가?' },
+    { category: '반응 구분', item: '불리한 반응이 나오면 더 세게 반복하지 않고 과제 난이도나 조건을 낮추었는가?' },
+    { category: '파지/전이', item: '도구에서 모음, 짧은 가사, 곡 구절로 도움을 줄이며 전이했는가?' },
+    { category: '파지/전이', item: '코치의 시범 없이 학생이 다시 수행할 수 있는지 확인했는가?' },
+    { category: '다음 수업', item: '다음 수업에서 재현할 구절·음역·모음·도구 조건을 기록했는가?' },
+    { category: 'Lax Vox (선택)', item: '튜브 종류·내경·길이·침수 깊이·음량과 학생 반응을 함께 기록했는가?' },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function MotorChecklistGuide() {
       <div className="mt-5 p-3 bg-rose-500/10 border border-rose-500/30 rounded-xl flex gap-2 items-start">
         <AlertCircle size={14} className="text-rose-400 shrink-0 mt-0.5" />
         <p className="text-[11px] text-rose-200 leading-tight">
-          본 체크리스트는 레슨 전후 자가점검용입니다. 부정문('~했는가?')에 '예'라고 답한 항 항목이 있다면 즉각 운동학습 원칙으로 교정하세요.
+          본 체크리스트는 고정 처방표가 아니라 레슨 전후 기록을 점검하는 도구입니다. 통증·지속적인 쉰 목소리·심한 피로가 있으면 과제를 중단하고 필요한 경우 음성 전문가의 평가를 받으세요.
         </p>
       </div>
     </div>

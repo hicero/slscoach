@@ -20,7 +20,7 @@ export default function VocalReference() {
         특히 <strong>Type 5 (Pressed / Over-adducted)</strong>는 SLS 원본 매뉴얼의 독립 Tends To가 아니며, <strong>Pull Chest 또는 Imperfect Mix 내부에서 발견되는 'pressed sub-pattern'</strong>을 현장 진단 및 레슨 편의상 독립 유형으로 분리한 것입니다.
         <hr className="my-2 border-amber-200/60" />
         <strong className="text-amber-900 font-bold block mb-1">💡 진단 및 처방 기준의 핵심</strong>
-        SLS의 궁극적 진단은 단순히 [호흡 양 vs 성대 접촉력]의 균형만을 보는 것이 아니라, <strong>Airflow (호흡), Cord Closure (성대 접촉), Vowel (모음)</strong>의 3요결합을 통해 <strong>'Low Stable Larynx(안정된 후두)'</strong>와 <strong>'Release(외부 주변근의 개입 없는 자유로움)'</strong>을 이끌어내는 데 목적이 있습니다.
+        이 가이드는 <strong>Airflow(기류), 소리의 연결, 모음, 노력감</strong>의 변화를 관찰 항목으로 사용합니다. 이 항목만으로 후두 위치·성대 접촉·근육 상태를 진단하거나 특정 결과를 보장하지 않으며, 학생 반응에 따라 다음 과제를 선택합니다.
       </div>
 
       <div className="flex flex-col xl:flex-row xl:items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4 mb-5 gap-4">
@@ -95,7 +95,7 @@ export default function VocalReference() {
           <div className="space-y-3">
             <h3 className="text-xs md:text-sm font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <ShieldCheck className="text-emerald-500" size={16} />
-              Tier 1: 상대적 저위험 시작 툴 (어떤 유형이든 초기 진단 전 워밍업 및 탐색으로 출발 가능)
+              Tier 1: 초기 비교 후보 (워밍업·탐색용, 자동 안전 보장 아님)
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {TOOLBOX_TIERS.tier1.map((t) => (
@@ -113,7 +113,7 @@ export default function VocalReference() {
                     </p>
                   </div>
                   <div className="mt-3 bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-700/50 p-2.5 rounded-xl text-[10px] text-slate-500 dark:text-slate-400 leading-normal">
-                    <strong className="text-emerald-700 dark:text-emerald-400 font-bold block mb-0.5">안전 가치가 높은 이유:</strong>
+                    <strong className="text-emerald-700 dark:text-emerald-400 font-bold block mb-0.5">사용 전 비교할 점:</strong>
                     <TermTooltip text={t.reason} />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default function VocalReference() {
           <div className="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
             <h3 className="text-xs md:text-sm font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <ShieldCheck className="text-teal-500" size={16} />
-              Tier 2: 진단 전 기본 탐색 툴 (경미한 관찰 아래 전 유형 공용 가능)
+              Tier 2: 기본 탐색 후보 (학생 반응을 확인하며 사용)
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {TOOLBOX_TIERS.tier2.map((t) => (
@@ -137,7 +137,7 @@ export default function VocalReference() {
                     </p>
                   </div>
                   <div className="bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-700/50 p-2.5 rounded-xl text-[10px] text-teal-700 dark:text-teal-400 font-normal">
-                    <strong className="block text-slate-800 dark:text-slate-200 font-bold mb-0.5">핵심 훈련 이점 및 효과:</strong>
+                    <strong className="block text-slate-800 dark:text-slate-200 font-bold mb-0.5">비교할 수 있는 점:</strong>
                     <TermTooltip text={t.benefit} />
                   </div>
                 </div>
@@ -150,9 +150,9 @@ export default function VocalReference() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <h3 className="text-xs md:text-sm font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                 <AlertTriangle className="text-rose-500" size={16} />
-                유형별 단계 의존적 툴 (특정 단계/유형 외 공용 오용 금지)
+                유형별 반응 비교표 (고정 금지표 아님)
               </h3>
-              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold">⚠️ 학생의 현재 Tends To와 맞지 않는 툴을 오용할 경우 발성 문제를 악화시킬 수 있습니다.</span>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold">⚠️ 같은 툴도 학생·음역·음량에 따라 반응이 다를 수 있으므로 관찰 후 유지·변경합니다.</span>
             </div>
 
             <div className="border border-slate-150 dark:border-slate-700/50 rounded-xl shadow-sm">
@@ -212,18 +212,18 @@ export default function VocalReference() {
                   <tbody className="bg-white dark:bg-slate-900 divide-y divide-slate-105">
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">원인</td>
-                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">흉성의 과도한 개입 (Bottom-up 끌어올리기)</td>
-                      <td className="px-3 py-2">순수하게 성대를 과도하게 짓누름 (성대 접촉을 직접 강제한다고 해석하지 않음)</td>
+                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">상행에서 음량·노력감이 커지고 무거운 연결이 지속되는 경향</td>
+                      <td className="px-3 py-2">과제 전반에서 눌림·거친 음질·불편감이 함께 관찰되는 경향</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">양상</td>
-                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">가창 시 음정이 올라갈수록 후두 상승, 브릿지에서 크게 Flip</td>
-                      <td className="px-3 py-2">전 음역대에서 눌린 소리, 호흡 소진 빠름, 후두 고정 수축</td>
+                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">상행에서 음량·노력감·연결의 변화가 커지거나 플립이 나타남</td>
+                      <td className="px-3 py-2">음역과 무관하게 눌림·거침·노력감이 반복되는지 확인</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">해법</td>
-                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">Top-down (Hooty), 이완 + 연결 의식 유지</td>
-                      <td className="px-3 py-2">Hooty (과폐쇄 해제), Lip Trill (압력 분산)</td>
+                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">Hooty·Lip Trill·Goo 등을 짧게 비교하고, 상행에서 노력감과 연결이 어떻게 달라지는지 기록</td>
+                      <td className="px-3 py-2">Hooty·Lip Trill·Mum 등을 짧게 비교하고, 눌림·불편감이 줄어드는 조건을 확인</td>
                     </tr>
                   </tbody>
                 </table>
@@ -248,18 +248,18 @@ export default function VocalReference() {
                   <tbody className="bg-white dark:bg-slate-900 divide-y divide-slate-105">
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">원인</td>
-                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">성대 접촉 면적/근력 부족</td>
-                      <td className="px-3 py-2">심각한 성대 폐쇄력 및 호흡 조절력 부재</td>
+                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">작은 소리에서 중심과 연결이 불안정하게 들리는 경향</td>
+                      <td className="px-3 py-2">기류감이 크고 모음이 바뀌면 선명도·지속이 달라지는 경향</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">양상</td>
-                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">브릿지에서 잦은 Flip, 음정이 불안정함</td>
-                      <td className="px-3 py-2">전 음역대 숨이 샘, Flip조차 발생하지 않는 옅은 소리</td>
+                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">상행·하행 또는 음량을 바꿀 때 플립과 음정 안정성이 달라지는지 확인</td>
+                      <td className="px-3 py-2">전 음역에서 기류감·옅은 음질이 지속되는지, 과제에 따라 달라지는지 확인</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">해법</td>
-                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">Edgy mmm 활용해 순간 탠션 리셋</td>
-                      <td className="px-3 py-2">자음(B,D,G) + mp~mf 환경의 연결 탐색 (과압착 전이 극경계)</td>
+                      <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">Edgy mmm·Lip Trill·Goo를 비교해 선명도와 노력감이 함께 좋아지는지 확인</td>
+                      <td className="px-3 py-2">B·D·G·Mum·Goo 등을 낮은 음량에서 비교하고, 선명도와 눌림을 함께 관찰</td>
                     </tr>
                   </tbody>
                 </table>
@@ -332,14 +332,14 @@ export default function VocalReference() {
       {activeTab === 'transitions' && (
         <div className="space-y-5">
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-3.5 rounded-xl text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed mb-1">
-            <strong>💡 SLS 발성 전이란?</strong> 보컬 훈련과 발성 밸런스 발달에 따라, 학생이 지닌 태생적인 발성 성향(Tends To)은 유기적으로 변화하게 됩니다. 전이가 발생된다는 것은 이전 과제의 반응이 달라지고 새로운 조건에서 다른 경향이 관찰되었다는 뜻으로 기록합니다.
+            <strong>💡 조건 변화 기록이란?</strong> 같은 학생도 과제·음역·모음·음량에 따라 다른 반응을 보일 수 있습니다. 아래 경로는 유형이 실제로 생리적으로 전환된다는 뜻이 아니라, 이전 과제와 다른 반응이 관찰될 때 다음 비교 조건을 선택하는 기록 방식입니다.
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {TRANSITION_GUIDE.map((tg) => (
               <div key={tg.path} className="border border-slate-150 dark:border-slate-700/50 rounded-xl p-4.5 hover:shadow-md transition-all bg-white dark:bg-slate-900 relative group">
                 <div className="absolute top-0 right-0 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 border-l border-b border-indigo-100 font-mono text-[9px] font-bold px-2.5 py-0.5 rounded-bl-lg rounded-tr-xl group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-200">
-                  성장 경로 {TRANSITION_GUIDE.indexOf(tg) + 1}
+                  비교 경로 {TRANSITION_GUIDE.indexOf(tg) + 1}
                 </div>
 
                 <h4 className="text-xs md:text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5 mb-2.5 pt-1">
@@ -349,7 +349,7 @@ export default function VocalReference() {
 
                 <div className="space-y-3 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                   <div>
-                    <strong className="text-slate-800 dark:text-slate-200 font-semibold block mb-0.5">유형 변화(전이)의 주된 원인:</strong>
+                    <strong className="text-slate-800 dark:text-slate-200 font-semibold block mb-0.5">관찰된 변화의 조건:</strong>
                     <p className="bg-slate-50 dark:bg-slate-800/40 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800/60 text-[11px]"><TermTooltip text={tg.reason} /></p>
                   </div>
 
@@ -377,10 +377,10 @@ export default function VocalReference() {
                <div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
                      <Activity className="text-teal-600" size={20} />
-                     발성 훈련의 과학적 근거 (SLS & 현대 음성 과학 학술 매치)
+                     발성 훈련의 근거와 코칭 해석
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1.5">
-                     SLS 발명 초기의 직관적 훈련 시스템이 현대 음성과학 논문에서 어떻게 과학적 사실로 교차 검증되는지 매핑한 전문 자료입니다.
+                     SLS 자료의 코칭 원칙, 연구가 실제로 다룬 범위, 현장에서 사용할 수 있는 비교 가설을 분리해 읽는 참고 화면입니다. 논문이 이 앱의 유형·도구 처방 전체를 증명한다는 뜻은 아닙니다.
                   </p>
                </div>
             </div>
@@ -396,13 +396,13 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        말할 때처럼(Speech Level) 후두가 안정되고, 외재근(삼키는 근육)의 개입 없이 내재근만으로 발성해야 한다.
+                        SLS에서 말하는 Speech Level은 말하듯 편안한 조건과 연결을 탐색하는 코칭 목표로 기록합니다. 실제 후두 위치나 외재근 사용은 이 화면의 관찰만으로 확정하지 않습니다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
                         <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Chhetri (2012, 2014):</strong> TA, CT, LCA의 내재근 활성도만으로 음정과 성문 자세가 충분히 제어됨을 보고. 외재근(스트랩) 사용 배제의 과학적 근거.</li>
-                           <li><strong className="text-white">Palaparthi (2019) / Geng (2020):</strong> 과도한 TA 개입 없이 TA-CT 밸런스를 유지하는 "스피치 레벨"의 MAP(근육 활성도) 위치를 일치하게 밝혀냄.</li>
+                           <li><strong className="text-white">Chhetri 관련 연구:</strong> 후두 근육 활동을 다룬 연구로 참고할 수 있지만, 외재근을 배제해야 한다는 교육 원칙이나 이 앱의 Type 분류를 직접 증명하는 근거로 확대하지 않습니다.</li>
+                           <li><strong className="text-white">Palaparthi / Geng 관련 문헌:</strong> 대상·과제·측정 범위를 원문에서 확인한 뒤 해당 결과만 인용해야 합니다. 특정 학생의 TA·CT 균형이나 Speech Level 상태를 청취만으로 판정하지 않습니다.</li>
                         </ul>
                      </div>
                   </div>
@@ -417,13 +417,13 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        브릿지를 부드럽게 넘어가는 것이 핵심이며, 이 통과 구간에서 불안정해지는 것(Type 3)은 흉성 무게가 방해하기 때문이다.
+                        브리지에서 연결이 흔들리면 음량·모음·진행 방향을 바꿔 부담이 줄어드는 조건을 찾습니다. Type 3은 이 앱에서 조건에 따른 변화를 기록하기 위한 현장형 분류입니다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
                         <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Titze (2014):</strong> 성문이 윗면과 아랫면 모두 직사각형(평행)인 믹스 상태(Mixed registration)는 수렴/발산형보다 물리적으로 불안정함. 브릿지에서의 음질 변화를 설명하는 한 가지 모델로 참고합니다.</li>
-                           <li><strong className="text-white">Roubeau (2007):</strong> M1(흉성)과 M2(두성/가성) 구역 사이의 주파수 도약(Jump)을 넘는 과정이라고 분류.</li>
+                           <li><strong className="text-white">Titze 관련 모델:</strong> 성문·성도 상호작용을 설명하는 물리 모델로 참고합니다. 모든 가수의 믹스가 불안정하거나 특정 툴이 이를 해결한다고 결론내리지 않습니다.</li>
+                           <li><strong className="text-white">Roubeau 관련 문헌:</strong> M1·M2와 레지스터 전환을 설명하는 용어 체계로 참고하며, 이 용어를 개인의 생리 상태 진단으로 사용하지 않습니다.</li>
                         </ul>
                      </div>
                   </div>
@@ -438,12 +438,12 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        초기 탐색에 사용할 수 있으나 개인별 반응을 확인해야 함. 과압축(Type 4,5)을 만들지 않고 과소폐쇄(Type 2,6)도 악화시키지 않는 하나의 시작점.
+                        초기 탐색의 한 후보입니다. 개인별로 기류·음질·노력감이 달라질 수 있으므로, 과압축이나 과소폐쇄를 자동으로 예방한다고 전제하지 않습니다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
                         <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Titze (2009):</strong> 립 트릴은 반폐쇄성도(SOVT) 도구로써 성도 임피던스를 향상시켜 발성 임계압(PTP)을 대폭 하락하게 물리 모델링을 수정함. 힘 안 들이고 성대를 진동시키는 SLS 안전 툴의 1티어 정당성 부여.</li>
+                           <li><strong className="text-white">Titze 관련 SOVT 모델:</strong> 반폐쇄 조건에서 음원과 성도의 상호작용·발성 임계압을 설명하는 모델 근거로 참고합니다. 립 트릴이 모든 사람에게 힘을 줄이거나 안전을 보장한다고 일반화하지 않습니다.</li>
                         </ul>
                      </div>
                   </div>
@@ -458,12 +458,12 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm space-y-2">
                         <div>
-                           <strong className="text-indigo-600 block mb-0.5">Type 2, 6 (접촉 부족)</strong>
-                           Edge mmm, 경음(B/D/K), Bratty로 성대를 붙여줘야 한다.
+                           <strong className="text-indigo-600 block mb-0.5">Type 2, 6 (중심이 약하게 들리는 경향)</strong>
+                           Edge mmm·B/D/K·Bratty 등을 낮은 음량에서 비교하고, 자음만 강해지거나 눌림이 늘지 않는지 확인한다.
                         </div>
                         <div className="border-t border-slate-150 dark:border-slate-700/50 pt-2">
-                           <strong className="text-indigo-600 block mb-0.5">Type 4, 5 (과도 접촉)</strong>
-                           경음을 빼고 Hooty나 Lip Trill로 이완시켜야 한다.
+                           <strong className="text-indigo-600 block mb-0.5">Type 4, 5 (눌림이 관찰되는 경향)</strong>
+                           Hooty·Lip Trill·Goo·Mum 등을 비교하고, 불편감이나 노력감이 늘면 과제를 낮추거나 중단한다.
                         </div>
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300 space-y-2">
@@ -472,8 +472,8 @@ export default function VocalReference() {
                            가성/숨새는 폐쇄율(CQ)이 극도로 낮음. 해당 연구 결과를 특정 Edge 처방의 효과로 일반화하지 않습니다.
                         </div>
                         <div className="border-t border-slate-600 pt-2 mt-2">
-                           <strong className="text-emerald-400 block mb-0.5">Geng (2020) / Jiang (2024)</strong>
-                           Type 4는 TA 과도 활성, Type 5는 성문 수렴형(Convergent) 상태임. 성문 형태(수렴/발산/직사각)의 극단화를 막는 양극단 툴 배치 원리.
+                           <strong className="text-emerald-400 block mb-0.5">관련 근육·성문 연구</strong>
+                           근육 활동이나 성문 형태를 다룬 연구 결과를 특정 학생의 Type 4·5 상태로 바로 번역하지 않습니다. 이 화면의 도구 배치는 관찰 가능한 소리·노력감 비교를 위한 코칭 가설입니다.
                         </div>
                      </div>
                   </div>
@@ -488,13 +488,13 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        무거운 흉성 풀링은 반드시 높은 음에서 시작(Tricking)하여 새로운 조정을 경험토록 한다. 넓은 [a]에서 좁은 [i, u] 모음으로 전환시킨다.
+                        무거운 연결이 상행에서 커지는 학생에게 높은 음에서 내려오는 과제(Tricking)를 비교할 수 있습니다. 시작 음과 [a]·[i]·[u] 모음의 순서는 학생 반응에 따라 조절하며 고정 처방으로 사용하지 않습니다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
                         <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
                            <li><strong className="text-white">Maxfield (2017) Source-Filter:</strong> 모음에 따라 음색과 음정의 반응이 달라질 수 있으므로, 고음에서 모음 대체 전후를 비교합니다.</li>
-                           <li><strong className="text-white">Jiang (2024):</strong> 트릭킹(고음 하행)이 통하는 이유는 고음에서 CT가 지배적이라 TA의 고질적 의존성을 자동으로 차단한다고 단정하지 않으며하기 때문.</li>
+                           <li><strong className="text-white">관련 음성생리 연구:</strong> 고음 하행 과제가 일부 조건에서 다르게 느껴질 수 있다는 해석은 가능하지만, 특정 근육의 의존성을 자동으로 차단한다고 단정하지 않습니다.</li>
                         </ul>
                      </div>
                   </div>
@@ -509,12 +509,12 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        성대가 완강하게 붙어 안 나올 때 "더 세게 붙여라"는 우선 피하고 반응을 확인. 트릴로 성대가 "살짝 떨어지는 느낌"까지 성문 저항을 풀어라.
+                        소리가 눌리거나 막힐 때 “더 세게”를 우선 지시하지 말고, Trill·Hooty·Mum 등에서 음질·기류·노력감이 어떻게 달라지는지 확인한다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
                         <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Titze (2014):</strong> 파열 스트레스 단계의 과압착 상태(극단적 수렴형 성문)에서 가하는 추가 압력은 조직 파괴 유발. SOVT는 특정 압력 변화를 일으킬 수 있는 보조 과제임.</li>
+                           <li><strong className="text-white">Titze 관련 모델:</strong> 압력과 조직 부담의 관계를 설명하는 참고 모델입니다. 모델 결과만으로 조직 손상이나 특정 SOVT 처방을 단정하지 않습니다.</li>
                         </ul>
                      </div>
                   </div>
@@ -526,7 +526,7 @@ export default function VocalReference() {
              <div className="mt-6 bg-slate-900 border border-slate-800 p-5 rounded-2xl shadow-xl text-slate-300">
                <h4 className="text-sm font-bold text-emerald-400 mb-2">💡 통찰과 시사점: (코칭 가이드)</h4>
                <p className="text-xs leading-relaxed">
-                 SLS 6가지 도구 상자와 툴들은 성문 하강 훈련법이 아닙니다. 학생에게 툴을 제시할 때, "세스 리그스가 그렇게 했기 때문에" 가 아닌, <strong>"이 툴이 당신의 성문 형태를 특정 모양으로 바꾼다고 단정하지 않고, 성문하압의 불연속적 폭발을 막아 안전하게 발성할 수 있게 해주는 구조적 해법 (Titze 2014 모델 등)"</strong>이라고 인지하고 코치할 때 그 위력과 안정성이 극대화됩니다.
+                 SLS의 음절·자음·모음과 SOVT는 학생 반응을 비교하고 연습에서 가사로 전이하기 위한 조건 설계 도구로 기록합니다. 특정 툴이 성문 형태를 바꾸거나 안전을 보장한다고 단정하지 않으며, 불편감·통증·지속적인 음질 악화가 있으면 중단하고 필요 시 음성 전문가의 평가를 고려합니다.
                </p>
             </div>
           </div>
@@ -542,61 +542,61 @@ export default function VocalReference() {
             </h3>
             
             <p className="text-[13px] text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-              SLS에서는 자음+모음 툴뿐만 아니라 신체의 움직임과 자세를 활용한 큐잉도 중요하게 다룹니다. 무의식적 긴장 패턴을 차단하고, 올바른 발성 조건을 간접적으로 유도합니다. 특히 고음에서 후두 상승이나 외부 근육 개입이 심한 학생에게 효과적입니다.
+              자세·움직임은 일부 학생에게 수행 조건을 비교하는 단서가 될 수 있습니다. 후두 위치나 근육 상태를 자동으로 바꾸거나 특정 결과를 보장한다고 설명하지 않으며, 불편감이 없는 범위에서 한 가지 조건만 바꿔 음질·연결·노력감의 변화를 기록합니다.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl">
                 <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 text-indigo-700 dark:text-indigo-400">① 허리 굽히기 (Bend Forward)</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">고음에 다가갈 때 허리를 앞으로 굽혀 고음에 대한 불안감을 해소하고 '도달하려는' 습관을 차단합니다.</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">같은 짧은 음형을 자세를 바꿔 비교하고, 음량·연결·노력감이 어떻게 달라지는지 관찰합니다.</p>
                 <div className="mt-2 text-[10px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-1.5 rounded-md inline-block text-slate-500 dark:text-slate-400 font-semibold">
-                  추천: Type 4 (Pull Chest), Type 5 (Pressed)
+                  비교 후보: Type 4·5에서 반응 확인
                 </div>
               </div>
               <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl">
                 <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 text-indigo-700 dark:text-indigo-400">② 손가락으로 볼 받치기</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">손가락으로 볼과 입 주변을 받쳐 턱과 입술의 긴장을 풉니다. 과도한 공기 사용을 방지합니다.</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">볼과 입 주변의 움직임을 가볍게 보조한 뒤, 소리의 선명도와 노력감이 달라지는지 비교합니다.</p>
                 <div className="mt-2 text-[10px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-1.5 rounded-md inline-block text-slate-500 dark:text-slate-400 font-semibold">
-                  추천: Type 2, 4 (Lip Trill 훈련 시)
+                  비교 후보: Type 2·4의 Lip Trill 과제
                 </div>
               </div>
               <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl">
                 <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 text-emerald-700 dark:text-emerald-400">③ Speech-Level Posture (가장 핵심)</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">후두가 안정된 위치에 머물게 합니다. 고음에서 턱을 들거나 저음에서 고개를 숙이지 않는 중립 자세를 유지합니다.</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">중립 자세를 기준으로 삼고, 턱·고개 위치를 바꿨을 때 음질·연결·불편감이 달라지는지 확인합니다.</p>
                 <div className="mt-2 text-[10px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-1.5 rounded-md inline-block text-slate-500 dark:text-slate-400 font-semibold">
-                  추천: 모든 유형의 최종 상태 (Type 1)
+                  비교 기준: 모든 유형
                 </div>
               </div>
               <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl">
                 <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 text-teal-700 dark:text-teal-400">④ 이완 유도 (Relaxation)</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">심호흡, 어깨 롤(Shoulder Roll), 스트레칭 등을 통해 전신의 긴장을 해소한 후 훈련에 돌입합니다.</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">심호흡·어깨 롤·가벼운 스트레칭 전후의 음질과 노력감을 비교합니다. 불편하거나 어지러우면 중단합니다.</p>
                 <div className="mt-2 text-[10px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-1.5 rounded-md inline-block text-slate-500 dark:text-slate-400 font-semibold">
-                  추천: Type 5 (신체적 과긴장 동반 시)
+                  비교 후보: Type 5에서 긴장감이 동반될 때
                 </div>
               </div>
               <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl">
                 <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 text-sky-700 dark:text-sky-400">⑤ 고개 숙이기 (Chin Tuck)</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">턱을 가슴 쪽으로 약간 숙인 채 발성하여 설골상근 긴장을 감소시키고 후두 상승 억제.</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">작은 범위의 고개 위치 변화를 비교하고, 음질·노력감·목의 불편감이 악화되지 않는지 확인합니다.</p>
                 <div className="mt-2 text-[10px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-1.5 rounded-md inline-block text-slate-500 dark:text-slate-400 font-semibold">
-                  추천: Type 4 (Pulled Chest 후두 상승 억제)
+                  비교 후보: Type 4에서 상행 반응 확인
                 </div>
               </div>
               <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-slate-150 dark:border-slate-700/50 rounded-xl">
                 <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-1 text-purple-700 dark:text-purple-400">⑥ 허리 숙이기 (Bend Forward)</h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">허리를 앞으로 약 45도 숙이고 발성하여 복강내압을 자동 증가, 호흡 지원 파워 자동화.</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-2">자세 변화 전후의 호흡감·음량·노력감을 비교합니다. 자세가 불편하거나 힘을 더 써야 하면 사용하지 않습니다.</p>
                 <div className="mt-2 text-[10px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-1.5 rounded-md inline-block text-slate-500 dark:text-slate-400 font-semibold">
-                  추천: Type 6 (Breathy/Weak 호흡 지원 강화)
+                  비교 후보: Type 6에서 기류감과 중심 변화 확인
                 </div>
               </div>
             </div>
 
-            <h3 className="text-[14px] font-bold text-slate-800 dark:text-slate-200 mb-3 border-b border-slate-100 dark:border-slate-800 pb-2">유형별 추천 신체 큐 요약정리</h3>
+            <h3 className="text-[14px] font-bold text-slate-800 dark:text-slate-200 mb-3 border-b border-slate-100 dark:border-slate-800 pb-2">유형별 신체 큐 비교 후보</h3>
             <div className="overflow-x-auto rounded-xl border border-slate-150 dark:border-slate-700/50">
               <table className="w-full text-xs text-left min-w-[600px]">
                 <thead className="bg-slate-50 dark:bg-slate-800/40 font-semibold text-slate-700 dark:text-slate-300">
                   <tr>
                     <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50 w-32">유형</th>
-                    <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50">추천 신체 큐</th>
+                    <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50">비교할 신체 큐</th>
                     <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50 w-1/2">목적 및 이유</th>
                   </tr>
                 </thead>
@@ -604,32 +604,32 @@ export default function VocalReference() {
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-teal-700 dark:text-teal-400">Type 1</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">Speech-Level Posture</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">이미 균형이 잡혀 있으므로 다른 동작 없이 기본 자세만 유지</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">중립 자세를 기준으로 다른 조건을 바꿨을 때의 차이를 확인</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-sky-600">Type 2</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">Cry / 볼 받치기</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">접촉을 강화하고 입 주변 긴장을 풀어 과도한 공기 사용을 방지</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">Cry·볼 보조 전후의 선명도·기류감·노력감을 비교</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-indigo-600">Type 3</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">고개 돌리기 + Cry, 걷기</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">브리지 통과 시 긴장 완화 및 전신 이완으로 자연스러운 연결 유도</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">고개 돌리기·걷기 전후의 연결과 재현성을 비교</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-amber-600">Type 4</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">허리 굽히기(핵심) + Dopy</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">고음을 향해 '도달'하려는 나쁜 습관을 자동으로 차단한다고 단정하지 않으며, 후두 억제</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">허리 굽히기·Dopy 전후에 상행의 노력감과 연결이 어떻게 달라지는지 관찰</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-rose-600">Type 5</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">어깨 롤링 + 이완 + Dopy</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">몸 전체의 압축과 과폐쇄를 풀고 후두 하강을 통해 공간을 확보</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">어깨 롤·이완·Dopy 전후의 눌림·불편감·음질을 비교</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-emerald-600">Type 6</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">Cry + 걷기</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">적당한 텐션의 접촉 강화 및 심리적 긴장 완화로 호흡 조절력 향상</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">Cry·걷기 전후의 기류감·선명도·노력감을 함께 기록</td>
                   </tr>
                 </tbody>
               </table>
@@ -648,7 +648,7 @@ export default function VocalReference() {
             </h3>
             
             <p className="text-[13px] text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-              SLS에서 모음(Vowel)은 성도(Vocal Tract)의 형태를 변화시켜 성대 접촉과 공명에 영향을 미치는 핵심 조절매개변수입니다. 운동학습 관점에서 모음 선택 자체가 발성 시스템의 특정 방향의 자기조직화를 유도하는 '과제 제약(Task Constraint)'입니다.
+              모음은 성도의 형태와 소리의 결과를 바꾸므로, 같은 음형에서 모음별 반응을 비교할 수 있는 중요한 과제 조건입니다. 다만 모음만으로 성대 접촉이나 레지스터를 확정하지 않고, 학생의 음질·연결·노력감 변화를 함께 기록합니다.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -656,16 +656,16 @@ export default function VocalReference() {
                 <h4 className="font-bold text-indigo-800 dark:text-indigo-300 text-[13px] mb-2">좁은 모음 [i], [u], [o]</h4>
                 <ul className="text-[11px] text-slate-700 dark:text-slate-300 space-y-1.5 list-disc pl-4 marker:text-indigo-400">
                   <li><strong>성도 형태:</strong> 구강 내 공간 축소, 성도가 좁아짐.</li>
-                  <li><strong>과제 효과:</strong> 두성 유도, 성대 접촉 간접 지원, 브릿지 통과 원활.</li>
-                  <li><strong>활용 유형:</strong> Type 4, 5 (과압축 완화, 두성 유도. 흉성이 강한 자에게 유리)</li>
+                  <li><strong>비교할 반응:</strong> 고음·연결에서 음질, 노력감, 기류감이 어떻게 달라지는지.</li>
+                  <li><strong>비교 후보:</strong> Type 4·5에서 좁은 모음과 다른 모음을 짧게 교차 비교.</li>
                 </ul>
               </div>
               <div className="p-4 bg-rose-50/50 border border-rose-100 rounded-xl">
                 <h4 className="font-bold text-rose-800 dark:text-rose-300 text-[13px] mb-2">넓은 모음 [a], [æ]</h4>
                 <ul className="text-[11px] text-slate-700 dark:text-slate-300 space-y-1.5 list-disc pl-4 marker:text-rose-400">
                   <li><strong>성도 형태:</strong> 구강 내 공간 확대, 성도가 넓어짐.</li>
-                  <li><strong>과제 효과:</strong> 흉성 유도, 풍부한 배음 형성, 성대 접촉 강화.</li>
-                  <li><strong>활용 유형:</strong> Type 2, 6 (흉성 발견, 접촉 형성. 흉성이 약한 자에게 유리)</li>
+                  <li><strong>비교할 반응:</strong> 선명도, 음량, 기류감과 노력이 어떻게 달라지는지.</li>
+                  <li><strong>비교 후보:</strong> Type 2·6에서 넓은 모음과 다른 모음을 낮은 음량으로 교차 비교.</li>
                 </ul>
               </div>
             </div>
@@ -677,24 +677,24 @@ export default function VocalReference() {
                   <tr>
                     <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50">카테고리</th>
                     <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50">예시 모음</th>
-                    <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50">활성화 레지스터</th>
+                    <th className="px-3 py-3 border-b border-slate-150 dark:border-slate-700/50">비교할 반응</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white dark:bg-slate-900 divide-y divide-slate-100">
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-indigo-600">Narrow (좁은 모음)</td>
                     <td className="px-3 py-2.5 font-mono">OO (/u/), EE (/i/)</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">Head Voice 활성화, Bridge 통과 용이</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">고음·연결에서 음질과 노력감 변화</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-teal-600">Medium (중간 모음)</td>
                     <td className="px-3 py-2.5 font-mono">UH (/ʌ/), ʊ (/ʊ/)</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">Mix Voice 활성화, Register 전환 균형</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">음역·음량을 바꿀 때 연결과 안정성 변화</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-rose-600">Wide (넓은 모음)</td>
                     <td className="px-3 py-2.5 font-mono">AH (/æ/), A (/ɑ/), EY, EH</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">Chest Voice 고정, 파워 및 공명</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">저음·음량에서 선명도와 눌림 변화</td>
                   </tr>
                 </tbody>
               </table>
@@ -703,7 +703,7 @@ export default function VocalReference() {
             <div className="p-4 bg-purple-50/40 border border-purple-100 rounded-xl">
                <h3 className="text-[12px] font-bold text-purple-900 mb-2">💡 SLS 모음 훈련 진행 원칙</h3>
                <p className="text-[11px] md:text-xs text-purple-800 dark:text-purple-300/80 leading-relaxed font-medium">
-                 가장 보편적인 교정 메커니즘은 <strong>좁은 모음 → 중간 모음 → 넓은 모음</strong> 순으로 진행하며, 환절기에서 당김이 심해질 때 좁은 모음으로 임시 스윙하여 안정성을 보강합니다. 지속적으로 좁은 모음만 부르면 Head Voice 파워가 미약해지는 부작용이 생기므로, 반드시 브리지를 안착한 후엔 입을 열어(Wide) 본래의 파워를 얻어야 합니다.
+                 좁은 모음 → 중간 모음 → 넓은 모음의 순서는 사용할 수 있는 한 가지 비교 경로입니다. 모든 학생에게 고정하지 말고, 한 조건에서 편안함·연결·음질이 좋아졌는지 확인한 뒤 모음을 넓혀 봅니다. 도움을 줄인 뒤에도 변화가 유지되는지 확인합니다.
                </p>
             </div>
           </div>
@@ -799,29 +799,29 @@ export default function VocalReference() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
-                  <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">고음에서 후두가 상승하는 느낌</h4>
+                  <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">고음에서 노력감·음량이 급증하는 느낌</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-mono bg-white dark:bg-slate-900 inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100 dark:border-slate-800">Type 4 (초기 신호)</p>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">Hooty로 일시적 이완 후 재시도. 넓은 모음 사용 즉시 중단.</p>
-                  <p className="text-[10px] font-semibold text-rose-600 flex items-center gap-1"><RefreshCw size={10}/> p 강도로 리셋</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">음량·음역을 낮춘 뒤 Hooty·Goo·Mum 등을 짧게 비교하고, 상행에서 노력감과 연결을 기록합니다.</p>
+                  <p className="text-[10px] font-semibold text-rose-600 flex items-center gap-1"><RefreshCw size={10}/> 불편감이 있으면 중단</p>
                </div>
                
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
                   <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">음이 전부 연결되지 않고 끊어짐</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-mono bg-white dark:bg-slate-900 inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100 dark:border-slate-800">Type 2, 6</p>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">경음 자음 + 넓은 모음으로 접촉을 변화를 비교. Hooty 사용 중지.</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">Goo·Mum·Gee 또는 Lip Trill을 낮은 음량으로 비교하고, 자음만 세지면서 모음이 눌리지 않는지 확인합니다.</p>
                </div>
 
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
                   <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">음이 통째 막히고 기류가 안 나옴</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-mono bg-white dark:bg-slate-900 inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100 dark:border-slate-800">Type 5</p>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">Tongue Trill + Lip Trill로 시작해 무조건 기류를 열고 압을 빼줍니다.</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">Tongue Trill·Lip Trill·Hooty를 짧게 비교하고, 기류와 소리가 함께 유지되는지 확인합니다. 압을 더 세게 만들지 않습니다.</p>
                   <p className="text-[10px] font-semibold text-rose-600">"압 더 세게" 우선 피하고 반응을 확인</p>
                </div>
 
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
-                  <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">30분 이상 지속되는 쉰 목소리</h4>
+                  <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">지속되거나 반복되는 쉰 목소리·통증</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-mono bg-white dark:bg-slate-900 inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100 dark:border-slate-800">모든 유형 (위험!)</p>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">즉시 연습 중단. 48시간 휴식 및 후두 외상 ENT 전문의 상담 권고.</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">연습을 중단합니다. 증상이 지속되거나 반복되면 이비인후과 또는 음성 전문가의 평가를 고려합니다.</p>
                </div>
             </div>
           </div>
@@ -844,13 +844,13 @@ export default function VocalReference() {
               <div className="p-4 bg-blue-50/50 border border-blue-100 rounded-xl space-y-2">
                 <h4 className="font-bold text-blue-800 dark:text-blue-300 text-[13px]">1. 패러다임의 전환: 교정에서 '조건 설계(중재)'로</h4>
                 <p className="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                  문제적 소리(Pull Chest, No Chest 등)는 단순한 <strong>실수</strong>가 아니라, 현재의 조건(과도한 음정/음량) 속에서 살기 위해 신경계가 선택해 파놓은 깊은 골짜기, <strong>보상 끌개(Attractor)</strong>입니다. "목 열어" 같은 몸통 직접 조정(MMC)은 실패하며, 대신 <strong>오직 올바른 협응만 나올 수 있는 저항력 있는 툴로 과제 규칙(조건) 자체를 개조</strong>해야 합니다.
+                  문제적 소리(Pull Chest, No Chest 등)는 현재 과제 조건에서 반복되는 수행 패턴으로 기록할 수 있습니다. '목을 열어' 같은 지시 하나에 의존하기보다, <strong>자음·모음·SOVTE·음량·음역 중 한 조건을 바꿔 반응을 비교</strong>하고, 어떤 조건에서 노력감과 연결이 좋아지는지 확인합니다.
                 </p>
               </div>
               <div className="p-4 bg-indigo-50/50 border border-indigo-100 rounded-xl space-y-2">
                 <h4 className="font-bold text-indigo-800 dark:text-indigo-300 text-[13px]">2. 자기조직화(Self-Organization)와 창발(Emergence)</h4>
                 <p className="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                  학생이 수많은 성대와 호흡 내부 근육들을 하나하나 의식으로 통제(자유도 문제)할 수 없습니다. 교사가 학생의 자유도를 제한하는 특수 툴(자음, 모음, SOVTE)이라는 <strong>과제 제약(Task Constraint)</strong>을 주면, 학생의 신경계가 생존을 위해 그 모양대로 <strong>스스로 목표 협응을 창발해 조립</strong>합니다.
+                  학생이 여러 생리 요소를 하나하나 의식적으로 통제하기는 어렵습니다. 교사는 자음·모음·SOVTE 같은 <strong>과제 제약(Task Constraint)</strong>으로 수행 조건을 단순화하고, 그 조건에서 실제로 어떤 소리·노력감·연결 변화가 나타나는지 관찰합니다. 제약은 특정 협응을 보장하는 장치가 아닙니다.
                 </p>
               </div>
               <div className="p-4 bg-teal-50/50 border border-teal-100 rounded-xl space-y-2">
@@ -862,7 +862,7 @@ export default function VocalReference() {
               <div className="p-4 bg-rose-50/50 border border-rose-100 rounded-xl space-y-2">
                 <h4 className="font-bold text-rose-800 dark:text-rose-300 text-[13px]">4. 임계 요동(Critical Fluctuation)과 상전이</h4>
                 <p className="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                  파사지오 대역에서 소리가 불안정하게 떨리거나 살짝 플립되는 것을 즉시 실패로 심판하지 마세요. 거대했던 무거운 흉성의 협응 체계가 부서지고 새로운 믹스 체계로 환승하며 일어나는 <strong>상전이(Phase Transition)의 정상적 신호이자 '좋은 변동성'</strong>일 수 있습니다.
+                  파사지오 대역에서 작은 변동이나 플립이 나타나면 즉시 원인을 확정하지 말고, 음량·모음·진행 방향을 낮은 부담으로 바꿔 비교합니다. 변화가 탐색 과정의 일부일 수 있지만, 불편감·지속적 악화·재현성 저하는 함께 기록하고 과제를 조정합니다.
                 </p>
               </div>
             </div>

@@ -11,7 +11,10 @@ export default function MotorProtocolGuide() {
           9장. 6가지 발성 유형별 운동학습 실전 훈련 프로토콜
         </h3>
         <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-          v6의 운동학습·복잡계 개념과 v8의 SLS 툴 + Lax Vox 훈련을 통합하여, 각 유형별로 현장에서 즉시 적용 가능한 단계별 실전 프로토콜을 제시합니다.
+          기존 자료의 운동학습 개념과 SLS 툴·Lax Vox 활용안을 통합한 코칭 적용 예시입니다. 유형을 확정하거나 특정 생리 상태를 만들어내는 임상 프로토콜이 아니라, 학생 반응을 비교하며 다음 과제를 선택하기 위한 수업 설계 자료입니다.
+        </p>
+        <p className="text-[11px] md:text-xs text-amber-700 dark:text-amber-300 bg-amber-50/70 dark:bg-amber-900/20 border border-amber-200/60 rounded-lg p-3 mb-4 leading-relaxed">
+          표의 순서·시간·도구 조합은 고정 처방이 아닙니다. 음질, 연결, 노력감, 불편감, 도구 제거 후 재현성을 기록하고 한 번에 하나의 조건만 조절하세요.
         </p>
 
         <div className="bg-white dark:bg-slate-800/50 rounded-xl p-4 border border-indigo-50 dark:border-indigo-900/20">
@@ -50,7 +53,7 @@ export default function MotorProtocolGuide() {
           </div>
           <div className="mt-4 p-3 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg text-xs flex gap-2">
             <CheckCircle2 size={16} className="text-indigo-600 dark:text-indigo-400 shrink-0" />
-            <p className="text-indigo-900 dark:text-indigo-200 font-medium">SLS 툴 + Lax Vox 결합 원칙: "SLS 툴로 발견하고, Lax Vox로 정밀 조절하고, 다시 SLS 툴로 전이한다"</p>
+            <p className="text-indigo-900 dark:text-indigo-200 font-medium">SLS 툴 + Lax Vox 비교 원칙: 학생 반응에 따라 두 조건을 번갈아 비교하고, 도움을 줄인 뒤 모음·가사로 전이한다.</p>
           </div>
         </div>
       </div>
@@ -65,7 +68,7 @@ export default function MotorProtocolGuide() {
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl p-4">
             <h4 className="font-bold text-indigo-700 dark:text-indigo-400 text-xs mb-1">Type 2: Light Unstable</h4>
-            <p className="text-xs text-slate-600 dark:text-slate-400">성대 접촉 끌개 형성 (파열음→비음→개방모음 전이)</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">자음·비음·모음 조건을 바꾸며 선명도와 연결을 비교</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl p-4">
             <h4 className="font-bold text-purple-700 dark:text-purple-400 text-xs mb-1">Type 3: Light Transitional</h4>
@@ -73,7 +76,7 @@ export default function MotorProtocolGuide() {
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl p-4">
             <h4 className="font-bold text-rose-700 dark:text-rose-400 text-xs mb-1">Type 4: Heavy/Pulled Chest</h4>
-            <p className="text-xs text-slate-600 dark:text-slate-400">풀체스트 끌개 이탈 (Tricking+좁은모음+SOVTE, 임계 요동 관리)</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">음역·음량을 낮추고 SOVT·모음 조건의 변화를 비교</p>
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl p-4">
             <h4 className="font-bold text-orange-700 dark:text-orange-400 text-xs mb-1">Type 5: Pressed/Over-adducted</h4>
@@ -81,7 +84,7 @@ export default function MotorProtocolGuide() {
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl p-4">
             <h4 className="font-bold text-sky-700 dark:text-sky-400 text-xs mb-1">Type 6: Breathy/Weak</h4>
-            <p className="text-xs text-slate-600 dark:text-slate-400">접촉 끌개 최초 형성 + 과폐쇄 전이 관리 (이중 목표 관리)</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">기류감과 소리의 중심을 비교하되 눌림 증가를 함께 확인</p>
           </div>
         </div>
       </div>
@@ -108,33 +111,33 @@ export default function MotorProtocolGuide() {
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-indigo-700 dark:text-indigo-400">Type 2</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">파열음으로 접촉 반응 비교<br/>넓은 모음으로 흉성 발견<br/>Lax Vox: Staccato→Glissando</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉을 비음→반폐쇄→개방으로 점진적 전이<br/>외적 초점: 튕겨나오는 소리</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">B[æ]b→M[ʌ]m→N[ei]→N[ae]→가사<br/>과폐쇄 전이 예방</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">파열음·모음의 선명도와 노력을 비교<br/>Lax Vox의 짧은 과제부터 확인<br/>Staccato→Glissando는 선택적 경로</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">비음·반폐쇄·개방 조건을 한 가지씩 비교<br/>외적 초점: 선명도·연결·노력감</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">B[æ]b·M[ʌ]m·N[ei]·N[ae] 중 반응이 좋은 조건에서 가사로 전이</td>
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-purple-700 dark:text-purple-400">Type 3</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">sub-Tends To 실시간 판독<br/>Pull Chest: 좁은 모음+SOVTE<br/>No Chest: 넓은 모음+파열음</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Pull Chest: Hooty+M[ʌ]m<br/>No Chest: Cry+Nay<br/>순수 Flip: Nay+W[ʌ]w</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">현재 반응을 먼저 기록<br/>좁은·넓은 모음과 SOVT를 교차 비교<br/>과제별 변화에 따라 다음 조건 선택</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Hooty·Mum·Cry·Nay·W[ʌ]w 중 변화를 만드는 조건을 한 번에 하나씩 비교</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">조건 관찰 기반 유연한 전이<br/>과폐쇄/플립 방지</td>
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-rose-700 dark:text-rose-400">Type 4</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Tricking(높은 음서 시작)<br/>좁은 모음+SOVTE 필수<br/>Lax Vox: Hooty Siren (1~3cm)</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Lip Trill→Hooty→M[ʌ]m으로 Release<br/>임계 요동 관찰(좋은 변동성)</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">SOVTE→반폐쇄→개방<br/>Lax Vox 1단계 충분히 적용<br/>파지 강력 요구</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">높은 음에서 내려오는 과제와 좁은 모음을 비교<br/>SOVT는 학생 반응과 튜브 조건을 기록하며 선택</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Lip Trill→Hooty→M[ʌ]m을 차례로 비교<br/>연결·노력감·재현성 기록</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">SOVT→반폐쇄→개방을 선택적으로 비교<br/>튜브 깊이·규격을 고정하지 않고 기록<br/>도움 제거 후 재현성 확인</td>
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-orange-700 dark:text-orange-400">Type 5</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Trill로 과폐쇄 해제<br/>Hooty로 후두 이완<br/>임시적 숨섞임 허용</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Trill로 수행 반응 비교<br/>Hooty로 음색·노력감 비교<br/>불편감이 없을 때만 짧게 사용</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">3단계 프로토콜 순차<br/>숨섞임→접촉 명료화<br/>'선명하게' 보류, '연결'에 초점</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Trill→Hooty→M[ʌ]m→개방<br/>과폐쇄 재발시 즉시 리셋</td>
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-sky-700 dark:text-sky-400">Type 6</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Edgy mmm으로 접촉 발견<br/>파열음 결합, Hooty 우선 피하고 반응을 확인<br/>Lax Vox: 2단계 접근</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Edgy·자음·모음의 선명도 비교<br/>Hooty도 짧게 반응 확인<br/>Lax Vox는 조건을 기록하며 선택</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 유지 + 과폐쇄 예방 (이중 관리)<br/>대역폭 하한/상한 관리</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 없으면 Lax Vox 중단<br/>Type 5 과폐쇄 전이 상시 모니터링</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">변화가 없거나 노력이 늘면 Lax Vox 조건을 낮추거나 다른 툴과 비교<br/>눌림·불편감의 전이를 기록</td>
               </tr>
             </tbody>
           </table>
@@ -165,7 +168,7 @@ export default function MotorProtocolGuide() {
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 2</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">[æ] 소리가 튕겨 나오는지, 윗입술이 간지럽게 떨리는지</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">소리가 끊기지 않고 이어지는지</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">거품이 짧게 나오면 접촉이 있는 거예요</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">기포·소리·노력감의 변화를 함께 관찰</td>
               </tr>
               <tr>
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 3</td>
@@ -176,7 +179,7 @@ export default function MotorProtocolGuide() {
               <tr>
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 4</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">입술이 떨리는 느낌만 집중, 소리가 뒤로 빠지는 느낌</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">소리가 자동으로 올라가는지</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">음역을 바꿔도 연결과 노력감이 유지되는지</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">거품이 쉬지 않고 나오는지</td>
               </tr>
               <tr>
@@ -189,7 +192,7 @@ export default function MotorProtocolGuide() {
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 6</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">mmm에서 입술이 간지럽게 떨리면, B에서 튕겨나오면</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">숨이 새지 않고 소리가 또렷해지는지</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">거품이 짧게 나오면 접촉 달성</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">기포만으로 성대 접촉을 판정하지 않고 제거 후 반응을 비교</td>
               </tr>
             </tbody>
           </table>
@@ -222,8 +225,8 @@ export default function MotorProtocolGuide() {
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 2</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 끌개 얕음 (약한 부하에 상전이)</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 끌개 깊어짐 (넓은 조건 안정)</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">파열음 강제, 넓은 모음→좁은 모음</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Type 5(Pressed) 과폐쇄 상전이</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">자음·모음·음량을 한 가지씩 비교</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">선명도를 위해 힘이 늘거나 눌리는지 확인</td>
               </tr>
               <tr>
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 3</td>
@@ -243,15 +246,15 @@ export default function MotorProtocolGuide() {
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 5</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">과폐쇄 끌개 과도 깊음 (공기 흐름 차단)</td>
                 <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">적절 접촉 끌개 (공기 흐름 허용)</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Trill 강제 이완, Hooty 후두 하강, 임시적 숨섞임</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">과폐쇄 재발 (전이 시 빈번)</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Trill·Hooty·Mum을 짧게 비교하고 불편하면 중단</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">도구 제거 후 눌림·노력감이 돌아오는지 확인</td>
               </tr>
               <tr>
                 <td className="px-4 py-2.5 font-medium text-slate-800 dark:text-slate-200">Type 6</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 끌개 부재 (숨섞임만 존재)</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 끌개 최초 형성 (흉성 발견)</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Edgy mmm+파열음, 넓은 모음+허리 숙이기</td>
-                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Type 5(Pressed) 과폐쇄 전이</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">기류감이 크고 소리의 중심이 약하게 관찰됨</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">선명도와 편안함이 함께 유지되는 조건</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Edgy·자음·Goo·Mum을 짧게 비교</td>
+                <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">눌림·불편감이 늘면 즉시 조건을 낮춤</td>
               </tr>
             </tbody>
           </table>
@@ -260,7 +263,7 @@ export default function MotorProtocolGuide() {
 
        {/* Summary Table 4 */}
        <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-        <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200">SLS 툴 + Lax Vox 결합 세션 타이밍 요약</h3>
+        <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200">세션 운영 시간 예시 (고정 처방 아님)</h3>
         <div className="overflow-x-auto shadow-sm border border-slate-200 dark:border-slate-700 rounded-xl">
           <table className="w-full text-left text-xs min-w-[700px]">
             <thead className="bg-slate-100 dark:bg-slate-800/60 font-semibold text-slate-700 dark:text-slate-300">
@@ -269,7 +272,7 @@ export default function MotorProtocolGuide() {
                 <th className="px-4 py-3 border-b border-l border-slate-200 dark:border-slate-700">SLS 툴 중심 (Phase 1~2 초)</th>
                 <th className="px-4 py-3 border-b border-l border-slate-200 dark:border-slate-700">Lax Vox 도입 (Phase 2 후반~3 초)</th>
                 <th className="px-4 py-3 border-b border-l border-slate-200 dark:border-slate-700">SLS 툴 전이 (Phase 3 후반)</th>
-                <th className="px-4 py-3 border-b border-l border-slate-200 dark:border-slate-700 text-indigo-700 dark:text-indigo-400">총 Lax Vox 시간</th>
+                <th className="px-4 py-3 border-b border-l border-slate-200 dark:border-slate-700 text-indigo-700 dark:text-indigo-400">Lax Vox 시간 예시</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 bg-white dark:bg-slate-900 break-keep">

@@ -128,13 +128,13 @@ export default function VocalDiagnostic({ onSelectType }: VocalDiagnosticProps) 
                 {diagnosticResult.koreanName}
               </h3>
               <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">
-                SLS 공식 명칭: {diagnosticResult.name}
+                SLS 관련 명칭·코칭 분류: {diagnosticResult.name}
               </p>
             </div>
           </div>
 
           <div className="bg-white dark:bg-slate-900/80 border border-slate-100 dark:border-slate-800 p-4.5 rounded-xl mb-5">
-            <h4 className="text-[10px] uppercase tracking-wider text-teal-600 font-bold mb-1">성대 특징 및 상태 요약</h4>
+            <h4 className="text-[10px] uppercase tracking-wider text-teal-600 font-bold mb-1">청취·수행 특징 요약</h4>
             <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
               <TermTooltip text={diagnosticResult.description} />
             </p>
