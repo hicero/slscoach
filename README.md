@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# VoiSpeech Coach Field Guide
 
-# Run and deploy your AI Studio app
+React/Vite 기반의 보컬 코치용 수업 참고 도구입니다.
 
-This contains everything you need to run your app locally.
+## 적용 파일
 
-View your app in AI Studio: https://ai.studio/apps/60b8377c-ac75-4290-a049-9e90f201a8e6
+- `src/App.tsx`: 수업 화면, 유형별 도구 경로, 반응 기록
+- `src/coachData.ts`: 우선 도구·대안 도구·실패 반응별 코칭 데이터
+- `src/coach.css`: 새 인터페이스 스타일
+- `src/types.ts`: 기존 유형·상세 레슨·참고 데이터
+- `src/components/`: 기존 상세 화면 컴포넌트. 새 App에서 필요한 내용을 계속 확장할 때 사용
 
-## Run Locally
+## 실행
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+빌드 명령은 `npm run build`입니다. GitHub의 연결된 배포 브랜치에 커밋하면 Vercel의 Git 연동 설정에 따라 새 배포가 생성됩니다.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 내용 사용 원칙
+
+수업 화면의 유형은 학생의 고정 진단명이 아니라 현재 과제에서 관찰한 경향입니다. 각 도구는 특정 근육이나 성문 형태를 반드시 만든다는 뜻이 아니라, 조건을 바꾸어 학생의 반응을 비교하기 위한 코칭 적용안입니다. 연구 근거는 연구 대상·도구·조건·평가 항목을 확인한 뒤 제한적으로 해석합니다.

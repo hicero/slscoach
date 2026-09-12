@@ -213,7 +213,7 @@ export default function VocalReference() {
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">원인</td>
                       <td className="px-3 py-2 border-r border-slate-100 dark:border-slate-800">흉성의 과도한 개입 (Bottom-up 끌어올리기)</td>
-                      <td className="px-3 py-2">순수하게 성대를 과도하게 짓누름 (맹목적인 Adduction 강제)</td>
+                      <td className="px-3 py-2">순수하게 성대를 과도하게 짓누름 (성대 접촉을 직접 강제한다고 해석하지 않음)</td>
                     </tr>
                     <tr>
                       <td className="px-3 py-2 font-medium bg-slate-50 dark:bg-slate-800/40 border-r border-slate-100 dark:border-slate-800">양상</td>
@@ -332,7 +332,7 @@ export default function VocalReference() {
       {activeTab === 'transitions' && (
         <div className="space-y-5">
           <div className="bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 p-3.5 rounded-xl text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed mb-1">
-            <strong>💡 SLS 발성 전이란?</strong> 보컬 훈련과 발성 밸런스 발달에 따라, 학생이 지닌 태생적인 발성 성향(Tends To)은 유기적으로 변화하게 됩니다. 전이가 발생된다는 것은 이전 유형의 주요 구조적 피로도가 치유되고, 새로운 성장에 걸맞은 보컬 과도기가 나타났음을 알리는 성장의 신호입니다.
+            <strong>💡 SLS 발성 전이란?</strong> 보컬 훈련과 발성 밸런스 발달에 따라, 학생이 지닌 태생적인 발성 성향(Tends To)은 유기적으로 변화하게 됩니다. 전이가 발생된다는 것은 이전 과제의 반응이 달라지고 새로운 조건에서 다른 경향이 관찰되었다는 뜻으로 기록합니다.
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -399,9 +399,9 @@ export default function VocalReference() {
                         말할 때처럼(Speech Level) 후두가 안정되고, 외재근(삼키는 근육)의 개입 없이 내재근만으로 발성해야 한다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
-                        <strong className="text-emerald-400 block mb-1">현대 증명 논문</strong>
+                        <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Chhetri (2012, 2014):</strong> TA, CT, LCA의 내재근 활성도만으로 음정과 성문 자세가 충분히 제어됨을 증명. 외재근(스트랩) 사용 배제의 과학적 근거.</li>
+                           <li><strong className="text-white">Chhetri (2012, 2014):</strong> TA, CT, LCA의 내재근 활성도만으로 음정과 성문 자세가 충분히 제어됨을 보고. 외재근(스트랩) 사용 배제의 과학적 근거.</li>
                            <li><strong className="text-white">Palaparthi (2019) / Geng (2020):</strong> 과도한 TA 개입 없이 TA-CT 밸런스를 유지하는 "스피치 레벨"의 MAP(근육 활성도) 위치를 일치하게 밝혀냄.</li>
                         </ul>
                      </div>
@@ -420,9 +420,9 @@ export default function VocalReference() {
                         브릿지를 부드럽게 넘어가는 것이 핵심이며, 이 통과 구간에서 불안정해지는 것(Type 3)은 흉성 무게가 방해하기 때문이다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
-                        <strong className="text-emerald-400 block mb-1">현대 증명 논문</strong>
+                        <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Titze (2014):</strong> 성문이 윗면과 아랫면 모두 직사각형(평행)인 믹스 상태(Mixed registration)는 수렴/발산형보다 물리적으로 불안정함. 브릿지 위기의 물리적 기원을 가장 완벽히 설명!</li>
+                           <li><strong className="text-white">Titze (2014):</strong> 성문이 윗면과 아랫면 모두 직사각형(평행)인 믹스 상태(Mixed registration)는 수렴/발산형보다 물리적으로 불안정함. 브릿지에서의 음질 변화를 설명하는 한 가지 모델로 참고합니다.</li>
                            <li><strong className="text-white">Roubeau (2007):</strong> M1(흉성)과 M2(두성/가성) 구역 사이의 주파수 도약(Jump)을 넘는 과정이라고 분류.</li>
                         </ul>
                      </div>
@@ -438,10 +438,10 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        모든 유형에서 부작용 없이 사용 가능. 과압축(Type 4,5)을 만들지 않고 과소폐쇄(Type 2,6)도 악화시키지 않는 유일한 시작점.
+                        초기 탐색에 사용할 수 있으나 개인별 반응을 확인해야 함. 과압축(Type 4,5)을 만들지 않고 과소폐쇄(Type 2,6)도 악화시키지 않는 하나의 시작점.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
-                        <strong className="text-emerald-400 block mb-1">현대 증명 논문</strong>
+                        <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
                            <li><strong className="text-white">Titze (2009):</strong> 립 트릴은 반폐쇄성도(SOVT) 도구로써 성도 임피던스를 향상시켜 발성 임계압(PTP)을 대폭 하락하게 물리 모델링을 수정함. 힘 안 들이고 성대를 진동시키는 SLS 안전 툴의 1티어 정당성 부여.</li>
                         </ul>
@@ -469,7 +469,7 @@ export default function VocalReference() {
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300 space-y-2">
                         <div>
                            <strong className="text-emerald-400 block mb-0.5">Švec (1999) - Videokymography</strong>
-                           가성/숨새는 폐쇄율(CQ)이 극도로 낮음. Edge 훈련이 CQ를 순간적으로 강제 상승시키는 유효한 방법임을 증명.
+                           가성/숨새는 폐쇄율(CQ)이 극도로 낮음. 해당 연구 결과를 특정 Edge 처방의 효과로 일반화하지 않습니다.
                         </div>
                         <div className="border-t border-slate-600 pt-2 mt-2">
                            <strong className="text-emerald-400 block mb-0.5">Geng (2020) / Jiang (2024)</strong>
@@ -491,10 +491,10 @@ export default function VocalReference() {
                         무거운 흉성 풀링은 반드시 높은 음에서 시작(Tricking)하여 새로운 조정을 경험토록 한다. 넓은 [a]에서 좁은 [i, u] 모음으로 전환시킨다.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
-                        <strong className="text-emerald-400 block mb-1">현대 증명 논문</strong>
+                        <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Maxfield (2017) Source-Filter:</strong> 넓은 모음의 F1 공명 주파수는 고음 진입 시 배음들과 비선형 음향 충돌을 유발함. 좁은 모음은 포먼트를 낮춰 물리적 브레이크를 방어.</li>
-                           <li><strong className="text-white">Jiang (2024):</strong> 트릭킹(고음 하행)이 통하는 이유는 고음에서 CT가 지배적이라 TA의 고질적 의존성을 물리적으로 차단하기 때문.</li>
+                           <li><strong className="text-white">Maxfield (2017) Source-Filter:</strong> 모음에 따라 음색과 음정의 반응이 달라질 수 있으므로, 고음에서 모음 대체 전후를 비교합니다.</li>
+                           <li><strong className="text-white">Jiang (2024):</strong> 트릭킹(고음 하행)이 통하는 이유는 고음에서 CT가 지배적이라 TA의 고질적 의존성을 자동으로 차단한다고 단정하지 않으며하기 때문.</li>
                         </ul>
                      </div>
                   </div>
@@ -509,12 +509,12 @@ export default function VocalReference() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                      <div className="bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm">
                         <strong className="text-indigo-600 block mb-1">SLS 훈련 매뉴얼</strong>
-                        성대가 완강하게 붙어 안 나올 때 "더 세게 붙여라"는 절대 금지. 트릴로 성대가 "살짝 떨어지는 느낌"까지 성문 저항을 풀어라.
+                        성대가 완강하게 붙어 안 나올 때 "더 세게 붙여라"는 우선 피하고 반응을 확인. 트릴로 성대가 "살짝 떨어지는 느낌"까지 성문 저항을 풀어라.
                      </div>
                      <div className="bg-slate-800 p-3 rounded-lg border border-slate-700 shadow-sm text-slate-300">
-                        <strong className="text-emerald-400 block mb-1">현대 증명 논문</strong>
+                        <strong className="text-emerald-400 block mb-1">관련 연구 참고</strong>
                         <ul className="list-disc pl-4 space-y-1">
-                           <li><strong className="text-white">Titze (2014):</strong> 파열 스트레스 단계의 과압착 상태(극단적 수렴형 성문)에서 가하는 추가 압력은 조직 파괴 유발. SOVT는 후두내압을 신속히 하강시켜 폭발을 방지하는 유일무이한 응급 처방임.</li>
+                           <li><strong className="text-white">Titze (2014):</strong> 파열 스트레스 단계의 과압착 상태(극단적 수렴형 성문)에서 가하는 추가 압력은 조직 파괴 유발. SOVT는 특정 압력 변화를 일으킬 수 있는 보조 과제임.</li>
                         </ul>
                      </div>
                   </div>
@@ -526,7 +526,7 @@ export default function VocalReference() {
              <div className="mt-6 bg-slate-900 border border-slate-800 p-5 rounded-2xl shadow-xl text-slate-300">
                <h4 className="text-sm font-bold text-emerald-400 mb-2">💡 통찰과 시사점: (코칭 가이드)</h4>
                <p className="text-xs leading-relaxed">
-                 SLS 6가지 도구 상자와 툴들은 성문 하강 훈련법이 아닙니다. 학생에게 툴을 제시할 때, "세스 리그스가 그렇게 했기 때문에" 가 아닌, <strong>"이 툴이 당신의 성문 형태를 직사각형(믹스)으로 물리 변형시켜주고, 성문하압의 불연속적 폭발을 막아 안전하게 발성할 수 있게 해주는 구조적 해법 (Titze 2014 모델 등)"</strong>이라고 인지하고 코치할 때 그 위력과 안정성이 극대화됩니다.
+                 SLS 6가지 도구 상자와 툴들은 성문 하강 훈련법이 아닙니다. 학생에게 툴을 제시할 때, "세스 리그스가 그렇게 했기 때문에" 가 아닌, <strong>"이 툴이 당신의 성문 형태를 특정 모양으로 바꾼다고 단정하지 않고, 성문하압의 불연속적 폭발을 막아 안전하게 발성할 수 있게 해주는 구조적 해법 (Titze 2014 모델 등)"</strong>이라고 인지하고 코치할 때 그 위력과 안정성이 극대화됩니다.
                </p>
             </div>
           </div>
@@ -619,7 +619,7 @@ export default function VocalReference() {
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-amber-600">Type 4</td>
                     <td className="px-3 py-2.5 font-semibold text-slate-700 dark:text-slate-300">허리 굽히기(핵심) + Dopy</td>
-                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">고음을 향해 '도달'하려는 나쁜 습관을 물리적으로 차단, 후두 억제</td>
+                    <td className="px-3 py-2.5 text-slate-600 dark:text-slate-400">고음을 향해 '도달'하려는 나쁜 습관을 자동으로 차단한다고 단정하지 않으며, 후두 억제</td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:bg-slate-800/40/50">
                     <td className="px-3 py-2.5 font-bold text-rose-600">Type 5</td>
@@ -766,7 +766,7 @@ export default function VocalReference() {
                     <td className="px-3 py-3 font-bold text-amber-600 text-center">Type 4</td>
                     <td className="px-3 py-3">1.5 Octave <span className="text-[9px] text-slate-400">(Tricking)</span></td>
                     <td className="px-3 py-3">Octave Repeater <span className="text-[9px] text-slate-400">(Reinforcing)</span><br/><span className="text-[10px] text-slate-400">Octave Down 3x</span></td>
-                    <td className="px-2 py-3 font-semibold text-teal-600">p~mp <span className="text-[9px] block text-slate-400">(절대 밀지 않기)</span></td>
+                    <td className="px-2 py-3 font-semibold text-teal-600">p~mp <span className="text-[9px] block text-slate-400">(무리해서 밀지 않기)</span></td>
                     <td className="px-2 py-3 font-semibold">mf <span className="text-[9px] block text-slate-400">(새 감각 강화)</span></td>
                     <td className="px-2 py-3 text-slate-600 dark:text-slate-400">저 <span className="text-[9px] block text-slate-400">(가볍게)</span></td>
                     <td className="px-2 py-3 text-slate-600 dark:text-slate-400">중</td>
@@ -775,7 +775,7 @@ export default function VocalReference() {
                     <td className="px-3 py-3 font-bold text-rose-600 text-center">Type 5</td>
                     <td className="px-3 py-3">1.5 Octave <span className="text-[9px] text-slate-400">(Tricking)</span></td>
                     <td className="px-3 py-3">Octave Repeater<br/><span className="text-[10px] text-slate-400">Octave Down 3x</span></td>
-                    <td className="px-2 py-3 font-semibold text-teal-600">p <span className="text-[9px] block text-slate-400">(Trill=선명, Hooty=치료적 숨섞임)</span></td>
+                    <td className="px-2 py-3 font-semibold text-teal-600">p <span className="text-[9px] block text-slate-400">(Trill=떨림 비교, Hooty=음색 비교)</span></td>
                     <td className="px-2 py-3 font-semibold">mp~mf <span className="text-[9px] block text-slate-400">(자연 접촉 복귀)</span></td>
                     <td className="px-2 py-3 text-slate-600 dark:text-slate-400">최저 <span className="text-[9px] block text-slate-400">(Trill) → 약간 숨섞임(Hooty)</span></td>
                     <td className="px-2 py-3 text-slate-600 dark:text-slate-400">약→중</td>
@@ -808,14 +808,14 @@ export default function VocalReference() {
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
                   <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">음이 전부 연결되지 않고 끊어짐</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-mono bg-white dark:bg-slate-900 inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100 dark:border-slate-800">Type 2, 6</p>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">경음 자음 + 넓은 모음으로 접촉을 강제 확립. Hooty 사용 중지.</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">경음 자음 + 넓은 모음으로 접촉을 변화를 비교. Hooty 사용 중지.</p>
                </div>
 
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
                   <h4 className="font-bold text-rose-700 dark:text-rose-400 text-sm mb-1">음이 통째 막히고 기류가 안 나옴</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-mono bg-white dark:bg-slate-900 inline-block px-1.5 py-0.5 rounded shadow-sm border border-slate-100 dark:border-slate-800">Type 5</p>
                   <p className="text-xs text-slate-700 dark:text-slate-300 mb-2">Tongue Trill + Lip Trill로 시작해 무조건 기류를 열고 압을 빼줍니다.</p>
-                  <p className="text-[10px] font-semibold text-rose-600">"압 더 세게" 절대 금지</p>
+                  <p className="text-[10px] font-semibold text-rose-600">"압 더 세게" 우선 피하고 반응을 확인</p>
                </div>
 
                <div className="border border-rose-100 bg-rose-50/30 rounded-xl p-4">
@@ -856,7 +856,7 @@ export default function VocalReference() {
               <div className="p-4 bg-teal-50/50 border border-teal-100 rounded-xl space-y-2">
                 <h4 className="font-bold text-teal-800 dark:text-teal-300 text-[13px]">3. SOVTE와 Vocalise = 과제 제약</h4>
                 <p className="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                  Lip Trill이나 좁은 모음 스케일은 성문 압력을 올려주는 단순한 요술 지팡이가 아닙니다. 풀체스트 같은 <strong>틀린 버릇을 아예 쓸 수가 없는 물리적 한계 환경을 목에 씌워버리는 '과제 제약'</strong>입니다. 자유도를 얼려서 악습을 틀어막고 정방향을 일러줍니다.
+                  Lip Trill이나 좁은 모음 스케일은 특정 압력이나 성대 상태를 보장하는 도구로 설명하지 않습니다. 수행 조건을 단순하게 만들어 다른 반응을 탐색하는 과제 제약으로 사용할 수 있으며, 도움을 줄인 뒤에도 변화가 유지되는지 확인합니다.
                 </p>
               </div>
               <div className="p-4 bg-rose-50/50 border border-rose-100 rounded-xl space-y-2">

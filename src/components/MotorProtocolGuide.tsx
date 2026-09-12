@@ -108,7 +108,7 @@ export default function MotorProtocolGuide() {
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-indigo-700 dark:text-indigo-400">Type 2</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">파열음으로 접촉 강제<br/>넓은 모음으로 흉성 발견<br/>Lax Vox: Staccato→Glissando</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">파열음으로 접촉 반응 비교<br/>넓은 모음으로 흉성 발견<br/>Lax Vox: Staccato→Glissando</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉을 비음→반폐쇄→개방으로 점진적 전이<br/>외적 초점: 튕겨나오는 소리</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">B[æ]b→M[ʌ]m→N[ei]→N[ae]→가사<br/>과폐쇄 전이 예방</td>
               </tr>
@@ -132,7 +132,7 @@ export default function MotorProtocolGuide() {
               </tr>
               <tr>
                 <td className="px-4 py-3 font-semibold text-sky-700 dark:text-sky-400">Type 6</td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Edgy mmm으로 접촉 발견<br/>파열음 결합, Hooty 절대 금지<br/>Lax Vox: 2단계 접근</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">Edgy mmm으로 접촉 발견<br/>파열음 결합, Hooty 우선 피하고 반응을 확인<br/>Lax Vox: 2단계 접근</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 유지 + 과폐쇄 예방 (이중 관리)<br/>대역폭 하한/상한 관리</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-400 border-l border-slate-100 dark:border-slate-800/60">접촉 없으면 Lax Vox 중단<br/>Type 5 과폐쇄 전이 상시 모니터링</td>
               </tr>

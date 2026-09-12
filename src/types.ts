@@ -10,11 +10,11 @@ export const VOWEL_NARROWING_CHART = [
 ];
 
 export const CONSONANT_STRENGTH_CHART = [
-  { level: "Hardest (가장 강한 성대 접촉)", examples: "G, B, D" },
-  { level: "Hard/Plosive (강한 파열음)", examples: "K, T, P, tʃ(cheek), dʒ(judge)" },
-  { level: "Phonated (유성음/중간 차단)", examples: "N, M, ŋ(sing), ɲ(onion), ð(thee), Z, V, ʒ(rouge)" },
-  { level: "Glide (글라이드/적은 차단)", examples: "W, Y" },
-  { level: "Aspirate (기음/가장 무차단/성대 벌어짐)", examples: "θ(think), ʃ(she), S, F, hw(why), H" },
+  { level: "유성 폐쇄·파열음", examples: "G, B, D", note: "구강 폐쇄와 시작 조건을 설명하며 성대 접촉의 고정 서열은 아닙니다." },
+  { level: "무성 파열음", examples: "K, T, P, tʃ, dʒ", note: "성대 진동 없이도 구강 폐쇄를 만들 수 있으므로 성대 상태를 자음만으로 판단하지 않습니다." },
+  { level: "유성음·비음·마찰음", examples: "N, M, ŋ, ð, Z, V, ʒ", note: "발음과 수행 조건에 따라 연결감이 다르게 나타날 수 있습니다." },
+  { level: "활음", examples: "W, Y", note: "모음으로 이어지는 움직임을 비교할 때 사용할 수 있습니다." },
+  { level: "무성 마찰·기음", examples: "θ, ʃ, S, F, H", note: "기류감이 커질 수 있지만 성문 상태를 자음만으로 확정하지 않습니다." },
 ];
 
 export interface LessonStep {
@@ -62,7 +62,7 @@ export const VOCAL_TYPES: VocalType[] = [
     name: "Type 1: Balanced Mix",
     koreanName: "균형 잡힌 믹스 (Balanced Mix)",
     slsTarget: "현재 균형 유지 및 가창 표현 세밀화",
-    description: "브릿지(Bridge/Passaggio)를 부드럽고 균일한 연결로 통과하며, 흉성(Chest Voice)과 두성(Head Voice)의 균형이 이미 잘 잡혀 있는 이상적인 유형입니다. SLS 공식 분류 명칭인 'Tends To: Mix'에 해당하며, 구조적 문제는 없으나 보컬적 스킬업이 필요한 상태입니다.",
+    description: "브릿지에서 음질과 연결이 비교적 부드럽게 들리는 경향입니다. SLS의 Mix 개념을 참고한 코칭용 분류이며, 청취만으로 생리적 상태를 확정하지 않습니다.",
     characteristics: [
       "저음부터 고음까지 급격한 음색 변화 없이 부드럽게 연결됨",
       "후두가 안정되어 있고 성대 접촉 빈도가 우수함",
@@ -139,9 +139,9 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["B[ae]b, D[ae]d, K[ae]k", "Staccato 훈련", "Edgy mmm", "Cry (울음 섞인 톤)"],
     avoidTools: ["Hooty 계열 음성 훈련 (성대 접촉을 더 약화시킴)", "좁은 모음 ([i], [u])"],
     strategy: "좁고 부드러운 모음보다는 '넓고 밝은 모음'을 앞세워 적정한 성대 밀착감을 먼저 회복합니다. 음정이 가창 도중 가성으로 뒤집히면(Flip), 'Edgy mmm'을 적용하여 성대의 얇고 선명한 울림을 즉시 리셋해 줍니다.",
-    motorDiagnostic: "성대 접촉 협응에 대한 끌개가 너무 얕거나 없음. 약간의 부하(음정 상승)만 걸려도 가성(반대위상)으로 상전이가 즉시 일어나며 도피하는 상태.",
-    constraintRedesign: "[과제 제약] 파열음(B, D, K)과 같은 물리적 장애물을 추가해 성대 하부에 순간적인 기압을 형성, 성대가 닫히지 않으면 소리를 낼 수 없는 강제적 과제 제약을 부여.",
-    emergenceFeedback: "'성대를 붙여라' 등의 내부 감각(MMC) 지시 철저히 배제(과긴장 유발). 'B[ʌ]b 발음에서 공기가 새지 않고 튕겨 나오는가?' 같은 명확한 외적 전환 피드백 적용. 단, 파열음 강도가 과하면 Type 5(과압착) 보상이 창발될 수 있으므로 최적 부하 모니터링.",
+    motorDiagnostic: "가벼운 연결이 음역 상승에서 쉽게 흔들리는 경향으로 관찰합니다. 특정 성대 협응이나 생리 상태로 단정하지 않고 음량·모음·음역을 바꿔 반응을 비교합니다.",
+    constraintRedesign: "[과제 비교] B, D, K 같은 자음과 모음 과제를 비교해 시작감과 연결감이 어떻게 달라지는지 관찰합니다. 자음만으로 성대 접촉을 확정하지 않습니다.",
+    emergenceFeedback: "'성대를 붙여라'처럼 결과를 직접 지시하기보다, 소리의 선명도·기류감·노력감 같은 관찰 가능한 기준을 사용합니다. 'B[ʌ]b 발음에서 공기가 새지 않고 튕겨 나오는가?' 같은 명확한 외적 전환 피드백 적용. 단, 파열음 강도가 과하면 Type 5(과압착) 보상이 창발될 수 있으므로 최적 부하 모니터링.",
     transferDesign: "Staccato 파열음 ➡️ Sustain 파열음 ➡️ 넓은 모음 기반 연결 ➡️ 짧은 가사 적용. (임계 요동 주의: Type 5 상전이 경고)",
     startKey: "여성: G3 – A3 / 남성: C3 (안정적인 흉성을 확실히 확보하기 위해 반드시 낮은 음역에서 훈련을 점진 시작)",
     keyPoints: "넓은 모음과 탄력적인 자음 조합으로 먼저 안전하게 성대 접촉을 이끌어내고, 소리가 깨지거나 흐려지면 즉시 Edgy mmm 스태카토로 재교정합니다.",
@@ -198,7 +198,7 @@ export const VOCAL_TYPES: VocalType[] = [
     name: "Type 3: Light Transitional",
     koreanName: "과도기적 유형 (Light Transitional - 이동 표적 Moving Target)",
     slsTarget: "흉성 발달을 점진적으로 강화하며 브릿지 통과의 안정화 도모",
-    description: "저음역에서 기초적인 가창 무게감(Chest Weight)은 잘 확보되어 있으나, 브릿지(환절기 음역대)로 진입하고 이를 통과하는 순간 연결이 끊기거나 심하게 요동치는 유형입니다. SLS 기본 카테고리에는 없지만 'No Chest Soprano'와 'Flip Type B'의 경계선에 해당하는 넓은 학생층의 구조적 과도기 상태입니다.",
+    description: "저음과 중고음의 음질 차이가 크고, 브릿지에서 연결이 흔들리는 경향입니다. SLS 개념을 참고해 재구성한 코칭용 분류이며 고정된 생리 진단이 아닙니다.",
     characteristics: [
       "저음은 풍부하지만 음정이 상승하면서 중음부에서 극적으로 연결이 끊어짐",
       "공용 워밍업에서는 어느 정도 부드럽지만, 조금만 자극적인 가창 기법이 들어가면 연결의 통제력을 상실함",
@@ -266,10 +266,10 @@ export const VOCAL_TYPES: VocalType[] = [
     name: "Type 4: Heavy/Pulled Chest",
     koreanName: "흉성 쥐어짜기 유형 (Heavy/Pulled Chest)",
     slsTarget: "후두 위치의 하강 및 목 주변의 과도한 외부 근육 긴장 이완",
-    description: "무겁고 둔탁한 저음 발성(Chest Voice) 스타일을 고음부 브릿지 영역까지 밀어 올려 가창하느라, 후두가 성대를 꽉 쥔 채 치솟고 목이 강하게 압박되어 결국 더 이상 높은 소리가 나지 않거나 극단적으로 뒤집히게(Flip) 되는 전형적인 풀체스트 유형입니다. SLS 공식 분류 명칭 명칭의 'Tends To: Pull Chest' 및 'Flip Type A (흉성 끌어올리기 시도 끝에 크게 뒤집히는 유형)'에 해당합니다. 과격한 흉성 집착을 완전히 중단(Release)하고 '속임수(Tricking) 전략'을 정교하게 발휘해 고음의 가볍고 열린 감각을 먼저 찾아내는 것이 최고의 비책입니다.",
+    description: "무겁고 둔탁한 저음 발성(Chest Voice) 스타일을 고음부 브릿지 영역까지 밀어 올려 가창하느라, 목 주변의 노력감과 음질의 경직이 커져 결국 더 이상 높은 소리가 나지 않거나 극단적으로 뒤집히게(Flip) 되는 풀체스트 경향으로 설명되는 코칭용 관찰 유형입니다. SLS 공식 분류 명칭 명칭의 'Tends To: Pull Chest' 및 'Flip Type A (흉성 끌어올리기 시도 끝에 크게 뒤집히는 유형)'에 해당합니다. 무거워지는 조건을 잠시 줄이고, 가벼운 과제로 다른 연결을 비교한 뒤 노래에 옮깁니다.",
     characteristics: [
       "음정이 올라갈 무렵 후두가 손에 만져질 정도로 높이 솟구치며 목이 강하게 좁아짐",
-      "목에 핏대가 심하게 서고 소리가 경직되며, 브릿지 구간에서 강제적인 한계에 다다름",
+      "목에 핏대가 심하게 서고 소리가 경직되며, 브릿지 구간에서 노력감과 음질 변화가 커짐",
       "고음은 크게 내지르면 약간 나지만, 부드러운 중음 연결 및 여리게 가창이 완전히 봉쇄됨"
     ],
     primaryTools: ["Lip Trill / Tongue Trill (유연성 회복)", "Hooty W[i]/G[i], G[u], N[ei]", "M[ʌ]m (Reinforcing 단계 제한적 사용)"],
@@ -287,7 +287,7 @@ export const VOCAL_TYPES: VocalType[] = [
         stage: "Discover",
         tools: "Lip Trill + Hooty W[i]",
         scale: "1.5 Octave (Tricking)",
-        dynamicBreath: "p~mp, 저 공기 사용량 (절대 밀지 않기)",
+        dynamicBreath: "p~mp, 저 공기 사용량 (무리해서 밀지 않기)",
         queuing: "립으로 부드럽게 넘어가 보세요",
         checkpoint: "목 안쪽 깊고 거친 외부 핏대 수축과 턱 밑 힘 들어감이 해제되어 편안한 호흡 균형이 자리를 잡는지 확인합니다."
       },
@@ -334,7 +334,7 @@ export const VOCAL_TYPES: VocalType[] = [
     name: "Type 5: Pressed/Over-adducted",
     koreanName: "성대 과압착 유형 (Pressed/Over-adducted)",
     slsTarget: "성대의 지나친 과압착 완화 및 성문 폐쇄 긴장 이완",
-    description: "성대를 지나치게 강력하고 뻣뻣하게 밀착(Over-compression)하는 습관 때문에, 폐에서 올라오는 부드러운 공기 흐름이 성대 사이를 원활히 빠져나가지 못하고 턱 막혀 버리는 유형입니다. 이는 SLS 원본의 독립 Tends To라기보다 Pull Chest 또는 Imperfect Mix 내부에서 나타나는 pressed sub-pattern에 해당합니다. '더 단단히 깊이 붙여서 가창하자'라는 지시는 절대 금지사항이며, 성대가 편안하게 이완된 감각을 만드는 데 호흡의 균형과 립/텅트릴 마사지를 집중 적용해야 합니다.",
+    description: "소리가 눌리거나 거칠게 들리고, 음량·음역을 바꾸면 노력감이 빠르게 커지는 경향입니다. 원인은 과제별 반응을 비교해 가설로 기록합니다. 이는 SLS 원본의 독립 Tends To라기보다 Pull Chest 또는 Imperfect Mix 내부에서 나타나는 pressed sub-pattern에 해당합니다. '더 단단히 깊이 붙여서 가창하자'라는 지시는 우선 피하고 반응을 확인사항이며, 성대가 편안하게 이완된 감각을 만드는 데 호흡의 균형과 립/텅트릴 마사지를 집중 적용해야 합니다.",
     characteristics: [
       "소리가 시종일관 짓눌린 칼칼한 잡음이나 쇠소리에 가깝고, 호흡 수명이 극도로 짧음",
       "가창 도중 음정 안정성을 꾀하는 게 거의 불가능하며 성대 근육 피로도가 기하급수적임",
@@ -342,13 +342,13 @@ export const VOCAL_TYPES: VocalType[] = [
     ],
     primaryTools: ["Lip Trill (립트릴)", "Tongue Trill (텅트릴/설소대 릴리즈)", "Hooty (가벼운 포근한 바보 목소리 음색, 임시적 과제 제약으로만 사용)", "가벼운 M[ʌ]m (가장 옅은 성대 터치)"],
     avoidTools: ["징징대는 소리 (Bratty)", "비강 접촉 (Pharyngeal)", "Ng [ŋ] 조임 툴", "경음 자음 및 Edgy mmm의 무분별한 사용"],
-    strategy: "목 주변에 '성대가 좌우로 약간 평화롭게 멀어져 얇게 풀리는 듯한 산뜻한 감각'을 빚어주는 것이 제1훈련 수칙입니다. '더 강하게 발성하라'는 주문은 절대 닫아두고 오직 립트릴과 텅트릴의 안정적인 마사지에 가창 시간을 풍성하게 할애합니다. ★ Type 5 예외: Hooty는 후두 하강 및 외부근 이완을 돕는 임시 도구이며, 숨섞임은 과폐쇄 해제의 자연스러운 '결과'일 뿐입니다. Hooty 없이 선명한 p를 무리하게 시도하면 조용한 압착(quiet pressing)으로 이어질 수 있습니다.",
+    strategy: "목 주변에 '목과 소리의 노력이 줄고 기류가 편하게 흐르는 감각'을 빚어주는 것이 제1훈련 수칙입니다. '더 강하게 발성하라'는 지시를 우선하지 않고 오직 립트릴과 텅트릴의 안정적인 마사지에 가창 시간을 풍성하게 할애합니다. ★ Type 5 예외: Hooty는 음색과 노력감 변화를 비교하는 임시 도구이며, 숨섞임이 늘거나 줄어드는 반응을 관찰합니다. Hooty 없이 선명한 p를 무리하게 시도하면 조용한 압착(quiet pressing)으로 이어질 수 있습니다.",
     motorDiagnostic: "성대 과폐쇄 및 호흡 억류라는 보상 협응이 한계치까지 고착화된 매우 깊은 단일 끌개 상태. 조절매개변수(공기압)의 누적 부하로 외부 개입(긴장)이 턱끝까지 차오름.",
-    constraintRedesign: "[부하 전면 하향/자유도 최소화] 음량을 p(피아노) 이하로 극단 제한. Lip/Tongue Trill을 통해 기류 유출이 필수적인 기계적 환경(조건)을 만들어 압착 본능이 물리적으로 가동되지 않게 강제.",
-    emergenceFeedback: "'목에 힘부터 빼라'는 지시를 절대 금지(오히려 긴장 증폭). Trill의 '부드러운 떨림' 기류나 Hooty의 '풍성하게 풀린 톤' 자체에 외적 초점을 두게 하여 이완 상태의 수동적 창발 유도.",
+    constraintRedesign: "[부하 전면 하향/자유도 최소화] 음량을 p(피아노) 이하로 극단 제한. Lip/Tongue Trill을 통해 기류 유출이 필수적인 기계적 환경(조건)을 만들어 압착 본능이 과제를 단순하게 제한.",
+    emergenceFeedback: "'목에 힘부터 빼라'는 지시를 우선 피하고 반응을 확인(오히려 긴장 증폭). Trill의 '부드러운 떨림' 기류나 Hooty의 '풍성하게 풀린 톤' 자체에 외적 초점을 두게 하여 이완 상태의 수동적 창발 유도.",
     transferDesign: "Lip/Tongue Trill ➡️ Hooty ➡️ 가벼운 Touch의 M[ʌ]m ➡️ 약 공기 사용량 기반 N[ei] 연결 ➡️ 단계적 부하 회복.",
     startKey: "여성: C#4 – C#5 / 남성: F#3 – G4 (목 수축 관성이 도무지 발동될 수 없는 고음에서부터 이완과 하행을 주도하는 전략)",
-    keyPoints: "선명한 p를 무리하게 유지하려다 조용한 압착(quiet pressing)에 빠지는 것을 가장 경계해야 합니다. Hooty의 의도적인 숨섞임으로 과폐쇄를 강제로 해제하는 것이 핵심입니다.",
+    keyPoints: "선명한 p를 무리하게 유지할 때 노력감이 커지는지 관찰합니다. Hooty를 사용한다면 음색과 편안함의 변화를 짧게 비교하고, 도움을 줄인 뒤에도 변화가 유지되는지 확인합니다.",
     lessonFlow: [
       {
         time: "0–3 분",
@@ -357,7 +357,7 @@ export const VOCAL_TYPES: VocalType[] = [
         scale: "1.5 Octave (Tricking)",
         dynamicBreath: "p, 최저 공기 사용량",
         queuing: "립 트릴로 시작, 압력이 빠져나가게",
-        checkpoint: "트릴이 압착 방지 (물리적 메커니즘이 성대의 과압을 대신 받아줌)"
+        checkpoint: "트릴이 압착 방지 (트릴 수행이 압력과 노력감 변화의 비교 기준을 제공)"
       },
       {
         time: "3–8 분",
@@ -366,7 +366,7 @@ export const VOCAL_TYPES: VocalType[] = [
         scale: "1.5 Octave (Tricking)",
         dynamicBreath: "p, 약간 숨섞임 허용",
         queuing: "후두를 낮추고 공기가 살짝 흐르게",
-        checkpoint: "치료적 숨섞임! 과폐쇄 상태를 강제로 해제 (선명한 p를 유지하면 조용한 압착이 됨을 주의)"
+        checkpoint: "숨섞임이 늘어나는지 관찰하며 과제를 조절 (선명한 p를 유지하면 조용한 압착이 됨을 주의)"
       },
       {
         time: "8–13 분",
@@ -375,7 +375,7 @@ export const VOCAL_TYPES: VocalType[] = [
         scale: "Octave Repeater (Reinforcing)",
         dynamicBreath: "mp~mf, 약→중 공기 사용량",
         queuing: "이완 후 가벼운 M으로 연결 확인",
-        checkpoint: "자연 접촉 복귀 (압착이 풀린 후 정상적인 상태로 진입)"
+        checkpoint: "압착감이 줄었을 때 다른 발음으로 변화가 유지되는지 비교"
       },
       {
         time: "13–20 분",
@@ -393,7 +393,7 @@ export const VOCAL_TYPES: VocalType[] = [
     name: "Type 6: Breathy/Weak",
     koreanName: "숨소리가 새고 힘없는 유형 (Breathy/Weak)",
     slsTarget: "접촉 강화 유도 및 성역 가창 흉성 구조 구축",
-    description: "성대가 제대로 접촉하지 못하고 벌어져 전 음역대에서 많은 양의 바람이 새며, 맑고 또렷한 진성이 나지 않고 가성처럼 풀려버리는 유형입니다. 오리지널 SLS의 'Tends To: No Chest (Little Girl)'의 특징을 지닙니다. 호흡이 새는 소리를 개선하고 가벼운 성대 접촉을 유도하기 위해 저음부터 'Edgy mmm'과 자음을 조합해 안정적인 접촉 감각을 키워야 합니다.",
+    description: "전 음역 또는 특정 과제에서 기류감이 크고 소리의 중심이 약하게 들리는 경향입니다. 청취만으로 성대 상태를 확정하지 않습니다. 오리지널 SLS의 'Tends To: No Chest (Little Girl)'의 특징을 지닙니다. 호흡이 새는 소리를 개선하고 가벼운 성대 접촉을 유도하기 위해 저음부터 'Edgy mmm'과 자음을 조합해 안정적인 접촉 감각을 키워야 합니다.",
     characteristics: [
       "성대 접촉 면적이 고르지 못하고 벌어져 호흡이 많이 새며 선명한 음성이 나지 안흠",
       "호흡이 가창 도중 과다 낭비되어 긴 호흡 지속이 곤란하고 소리가 안으로 답답하게 갇힘",
@@ -402,8 +402,8 @@ export const VOCAL_TYPES: VocalType[] = [
     primaryTools: ["Edgy mmm (성대 앞쪽 접촉 유도)", "자음 기반 훈련 (B, D, K + Cry)", "G[ʌ]g (후두 낮추기 및 접촉 유도)", "Squeaky Door (가벼운 성대 접촉을 유도하는 삐걱거리는 문 소리 기법)"],
     avoidTools: ["Hooty 계열 (흉성 발견 초기의 주 도구로는 부적합. 다만 접촉을 만든 뒤 과압축으로 전이될 경우 리셋 도구로 짧게 사용 가능)", "가성을 과도하게 유발해 성대를 벌리는 좁은 모음"],
     strategy: "편안하게 부를 수 있는 저음역대에서부터 'Edgy mmm'과 압력 조절을 돕는 자음을 연결하여, 성대가 가볍고 안전하게 연결되는 접촉을 알게 하는 것이 중요합니다. 접촉이 강화되면서 성대가 지나치게 조이는 상태(Type 5)로 가지 않도록 주의하며, 소리가 조일 경우 즉시 립트릴로 이완을 유도합니다.",
-    motorDiagnostic: "성대 폐쇄 협응 자체가 거의 형성되지 못하고, 전 음역에서 성문 이탈기류(호흡 누수) 상태만이 유일한 안정 끌개로 작용하는 극도 소극적 협응 상태.",
-    constraintRedesign: "[과제 제약 창출] 'Edgy mmm', 파열음(G, B, K), 그리고 Squeaky Door(문 삐걱임)를 결합하여, 유출되는 호흡 기류에 즉각적인 물리적 저항 장벽(성문 폐쇄의 필연성)을 구축.",
+    motorDiagnostic: "기류감이 큰 수행이 반복되는 경향으로 관찰합니다. 성문 상태나 근육 협응은 청취만으로 확정하지 않습니다.",
+    constraintRedesign: "[과제 제약 창출] 'Edgy mmm', 파열음(G, B, K), 그리고 Squeaky Door(문 삐걱임)를 결합하여, 유출되는 호흡 기류에 즉각적인 물리적 저항 장벽(연결감 변화)을 구축.",
     emergenceFeedback: "'성대를 세게 붙여라' 직접 지시 금지(Type 5로 전이되는 나쁜 보상 우려). Edgy 사운드의 선명한 '크랙' 질감(결과물)에 청각적 주의초점을 맞추어 무의식적 접촉력 창발 달성.",
     transferDesign: "Edgy mmm / Staccato ➡️ 파열음 B/D/K + Cry 결합 ➡️ 지속적인 유성자음(G, B) 연결 ➡️ 일반 모음 전이.",
     startKey: "여성: G3 – A3 / 남성: C3 (가장 편안하고 명료한 흉성 본령을 가둘 수 있는 저음 극단 구역에서 무조건 시작)",
@@ -473,7 +473,7 @@ export const TRANSITION_GUIDE = [
   },
   {
     path: "Type 2 → Type 3",
-    reason: "성대 접촉력이 부족했던 상태(Type 2)에서 모음 교정 훈련으로 어느 정도 흉성 확립의 기틀이 잡혔으나, 환절기 구역(브릿지)에서 연결을 방어할 근력이나 요령이 미처 다듬어지지 않아 여전히 갈라짐이 남아있는 상태",
+    reason: "성대 접촉력이 부족했던 상태(Type 2)에서 모음 교정 훈련으로 어느 정도 흉성 확립의 기틀이 잡혔으나, 브릿지 구간에서 연결을 방어할 근력이나 요령이 미처 다듬어지지 않아 여전히 갈라짐이 남아있는 상태",
     solution: "Nay 발성을 통한 Tricking을 접목해 브릿지 연결 감각을 누적(Stabilize)시키며, 좁은 모음과 하행 스케일을 이용해 점진적으로 믹스의 안착을 유도합니다.",
     attention: "성대가 순간적으로 풀려 Flip이 재발한다면 가벼운 Nay 가락이나 Edgy mmm으로 안전하게 리셋 후 재시도합니다."
   },
@@ -490,8 +490,8 @@ export const TOOLBOX_TIERS = {
     {
       name: "Lip Trill (립 트릴)",
       classification: "Safe Adduction (안전한 접촉 유도)",
-      principle: "호흡의 유출량과 성대의 물리적 저항감의 자동화된 환상적인 완급 비율 창출. 브릿지 통과 경험을 안전하게 기획.",
-      reason: "성대가 짓눌리는 과압착(Type 4, 5)을 원천 차단하고 동시에 성대가 마냥 벌어지는 과소폐쇄(Type 2, 6) 역시 자연스럽게 불협화음을 보완하는, SLS 철학의 가장 위대한 중립 기조 도구."
+      principle: "호흡의 유출량과 성대의 물리적 저항감의 자동화된 기류와 소리의 변화를 비교. 브릿지 통과 경험을 안전하게 기획.",
+      reason: "성대가 짓눌리는 과압착(Type 4, 5)을 원천 차단하고 동시에 성대가 마냥 벌어지는 과소폐쇄(Type 2, 6) 역시 자연스럽게 불협화음을 보완하는, 여러 과제의 반응을 비교하기 쉬운 기본 도구."
     },
     {
       name: "Tongue Trill (텅 트릴)",
@@ -521,7 +521,7 @@ export const TOOLBOX_TIERS = {
     {
       name: "N[ei] (네이- 가창)",
       warning: "[ei] 모음이 수축 폭을 가늘게 조이면서 과소폐쇄 환자(Type 2, 6)의 고중음 부분에서 두성 방향으로 당기는 본능을 일부 과동조할 부작용이 잔존.",
-      benefit: "그러나 자음 'N'이 제공하는 윤기 나는 조율력에 힘입어 성대의 안전한 결합을 부차적으로 뒷받침하므로, 실전 Speech Level 구현 단계의 가장 강력한 코칭 툴로 기능함."
+      benefit: "그러나 자음 'N'이 제공하는 윤기 나는 조율력에 힘입어 성대의 안전한 결합을 부차적으로 뒷받침하므로, 실전 Speech Level 구현 단계의 주요 비교 도구 중 하나로 기능함."
     },
     {
       name: "Staccato 실행 (스타카토)",
@@ -530,12 +530,12 @@ export const TOOLBOX_TIERS = {
     }
   ],
   clashSection: [
-    { tool: "Hooty / Dumb / Woofy", type45: "✓ 절대적으로 환영 (후두가 솟구치는 풀체스트 이완 및 후두 하강에 유효)", type26: "✗ 매우 치명적 (숨소리가 새는 병증을 극단화하여 성대 울림의 질적 고사를 가속함)" },
-    { tool: "Bratty / Pharyngeal / 징징거림", type45: "✗ 매우 치명적 (턱 끝과 성대 주변을 조여매는 과압축 염증을 극한까지 악화함)", type26: "✓ 절대적으로 환영 (희미한 성대의 에지 부분에 접촉의 활력을 불어넣는 보약)" },
-    { tool: "Ng [ŋ] 이응 받침 가창", type45: "✗ 매우 치명적 (과도한 이완 없이 골격을 압착)", type26: "✓ 절대적으로 환영 (비강 유도와 성대 에지 접촉 촉진)" },
-    { tool: "경음 자음 (B/D/K계열)", type45: "✗ 매우 치명적 (외부 숨을 억류하여 목 주변 긴장 폭발)", type26: "✓ 절대적으로 환영 (공기 흐름의 훌륭한 저항력으로 탄력 성대 폐쇄 개점)" },
-    { tool: "넓은 모음 ([a], [ae])", type45: "✗ 매우 치명적 (흉성 당기기를 더 가열차게 부추겨 목덜미 수축)", type26: "✓ 절대적으로 환영 (성대 밀착 및 실질적 흉성의 뼈대를 정착하는 터전)" },
-    { tool: "좁은 모음 ([i], [u])", type45: "✓ 절대적으로 환영 (수월한 두성 유입 촉진 및 흉성 당기기 기류 상쇄)", type26: "✗ 매우 치명적 (충분히 발달하지 못한 저음역 접촉을 더 형편없이 녹여버림)" }
+    { tool: "Hooty / Dumb / Woofy", type45: "✓ 우선 고려할 수 있음 (후두가 솟구치는 풀체스트 이완 및 후두 하강에 유효)", type26: "✗ 주의가 필요함 (숨소리가 새는 병증을 극단화하여 성대 울림의 질적 고사를 가속함)" },
+    { tool: "Bratty / Pharyngeal / 징징거림", type45: "✗ 주의가 필요함 (턱 끝과 성대 주변을 조여매는 과압축 염증을 극한까지 악화함)", type26: "✓ 우선 고려할 수 있음 (희미한 성대의 에지 부분에 선명도 변화를 비교할 수 있는 과제)" },
+    { tool: "Ng [ŋ] 이응 받침 가창", type45: "✗ 주의가 필요함 (과도한 이완 없이 골격을 압착)", type26: "✓ 우선 고려할 수 있음 (비강 유도와 성대 에지 접촉 촉진)" },
+    { tool: "경음 자음 (B/D/K계열)", type45: "✗ 주의가 필요함 (외부 숨을 억류하여 목 주변 긴장 폭발)", type26: "✓ 우선 고려할 수 있음 (공기 흐름의 훌륭한 저항력으로 탄력 성대 폐쇄 개점)" },
+    { tool: "넓은 모음 ([a], [ae])", type45: "✗ 주의가 필요함 (흉성 당기기를 더 가열차게 부추겨 목덜미 수축)", type26: "✓ 우선 고려할 수 있음 (성대 밀착 및 저음의 음색과 연결을 비교하는 조건)" },
+    { tool: "좁은 모음 ([i], [u])", type45: "✓ 우선 고려할 수 있음 (고음의 음색과 노력감을 비교하는 조건)", type26: "✗ 주의가 필요함 (저음에서 중심이 약해지는지 반응을 확인)" }
   ]
 };
 
@@ -571,7 +571,7 @@ export const DIAGNOSTIC_FLOWCHART: DiagnosticQuestion[] = [
     question: "목을 쥐어짜며 힘들게 가창할 때, 소리에 기류가 어느 정도 통과하나요? 아니면 숨통조차 막히나요?",
     options: [
       { text: "소리를 거칠고 둔중하게 고음으로 쭉 끌고 올라가며, 후두가 만져질 만큼 한껏 위로 솟구치다 결국 막히거나 거칠게 항복하며 뒤집힙니다.", nextId: null, resultTypeId: "type4" },
-      { text: "성대가 마치 녹슨 쇠처럼 우악스럽게 달라붙어 소리가 돌처럼 칼칼하고 빳빳하게 굳어서, 폐에서 나가는 공기가 완전히 질식되어 가창이 불쾌해집니다.", nextId: null, resultTypeId: "type5" }
+      { text: "소리가 눌리거나 거칠게 들리고, 음량과 음역을 바꾸면 노력감이 빠르게 커지는 경향입니다.", nextId: null, resultTypeId: "type5" }
     ]
   }
 ];
